@@ -1,43 +1,68 @@
-{include file="header.tpl"}
 
-
-		<div class="row">
-			<div class="col-lg-12">
-            	 <img src="images/flyjaffna2.png" style="width: 100%" />
-	    	</div>
-		</div>
-        <div class="row">
-			<div class="col-lg-8" style="text-align: center;" >
-            	<h1 style="font-size:30pt; margin-top:100px;">We Are Coming With a New Look.</h1>
-	    	</div>
-            <div class="col-lg-3">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading" style="text-align: center;">
-                        <img src="images/logo.png" width="60" height="60" /><h2 class="panel-title">Please Sign In</h2>
-                    </div>
-                    <div class="panel-body">
-                        <form action="login.php?job=login" method="post">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="User Name" name="user_name" type="text" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <input type="submit" class="btn btn-lg btn-success btn-block" Value="Login"/>
-                                
-                                {if $error}
-                                <div class="alert alert-danger" style="margin-top: 10px;">
-                                	{$error}
-                            	</div>
-                            	{/if}
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+{include file="user_header.tpl"}
+{if $error_report=='on'}
+    <div class="error_report" style="margin-top: 10px; width: 99%;">
+        <strong>{$error_message}</strong>
     </div>
+{/if}
+<body class="hold-transition login-page" style="background-image: url(images/bg.jpg)"">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="index.php"><b>K</b>Ticket</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form  action="login.php?job=login" method="post">
+            <div class="form-group has-feedback">
+                <input type="text" name="user_name" class="form-control" placeholder="User Name">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" name="password" class="form-control" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+
+        <!-- /.social-auth-links -->
+
+        <a href="#">I forgot my password</a><br>
+
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery 2.2.3 -->
+<script src="js/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="js/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+</body>
+</html>
+
+
 
 {include file="footer.tpl"}

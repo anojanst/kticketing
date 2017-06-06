@@ -37,7 +37,6 @@ $('input.user').typeahead({
 </style>
 {/literal}
 
-<div class="content-wrapper">
 <strong> {php}list_new_message();{/php}</strong>
 
 
