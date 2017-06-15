@@ -17,9 +17,10 @@ $(function() {
 
 {/literal}
 
+<section class="content">
 	<div class="row">
 		<div class="col-lg-6" style="margin-top: 10px;">
-			<div class="panel panel-primary">
+			<div class="box box-primary">
                 <div class="panel-heading">
                     Add new Bank
                 </div>
@@ -36,11 +37,11 @@ $(function() {
 	                    
 	                    	
 						{if $edit=='on'}
-							<button type="submit" name="ok" value="Update" class="btn btn-default">Update</button>
+							<button type="submit" name="ok" value="Update" class="btn btn-primary">Update</button>
 						{else}
-							<button type="submit" name="ok" value="Save" class="btn btn-default">Save</button>
+							<button type="submit" name="ok" value="Save" class="btn btn-primary">Save</button>
 						{/if}
-	                    	<button type="reset" class="btn btn-default">Reset</button>                  
+	                    	<button type="reset" class="btn btn-primary">Reset</button>
                   
                    </form>
 				</div>
@@ -58,4 +59,5 @@ $(function() {
             </div>   
         </div>
    </div>
+</section>
 {include file="footer.tpl"}

@@ -314,7 +314,7 @@
                 <li class="treeview">
                     <a href="#"><i class="fa fa-bar-chart"></i><span> Reports</span><span class="pull-right-container">
 			<i class="fa fa-angle-left pull-right"></i></span></a>
-                    <ul class="treeview-menu">
+                    <ul class="treeview-menu menu-open">
                         <li>
                             <a href="profit_by_staff.php"><i class="fa fa-money"></i> Profit By Staff</a>
                         </li>
@@ -491,6 +491,9 @@
                         </li>
                         <li>
                             <a href="branch_target.php?branch_target"><i class="fa fa-money"></i> Branch Target</a>
+                        </li>
+                        <li class="scroll">
+                            <a href="modules.php"><i class="fa fa-th"></i><span>Module Management</span></a>
                         </li>
 
                     </ul>

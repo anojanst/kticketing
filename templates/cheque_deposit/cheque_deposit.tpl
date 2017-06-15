@@ -22,9 +22,10 @@ $('input.account').typeahead({
    </div>
 {/if}
 
+<section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-primary">
+			<div class="box box-primary">
                 <div class="panel-heading">
                     <div class="row">
 						<div class="col-lg-3">
@@ -41,7 +42,7 @@ $('input.account').typeahead({
                     	</div>
 					</div>
                 </div>
-                <div class="panel-body">
+                <!--<div class="panel-body">
             		<!--<form name="cheque_inquiry_form" action="cheque_deposit.php?job=inquiry" method="post">
 						<div class="row">
 							<div class="col-lg-9">
@@ -71,5 +72,18 @@ $('input.account').typeahead({
             </div>
 	    </div>
 	</div>
+</section>
 
 {include file="footer.tpl"}
+{literal}
+<script>
+  $(function () {
+
+    $('#datepicker').datepicker({
+     format: 'yyyy-mm-dd',
+      autoclose: true
+    });
+ });
+</script>
+
+{/literal}

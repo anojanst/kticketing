@@ -50,6 +50,7 @@ if ($_SESSION ['login'] == 1) {
 			$smarty->assign ( 'account', $_SESSION ['account'] );
 			$smarty->assign ( 'page', 'Cheque Reconciliation' );
 			$smarty->display ( 'cheque/cheque.tpl' );
+
 		} elseif ($_REQUEST ['job'] == "cancel_realised_cheque") {
 			cancel_realised_cheque ( $_REQUEST ['id'] );
 			$info = get_cheque_info_id ( $_REQUEST ['id'] );

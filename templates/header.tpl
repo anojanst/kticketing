@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 <link href="css/kendo.common.min.css" rel="stylesheet">
 <link href="css/kendo.default.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/dataTables.bootstrap.css">

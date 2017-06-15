@@ -23,7 +23,7 @@
 <script src="js/select2.full.min.js"></script>
 <script src="js/fileinput.js"></script>
 <script src="js/fileinput.min.js"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
 </body>
 

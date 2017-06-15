@@ -1,14 +1,13 @@
 {include file="header.tpl"}
 {include file="navigation.tpl"}
 {literal}
-</script>
 <script type="text/javascript">
 $(document).ready(function() {
-$('input.account').typeahead({
-  name: 'account',
-  remote : 'ajax/bank.php?query=%QUERY'
+    $('input.account').typeahead({
+        name: 'account',
+        remote : 'ajax/bank.php?query=%QUERY'
 
-});
+    });
 })
 </script>
 {/literal}
@@ -20,9 +19,10 @@ $('input.account').typeahead({
    </div>
 {/if}
 
+<section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-primary">
+			<div class="box box-primary">
                 <div class="panel-heading">
                     Search By Deposit No
                 </div>
@@ -37,7 +37,7 @@ $('input.account').typeahead({
 							<div class="col-lg-3">
 								<div class="form-group">
 									<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-        								<input type="text" name="statement_date" value="{$statement_date}" required placeholder="Statement Date" style="width: 100%;">
+        								<input type="text" name="statement_date" class="form-control" id="datepicker" value="{$statement_date}" required placeholder="Statement Date" style="width: 100%;">
         								<span class="add-on"><i class="icon-remove"></i></span>
 										<span class="add-on"><i class="icon-th"></i></span>
     								</div>
@@ -46,7 +46,7 @@ $('input.account').typeahead({
                     		</div>
 							<div class="col-lg-3">
 								<div class="form-group">
-									<button type="submit" name="ok" class="btn btn-danger">Go</button>
+									<button type="submit" name="ok" class="btn btn-primary">Go</button>
 								</div>                 
                     		</div>				
 						</div>                 
@@ -55,5 +55,16 @@ $('input.account').typeahead({
             </div>
 	    </div>
 	</div>
-
+</section>
 {include file="footer.tpl"}
+{literal}
+<script>
+  $(function () {
+
+    $('#datepicker').datepicker({
+     format: 'yyyy-mm-dd',
+      autoclose: true
+    });
+ });
+</script>
+{/literal}
