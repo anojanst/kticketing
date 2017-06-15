@@ -18,7 +18,7 @@ function customer_paybill_detail($customer_id, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="danger" style="font-weight: bold;">
 					<td>Ref No</td>
 					<td>Date</td>
@@ -193,7 +193,7 @@ function list_paybill_vouchers($random_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="danger" style="font-weight: bold;">
 					<td>Ref No</td>
 					<td>Date</td>
@@ -360,7 +360,7 @@ function list_paybill() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table id="bl_list" border="1">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead>
 	
 	<th>paybill</th>
@@ -615,7 +615,7 @@ function list_paybill_vouchers_view($paybill_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
   <thead>
     <tr class="success" style="font-weight: bold;">
     <td>Ref No</td>
@@ -709,7 +709,7 @@ function search_paybill($paybill_no, $customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>Print</td>
@@ -851,7 +851,7 @@ function search_paybill_print($paybill_no, $customer, $from_date, $to_date) {
 	}
 
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	

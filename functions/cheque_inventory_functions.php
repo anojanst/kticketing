@@ -164,7 +164,7 @@ function list_cheque_not_realised($statement_date, $account) {
 		
 		echo '<br /><h1>' . $che_date . '</h1><br/>';
 		echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Realise</th>
@@ -248,7 +248,7 @@ function list_realised_cheques() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Remove</th>
@@ -331,7 +331,7 @@ function list_returned_cheques() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Remove</th>
@@ -500,7 +500,7 @@ function list_specify_cheque($statement_date, $che_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Deposit</th>

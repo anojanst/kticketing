@@ -77,7 +77,7 @@ function list_visa($visa_no, $customer) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="danger">
 						   <th>Delete</th>
@@ -121,7 +121,7 @@ function display_visa_detail($visa_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   ';
 	
 	$result = mysqli_query ($conn, "SELECT * FROM visa WHERE visa_no='$visa_no' AND cancel_status='0' ORDER BY id ASC" );
@@ -155,7 +155,7 @@ function display_visa_detail_full($visa_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   ';
 	
 	$result = mysqli_query ($conn, "SELECT * FROM visa WHERE visa_no='$visa_no' AND cancel_status='0' ORDER BY id ASC" );
@@ -239,7 +239,7 @@ function list_passengers_detail($visa_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
          
                        <tr>
 						   <th>Delete</th>
@@ -276,7 +276,7 @@ function list_passengers_details_view($visa_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
          
                        <tr>
 						   <th>Full Name</th>
@@ -342,7 +342,7 @@ function list_visa_logbook($visa_no, $customer) {
 
 
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="info">
 						   <th>V.No</th>

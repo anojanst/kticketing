@@ -39,7 +39,7 @@ function search_telephone_no($customer_name, $telephone_no, $from_date, $to_date
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="danger" style="font-weight: bold;">
 					<td>customer name</td>
 					<td>telephone no</td>

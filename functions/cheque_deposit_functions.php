@@ -208,7 +208,7 @@ function list_specify_cheque($deposit_date, $che_no) {
 	
 	echo '<br /><h1>' . $che_date . '</h1><br />';
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Deposit</th>

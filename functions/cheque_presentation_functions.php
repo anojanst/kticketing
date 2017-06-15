@@ -9,7 +9,7 @@ function list_paybill_not_presentation($presentation_date) {
 		
 		echo '<h1>' . $che_date . '</h1>';
 		echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Present</th>
@@ -88,7 +88,7 @@ function list_paybill_presented() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Unpresent</th>
@@ -199,7 +199,7 @@ function list_specify_paybill_cheque($presentation_date, $che_no) {
 	
 	echo '<h1>' . $che_date . '</h1>';
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Present</th>

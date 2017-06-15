@@ -5,7 +5,7 @@ function list_purchase_order_of_supplier($supplier_name) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px; margin-top: 20px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Purchase Order No</th>
 	<th>Purchase Order Date</th>
@@ -50,7 +50,7 @@ function list_purchase_order_of_purchase_no($purchase_order_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px; margin-top: 20px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Purchase Order No</th>
 	<th>Purchase Order Date</th>
@@ -127,7 +127,7 @@ function list_added_purchase_orders($random_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 		  <thead>
     		<tr>
     		<th>Purchase Order No</th>
@@ -325,7 +325,7 @@ function list_purchase_order_payment_search($purchase_order_payment_no_search, $
 	
 	if ($purchase_order_payment_no_search || $supplier_search) {
 		
-		echo '<table class="inventory_table" style="width: 900px; border-bottom: 2px solid silver; margin-bottom: 10px;">
+		echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Print</th>
 	<th>Payment No</th>

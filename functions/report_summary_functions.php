@@ -23,7 +23,7 @@ function final_cheque_inventory_report($status, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 11px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr style="font-weight: bold;">
 	<td colspan="5" class="danger">Cheque Detail</td>
 	<td colspan="3" class="success">Referrence Detail</td>
@@ -67,7 +67,7 @@ function final_income_expence_report($branch, $from_date, $to_date) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 
 	<thead><th>Date</th>
 	<th>Ref No</th>
@@ -201,7 +201,7 @@ function final_outstanding_invoice_report($customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -257,7 +257,7 @@ function final_outstanding_other_expenses_report($customer, $from_date, $to_date
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -313,7 +313,7 @@ function final_outstanding_voucher_report($travels, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>

@@ -23,7 +23,7 @@ function list_purchase_order_search_for_confirm($purchase_order_no_search, $supp
 	
 	if ($purchase_order_no_search || $supplier_search) {
 		
-		echo '<table class="inventory_table" style="width: 900px; border-bottom: 2px solid silver; margin-bottom: 10px;">
+		echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>View</th>
 	<th>Purchase Order No</th>
@@ -67,7 +67,7 @@ function list_purchase_orders_for_confirm() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px; border-bottom: 2px solid silver; margin-bottom: 10px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>View</th>
 	<th>Purchase Order No</th>
@@ -152,7 +152,7 @@ function display_purchase_order_items($purchase_order_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="sales_table" style="width: 895px; margin-top: 10px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead>
 		<tr>
 			<th>Product Name</th>

@@ -144,7 +144,7 @@ function list_other_incomes_search($other_incomes_no_search, $customer_search) {
 	
 	if ($other_incomes_no_search || $customer_search) {
 		
-		echo '<table class="inventory_table" style="width: 900px; border-bottom: 2px solid silver; margin-bottom: 10px;">
+		echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Print</th>
 	<th>Other incomes  No</th>
@@ -193,7 +193,7 @@ function list_other_incomess() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px; border-bottom: 2px solid silver; margin-bottom: 10px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Edit</th>
 	<th>Print</th>

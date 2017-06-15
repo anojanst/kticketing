@@ -298,7 +298,7 @@ function customer_birthday_by_day($date) {
 	$date = date ( "m-d", strtotime ( $date ) );
 
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="success" style="font-weight: bold;">
 
 				<td>Customer Name</td>

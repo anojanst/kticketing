@@ -701,7 +701,7 @@ function search_invoice($invoice_no, $customer, $from_date, $to_date) {
 		$date_check = "AND invoice_date='$today'";
 	}
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>Print</td>

@@ -77,7 +77,7 @@ function display_loan_detail($loan_no, $id) {
 	$result = mysqli_query ( $conn, "SELECT * FROM loan WHERE loan_no='$loan_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                        <tr>
 						   <th>Loanee</th>
                            <th>Amount</th>
@@ -132,7 +132,7 @@ function display_loan_detail_just_view($loan_no, $id) {
 	$result = mysqli_query ($conn, "SELECT * FROM loan WHERE loan_no='$loan_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <tr class="danger">
 						   <th>loan No</th>
 						   <th>PNR</th>
@@ -196,7 +196,7 @@ function display_loan_cost($loan_no, $id) {
 	$result = mysqli_query ( $conn, "SELECT * FROM loan WHERE loan_no='$loan_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                  <tr class="success">
 						   <th rowspan="2">Name</th>
                            <th rowspan="2">Mobile</th>
@@ -435,7 +435,7 @@ function list_non_confirm($loan_no, $customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="info">
 						   <th>loan No</th>

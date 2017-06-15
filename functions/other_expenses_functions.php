@@ -465,7 +465,7 @@ function list_description_by_other_expenses_view($other_expenses_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="danger" style="font-weight: bold;">
 					<td>Description</td>
 					<td>Detail</td>
@@ -656,7 +656,7 @@ function search_other_expenses($other_expenses_no, $customer, $from_date, $to_da
 		$date_checking = "AND other_expenses_date='$today'";
 	}
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>Print</td>

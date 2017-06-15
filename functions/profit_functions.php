@@ -32,7 +32,7 @@ function list_staff_profit($from_date, $to_date) {
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
-              			<table class="table" style="font-size: 13px;">
+              			<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 						<thead>
                        		<tr class="success">
 								<td>Booking No</td>

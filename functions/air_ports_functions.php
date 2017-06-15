@@ -28,7 +28,7 @@ function list_air_ports() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Edit</th>

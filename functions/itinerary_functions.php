@@ -96,7 +96,7 @@ function list_itinerary_has_flights($itinerary_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 14px; border: 1px white solid;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	              <tr>
                       <td style="border: none;"><strong>Flight No</strong></td>
                       <td style="border: none;"><strong>Sector</strong></td>
@@ -124,7 +124,7 @@ function display_itinerary_detail($itinerary_no, $id) {
 	$result = mysqli_query ($conn,  "SELECT * FROM itinerary WHERE itinerary_no='$itinerary_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                        <tr>
 						   <th>From</th>
                            <th>To</th>
@@ -179,7 +179,7 @@ function display_itinerary_detail_just_view($itinerary_no, $id) {
 	$result = mysqli_query ($conn, "SELECT * FROM itinerary WHERE itinerary_no='$itinerary_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <tr class="danger">
 						   <th>itinerary No</th>
 						   <th>PNR</th>
@@ -243,7 +243,7 @@ function display_itinerary_cost($itinerary_no, $id) {
 	$result = mysqli_query ( $conn, "SELECT * FROM itinerary WHERE itinerary_no='$itinerary_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                  <tr class="success">
 						   <th rowspan="2">Name</th>
                            <th rowspan="2">Mobile</th>
@@ -358,7 +358,7 @@ function list_passengers_details($itinerary_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                  
                        <tr class="danger">
 						   <th>Delete</th>
@@ -391,7 +391,7 @@ function list_passengers_details_just_view($itinerary_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">';
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM itinerary_has_passengers WHERE itinerary_no='$itinerary_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -442,7 +442,7 @@ function get_itinerary_details_for_voucher($itinerary_no) {
 	$result = mysqli_query ($conn, "SELECT * FROM itinerary WHERE itinerary_no='$itinerary_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                        <tr class="danger">
 						   <th>No of Pax</th>
 						   <th>From</th>
@@ -641,7 +641,7 @@ function list_non_confirm($itinerary_no, $customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="info">
 						   <th>itinerary No</th>

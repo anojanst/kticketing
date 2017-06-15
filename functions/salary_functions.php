@@ -207,7 +207,7 @@ function search_branch_salary_history($branch, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="danger" style="font-weight: bold;">
 					<td>branch</td>
 					<td>date</td>
@@ -268,7 +268,7 @@ function list_description_by_salary_view($salary_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="danger" style="font-weight: bold;">
 					<td>Description</td>
 					<td>Detail</td>

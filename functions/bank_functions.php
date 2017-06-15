@@ -32,7 +32,7 @@ function list_banks(){
 	include 'conf/opendb.php';
 
 	echo '<div class="table-responsive">
-              <table id="example1" class="table table-bordered table-striped">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Edit</th>
@@ -224,7 +224,7 @@ function list_deposit() {
 	include 'conf/opendb.php';
 
 	echo '<div class="table-responsive">
-              <table id="example1" class="table table-bordered table-striped">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
 							<th>Deposit No</th>
@@ -332,7 +332,7 @@ function list_withdraw() {
 	include 'conf/opendb.php';
 
 	echo '<div class="table-responsive">
-              <table id="example1" class="table table-bordered table-striped">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
 							<th>withdraw No</th>
@@ -443,7 +443,7 @@ function list_transfer() {
 	include 'conf/opendb.php';
 
 	echo '<div class="table-responsive">
-              <table id="example1" class="table table-bordered table-striped">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
 							<th>Transfer No</th>

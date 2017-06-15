@@ -120,7 +120,7 @@ function list_voucher() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>Print</td>
@@ -260,7 +260,7 @@ function search_voucher($voucher_no, $travels, $from_date, $to_date) {
 		$date_check = "AND voucher_date='$today'";
 	}
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>Print</td>

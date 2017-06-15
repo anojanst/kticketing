@@ -30,7 +30,7 @@ function list_cab_packages() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Edit</th>
@@ -307,7 +307,7 @@ function cab_charges($cab_booking_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Package</th>
@@ -355,7 +355,7 @@ function cab_charges_view($cab_booking_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Package</th>
@@ -406,7 +406,7 @@ function cab_charges_view_print($cab_booking_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Package</th>

@@ -66,7 +66,7 @@ function list_refund() {
 	$today = date ( 'Y-m-d' );
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -187,7 +187,7 @@ function search_refund($refund_no, $customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -314,7 +314,7 @@ function refund_detail($refund_no) {
 	$result = mysqli_query ( $conn, "SELECT * FROM refund WHERE refund_no='$refund_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                        <tr>
                            <th>Refund No</th>
                            <th>Type</th>
@@ -375,7 +375,7 @@ function list_passengers_for_refund_no($refund_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
          		 <tr class="info">
                     <th>Remove</th>
 					<th>Full Name</th>
@@ -410,7 +410,7 @@ function list_passengers_for_refund_no_view($refund_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
          		 <tr class="info">
 					<th>Full Name</th>
                     <th>First Name</th>
@@ -442,7 +442,7 @@ function list_passengers_booking_no($booking_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
      
                        <tr class="info">
 						   <th>Full Name</th>
@@ -654,7 +654,7 @@ $today = date ( 'Y-m-d' );
 	}
 
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="info">
 						   <th>R.No</th>

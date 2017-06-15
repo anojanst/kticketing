@@ -3,7 +3,7 @@ function list_employees() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="employee_home_table">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Edit</th>
 	<th>Full Name</th>
@@ -50,7 +50,7 @@ function list_employees_search($search) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="employee_home_table">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Edit</th>
 	<th>Employee Name</th>

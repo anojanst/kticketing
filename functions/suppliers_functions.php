@@ -3,7 +3,7 @@ function list_suppliers() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th width="20">Edit</th>
 	<th width="120">Supplier Name</th>
@@ -45,7 +45,7 @@ function list_supplier_search($search) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th width="20">Edit</th>
 	<th width="120">Supplier Name</th>

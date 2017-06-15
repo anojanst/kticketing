@@ -77,7 +77,7 @@ function list_insurance($insurance_no, $customer) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="danger">
 						   <th>Delete</th>

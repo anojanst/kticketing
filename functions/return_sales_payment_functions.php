@@ -4,7 +4,7 @@ function list_return_sales_of_customer($customer_name) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px; margin-top: 20px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Return Sales No</th>
 	<th>Return Sales Date</th>
@@ -49,7 +49,7 @@ function list_return_sales_of_return_no($return_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table" style="width: 900px; margin-top: 20px;">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Return Sales No</th>
 	<th>Return Sales Date</th>
@@ -126,7 +126,7 @@ function list_added_return_sales($random_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<table class="inventory_table">
+	echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 		  <thead>
     		<tr>
     		<th>Return Sales No</th>
@@ -324,7 +324,7 @@ function list_return_sales_payment_search($return_sales_payment_no_search, $cust
 	
 	if ($return_sales_payment_no_search || $customer_search) {
 		
-		echo '<table class="inventory_table" style="width: 900px; border-bottom: 2px solid silver; margin-bottom: 10px;">
+		echo '<table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<thead valign="top">
 	<th>Print</th>
 	<th>Payment No</th>

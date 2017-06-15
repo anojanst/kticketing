@@ -30,7 +30,7 @@ function list_latest_activities($branch, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 14px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                        <tr>
 						   <th colspan="4" class="success">Cash Flow IN</th>
                            <th colspan="4" class="danger">Cash Flow OUT</th>

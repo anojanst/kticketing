@@ -23,7 +23,7 @@ function outstanding_invoice_report($customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -124,7 +124,7 @@ function outstanding_other_expenses_report($customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -223,7 +223,7 @@ function outstanding_voucher_report($travels, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -336,7 +336,7 @@ function customer_invoice_due($from_date, $to_date) {
 		echo "<h1>$customer_info[customer_name]</h1>";
 		
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr class="danger" style="font-weight: bold;">
 				
 				<td>View</td>
@@ -439,7 +439,7 @@ function customer_other_expenses_due($from_date, $to_date) {
 		echo "<h1>$customer_info[customer_name]</h1>";
 		
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>
@@ -541,7 +541,7 @@ function customer_voucher_due($from_date, $to_date) {
 		echo "<h1>$row[travels]</h1>";
 		
 		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>View</td>

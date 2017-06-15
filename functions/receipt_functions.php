@@ -11,7 +11,7 @@ function customer_receipt_detail($customer_id) {
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		if ($i == 1) {
 			echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="success">
 							<th>Invoice No</th>
@@ -120,7 +120,7 @@ function list_receipt_invoices($random_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="info">
 						    <th>Invoice No</th>
@@ -267,7 +267,7 @@ function list_receipt() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 	
 	<td>Print</td>
@@ -406,7 +406,7 @@ function search_receipt($rec_no, $customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>Print</td>
@@ -548,7 +548,7 @@ function search_receipt_print($rec_no, $customer, $from_date, $to_date) {
 	}
 
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	
@@ -842,7 +842,7 @@ function list_receipt_invoices_view($rec_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
   <thead>
     <tr class="success" style="font-weight: bold;">
     <td>Invoice No</td>
