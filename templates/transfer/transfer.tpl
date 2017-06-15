@@ -23,18 +23,13 @@ $('input.account').typeahead({
    </div>
 {/if}
 
-	<div class="nav-tabs-custom">
-  		<div class="tab-content">
-
-				<div class="col-lg-12">
-                	<h4><strong> Search By Transfer No</strong></h4>
-               	</div>
-
+<section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
 			<div class="box box-primary">
-
-
+                <div class="panel-heading">
+                    Search By Transfer No
+                </div>
                 <div class="panel-body">
             		<form name="transfer_form" action="transfer.php?job=save" method="post">
 						<div class="row">
@@ -46,7 +41,7 @@ $('input.account').typeahead({
 							<div class="col-lg-2">
 								<div class="form-group">
 									<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-        								<input type="text" name="date" value="{$date}" readonly placeholder="Date" style="width: 100%;">
+        								<input type="text" name="date" value="{$date}" class="form-control" id="datepicker" readonly placeholder="Date" style="width: 100%;">
         								<span class="add-on"><i class="icon-remove"></i></span>
 										<span class="add-on"><i class="icon-th"></i></span>
     								</div>
@@ -97,19 +92,16 @@ $('input.account').typeahead({
             </div>
 	    </div>
 	</div>
-
-
-		</div>
-	</div>
-</div>
+</section>
 {include file="footer.tpl"}
+{literal}
+<script>
+  $(function () {
 
-
-	{literal}
-		<script>
-			 $(function () {
-				 $("#example1").DataTable();
-			 });
-		</script>
-	{/literal}
-
+    $('#datepicker').datepicker({
+     format: 'yyyy-mm-dd',
+      autoclose: true
+    });
+ });
+</script>
+{/literal}

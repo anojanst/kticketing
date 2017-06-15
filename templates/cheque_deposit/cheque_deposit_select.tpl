@@ -20,15 +20,7 @@ $('input.account').typeahead({
    </div>
 {/if}
 
-	<div class="nav-tabs-custom">
-  		<div class="tab-content">
-
-				<div class="col-lg-12">
-                	<h4><strong> Cheque Deposit </strong></h4>
-               	</div>
-
-
-
+<section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
 			<div class="box box-primary">
@@ -46,7 +38,7 @@ $('input.account').typeahead({
 							<div class="col-lg-3">
 								<div class="form-group">
 									<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-        								<input type="text" name="deposit_date" value="{$deposit_date}" required placeholder="Deposit Date" style="width: 100%;">
+        								<input type="text" name="deposit_date" class="form-control" id="datepicker" value="{$deposit_date}" required placeholder="Deposit Date" style="width: 100%;">
         								<span class="add-on"><i class="icon-remove"></i></span>
 										<span class="add-on"><i class="icon-th"></i></span>
     								</div>
@@ -64,17 +56,17 @@ $('input.account').typeahead({
             </div>
 	    </div>
 	</div>
+</section>
 
-		</div>
-	</div>
-</div>
 {include file="footer.tpl"}
+{literal}
+<script>
+  $(function () {
 
-
-	{literal}
-		<script>
-			 $(function () {
-				 $("#example1").DataTable();
-			 });
-		</script>
-	{/literal}
+    $('#datepicker').datepicker({
+     format: 'yyyy-mm-dd',
+      autoclose: true
+    });
+ });
+</script>
+{/literal}

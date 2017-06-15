@@ -1,9 +1,9 @@
 <?php
 require_once 'conf/smarty-conf.php';
 include 'functions/modules_functions.php';
+include 'functions/employees_functions.php';
 include 'functions/user_functions.php';
-include 'functions/chat_functions.php';
-include 'functions/todo_functions.php';
+
 
 $module_no = 2;
 
@@ -54,18 +54,18 @@ if ($_SESSION ['login'] == 1) {
 			$smarty->assign ( 'page', 'Modules' );
 			$smarty->display ( 'modules/modules.tpl' );
 		}
-	} 
-
-	else {
-		$smarty->assign ( 'error_report', "on" );
-		$smarty->assign ( 'error_message', "Dear $_SESSION[user_name], you don't have permission to Module Management." );
-		$smarty->assign ( 'page', "Access Error" );
-		$smarty->display ( 'user_home/access_error.tpl' );
-	}
-} 
+}
+else{
+	$smarty->assign ( 'error_report', "on" );
+	$smarty->assign ( 'error_message', "Dear $_SESSION[user_name], you don't have permission to Module Management." );
+	$smarty->assign ( 'page', "Access Error" );
+	$smarty->display ( 'user_home/access_error.tpl' );
+}
+}
+	
 
 else {
 	
 	$smarty->assign ( 'error', "Incorrect Login Details!" );
-	$smarty->display ( 'login/login.tpl' );
+	$smarty->display('login.tpl');
 }

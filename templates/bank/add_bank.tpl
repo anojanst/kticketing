@@ -13,22 +13,17 @@ $(function() {
 });
 </script>
 
+
+
 {/literal}
 
-
-<div class="content-wrapper">
-	<div class="nav-tabs-custom">
-  		<div class="tab-content">
-
-				<div class="col-lg-12">
-                	<h2><strong> Add new Bank</strong></h2>
-               	</div>
-
+<section class="content">
 	<div class="row">
 		<div class="col-lg-6" style="margin-top: 10px;">
 			<div class="box box-primary">
-
-
+                <div class="panel-heading">
+                    Add new Bank
+                </div>
                 <div class="panel-body">
             
 					<form role="form" action="add_bank.php?job=add" method="post">
@@ -42,11 +37,11 @@ $(function() {
 	                    
 	                    	
 						{if $edit=='on'}
-							<button type="submit" name="ok" value="Update" class="btn btn-default">Update</button>
+							<button type="submit" name="ok" value="Update" class="btn btn-primary">Update</button>
 						{else}
-							<button type="submit" name="ok" value="Save" class="btn btn-default">Save</button>
+							<button type="submit" name="ok" value="Save" class="btn btn-primary">Save</button>
 						{/if}
-	                    	<button type="reset" class="btn btn-default">Reset</button>                  
+	                    	<button type="reset" class="btn btn-primary">Reset</button>
                   
                    </form>
 				</div>
@@ -55,25 +50,14 @@ $(function() {
 	    
 		<div class="col-lg-6">
 			<div class="panel panel-red" style="margin-top: 10px;">
-
+                <div class="panel-heading">
+                    Banks
+                </div>
                 <div class="panel-body">
                     {php}list_banks();{/php}
                 </div>
             </div>   
         </div>
    </div>
-
-
-		</div>
-	</div>
-</div>
+</section>
 {include file="footer.tpl"}
-
-
-	{literal}
-		<script>
-			 $(function () {
-				 $("#example1").DataTable();
-			 });
-		</script>
-	{/literal}
