@@ -96,4 +96,9 @@
             });
         });
     </script>
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+        });
+    </script>
 {/literal}

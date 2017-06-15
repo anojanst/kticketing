@@ -63,3 +63,11 @@ $('input.customer').typeahead({
 {php}list_non_confirm($_SESSION['search_booking_no'], $_SESSION['search_customer'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
                 
 {include file="footer.tpl"}
+
+{literal}
+	<script>
+        $(function () {
+            $("#example1").DataTable();
+        });
+	</script>
+{/literal}

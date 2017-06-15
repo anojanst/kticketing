@@ -59,3 +59,10 @@
 </section>
 
 {include file="footer.tpl"}
+{literal}
+	<script>
+        $(function () {
+            $("#example1").DataTable();
+        });
+	</script>
+{/literal}

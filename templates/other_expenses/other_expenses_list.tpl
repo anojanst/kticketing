@@ -84,20 +84,25 @@
 </section>
 {include file="footer.tpl"}
 {literal}
-<script>
-    $(function () {
-        $('#datepicker').datepicker({
-         format: 'yyyy-mm-dd',
-          autoclose: true
+	<script>
+        $(function () {
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
         });
-    });
-</script>
-<script>
-    $(function () {
-        $('#datepicker1').datepicker({
-         format: 'yyyy-mm-dd',
-          autoclose: true
+	</script>
+	<script>
+        $(function () {
+            $('#datepicker1').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
         });
-    });
-</script>
+	</script>
+	<script>
+		$(function () {
+			$("#example1").DataTable();
+		});
+	</script>
 {/literal}

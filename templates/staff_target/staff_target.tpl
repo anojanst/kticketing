@@ -65,15 +65,20 @@
 </section>
 {include file="footer.tpl"}
 {literal}
-<script>
-  $(function () {
+	<script>
+        $(function () {
 
-    $('#datepicker').datepicker({
-     format: 'yyyy-mm-dd',
-      autoclose: true
-    });
- });
-</script>
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
+	    $(function () {
+	        $("#example1").DataTable();
+	    });
+	</script>
 
 
 {/literal}

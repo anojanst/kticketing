@@ -84,21 +84,26 @@
         });
 	</script>
 	<script>
-	  $(function () {
+        $(function () {
 
-	    $('#datepicker').datepicker({
-	     format: 'yyyy-mm-dd',
-	      autoclose: true
-	    });
-	 });
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
 	</script>
 	<script>
-	  $(function () {
+        $(function () {
 
-	    $('#datepicker1').datepicker({
-	     format: 'yyyy-mm-dd',
-	      autoclose: true
+            $('#datepicker1').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
+	    $(function () {
+	        $("#example1").DataTable();
 	    });
-	 });
 	</script>
 {/literal}

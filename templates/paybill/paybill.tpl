@@ -1,43 +1,43 @@
 {include file="header.tpl"}
 {include file="navigation.tpl"}
 {literal}
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('input.customer_name').typeahead({
-            name: 'customer_name',
-            remote : 'ajax/customer_id_and_name.php?query=%QUERY'
+	<script type="text/javascript">
+        $(document).ready(function() {
+            $('input.customer_name').typeahead({
+                name: 'customer_name',
+                remote : 'ajax/customer_id_and_name.php?query=%QUERY'
 
-        });
-    })
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('input.bank').typeahead({
-            name: 'bank',
-            remote : 'ajax/bank.php?query=%QUERY'
+            });
+        })
+	</script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+            $('input.bank').typeahead({
+                name: 'bank',
+                remote : 'ajax/bank.php?query=%QUERY'
 
-        });
-    })
-</script>
+            });
+        })
+	</script>
 
-<script type="text/javascript">
-    function checkTotal(){
-        var x = document.getElementById("total").innerHTML,
-            a = document.getElementById("cheAmount").value,
-            b = document.getElementById("cardAmount").value,
-            c = document.getElementById("depAmount").value,
-            d = document.getElementById("ezAmount").value,
-            e = document.getElementById("cashAmount").value;
+	<script type="text/javascript">
+        function checkTotal(){
+            var x = document.getElementById("total").innerHTML,
+                a = document.getElementById("cheAmount").value,
+                b = document.getElementById("cardAmount").value,
+                c = document.getElementById("depAmount").value,
+                d = document.getElementById("ezAmount").value,
+                e = document.getElementById("cashAmount").value;
 
-        var total = +a + +b + +c + +d + +e;
-        if (total!=x){
-            alert(total);
-            alert(x);
-            alert("Please enter the correct Amonuts in relevent field");
-            return false;
+            var total = +a + +b + +c + +d + +e;
+            if (total!=x){
+                alert(total);
+                alert(x);
+                alert("Please enter the correct Amonuts in relevent field");
+                return false;
+            }
         }
-    }
-</script>
+	</script>
 
 {/literal}
 {if $error_message}
@@ -308,51 +308,56 @@
 </section>
 {include file="footer.tpl"}
 {literal}
-<script>
-	$(function () {
-		$('#datepicker').datepicker({
-		 	format: 'yyyy-mm-dd',
-		  	autoclose: true
+	<script>
+        $(function () {
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
+        $(function () {
+            $('#datepicker1').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+
+	<script>
+        $(function () {
+
+            $('#datepicker2').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+
+	<script>
+        $(function () {
+
+            $('#datepicker3').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+
+	<script>
+        $(function () {
+
+            $('#datepicker4').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
+		$(function () {
+			$("#example1").DataTable();
 		});
-	});
-</script>
-<script>
-	$(function () {
-		$('#datepicker1').datepicker({
-			format: 'yyyy-mm-dd',
-			autoclose: true
-		});
-	});
-</script>
-
-<script>
-    $(function () {
-
-        $('#datepicker2').datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        });
-    });
-</script>
-
-<script>
-    $(function () {
-
-        $('#datepicker3').datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        });
-    });
-</script>
-
-<script>
-    $(function () {
-
-        $('#datepicker4').datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        });
-    });
-</script>
+	</script>
 
 {/literal}

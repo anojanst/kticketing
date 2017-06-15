@@ -2,34 +2,34 @@
 {include file="navigation.tpl"}
 
 {literal}
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('input.customer').typeahead({
-            name: 'customer',
-            remote : 'ajax/customer_id_and_name.php?query=%QUERY'
+	<script type="text/javascript">
+        $(document).ready(function() {
+            $('input.customer').typeahead({
+                name: 'customer',
+                remote : 'ajax/customer_id_and_name.php?query=%QUERY'
 
-        });
-    })
-</script>
+            });
+        })
+	</script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('input.embassy').typeahead({
-            name: 'embassy',
-            remote : 'ajax/embassy.php?query=%QUERY'
+	<script type="text/javascript">
+        $(document).ready(function() {
+            $('input.embassy').typeahead({
+                name: 'embassy',
+                remote : 'ajax/embassy.php?query=%QUERY'
 
-        });
-    })
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('input.passport_no').typeahead({
-            name: 'passport_no',
-            remote : 'ajax/passport_no.php?query=%QUERY'
+            });
+        })
+	</script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+            $('input.passport_no').typeahead({
+                name: 'passport_no',
+                remote : 'ajax/passport_no.php?query=%QUERY'
 
-        });
-    })
-</script>
+            });
+        })
+	</script>
 {/literal}
 
 {if $error_message}
@@ -264,31 +264,36 @@
 </section>
 {include file="footer.tpl"}
 {literal}
-<script>
-  $(function () {
+	<script>
+        $(function () {
 
-    $('#datepicker').datepicker({
-     format: 'yyyy-mm-dd',
-      autoclose: true
-    });
- });
-</script>
-<script>
-  $(function () {
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
+        $(function () {
 
-    $('#datepicker1').datepicker({
-     format: 'yyyy-mm-dd',
-      autoclose: true
-    });
- });
-</script>
-<script>
-  $(function () {
+            $('#datepicker1').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
+        $(function () {
 
-    $('#datepicker2').datepicker({
-     format: 'yyyy-mm-dd',
-      autoclose: true
-    });
- });
-</script>
+            $('#datepicker2').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
+		$(function () {
+			$("#example1").DataTable();
+		});
+	</script>
 {/literal}
