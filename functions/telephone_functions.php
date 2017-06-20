@@ -6,7 +6,7 @@ function add_telephone($customer_name, $telephone_no, $details, $date, $type) {
 	mysqli_select_db ($conn, $dbname );
 	$query = "INSERT INTO calls (id, customer_id, customer_name, telephone_no, details, date, saved_by, type, reference, ref_no)
 	VALUES ('','$customer_id', '$customer_name', '$telephone_no', '$details', '$date', '$_SESSION[user_name]', '$type', '$reference', '$ref_no')";
-	mysql_query ($conn, $query ) or die ( mysqli_connect_error () );
+	mysqli_query ($conn, $query ) or die ( mysqli_connect_error () );
 	
 	
 }
@@ -122,7 +122,7 @@ function cancel_telephone_no($id) {
 	$query = "UPDATE calls SET
 	cancel_status='1'
 	WHERE id='$id'";
-	mysql_query ($conn, $query );
+	mysqli_query ($conn, $query );
 	
 	
 }
@@ -135,7 +135,7 @@ function update_contact_status($id, $type, $reference, $ref_no) {
 	type='$type', reference='$reference', ref_no='$ref_no'
 	WHERE id='$id'";
 	
-	mysql_query ($conn, $query );
+	mysqli_query ($conn, $query );
 	
 	
 }
@@ -143,7 +143,7 @@ function get_telephone_info($id) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	$result = mysql_query ( $conn, "SELECT * FROM calls WHERE id='$id'" );
+	$result = mysqli_query ( $conn, "SELECT * FROM calls WHERE id='$id'" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		return $row;
 	}
@@ -154,7 +154,7 @@ function get_telephone_max_id() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	$result = mysql_query ($conn, "SELECT MAX(id) FROM calls WHERE cancel_status='0' " );
+	$result = mysqli_query ($conn, "SELECT MAX(id) FROM calls WHERE cancel_status='0' " );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		return $row ['MAX(id)'];
 	}

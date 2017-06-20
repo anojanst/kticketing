@@ -32,7 +32,9 @@ blink('.blink');
                             Saved Tasks
                         </div>
                         <div class="panel-body">
-                            {php}list_all_task($_SESSION['user_name']);{/php}
+							<div class="row">
+                            	{php}list_all_task($_SESSION['user_name']);{/php}
+							</div>
                         </div>
                     </div> 
 	

@@ -41,7 +41,7 @@ function list_ip($user_name, $to_date, $from_date){
 		$and="";
 	}
 	echo '<div class="table-responsive">
-              <table class="table">
+               <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Username</th>

@@ -254,6 +254,7 @@
             </div>
         </div>
     -->
+<!--
 	<div class="row">
 		<div class="panel panel-green" style="margin-top: 10px;">
 			<div class="panel-heading">
@@ -356,6 +357,7 @@
 			</div>
 		</div>
 		<!-- /.col-lg-12 -->
+
 	</div>
 	<!-- /.row -->
 

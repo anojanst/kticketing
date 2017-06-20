@@ -312,8 +312,14 @@
                 </li>
 
                 <li class="treeview">
+                    <a href="reports.php?job=report"><i class="fa fa-reply-all"></i><span> Report</span><span class="pull-right-container">
+					<i class="fa fa-angle-left pull-right"></i></span></a>
+
+                </li>
+
+                <li class="treeview">
                     <a href="#"><i class="fa fa-bar-chart"></i><span> Reports</span><span class="pull-right-container">
-			<i class="fa fa-angle-left pull-right"></i></span></a>
+						<i class="fa fa-angle-left pull-right"></i></span></a>
                     <ul class="treeview-menu menu-open">
                         <li>
                             <a href="profit_by_staff.php"><i class="fa fa-money"></i> Profit By Staff</a>

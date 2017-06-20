@@ -482,7 +482,7 @@ function get_passenger_count_refund($refund_no) {
 	include 'conf/opendb.php';
 	
 	$result = mysqli_query ($conn, "SELECT * FROM refund_has_passengers WHERE refund_no='$refund_no' AND cancel_status='0'" );
-	$num_rows = mysql_num_rows ( $result );
+	$num_rows = mysqli_num_rows ( $result );
 	return $num_rows;
 	
 	
@@ -491,7 +491,7 @@ function check_repetive_passport_no_refund($refund_no, $passport_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	if (mysql_num_rows ( mysqli_query ( "SELECT id FROM refund_has_passengers WHERE refund_no='$refund_no' AND passport_no='$passport_no' AND cancel_status='0'" ) )) {
+	if (mysqli_num_rows ( mysqli_query ($conn, "SELECT id FROM refund_has_passengers WHERE refund_no='$refund_no' AND passport_no='$passport_no' AND cancel_status='0'" ) )) {
 		return 1;
 	} else {
 		return 0;
