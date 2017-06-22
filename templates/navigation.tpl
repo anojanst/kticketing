@@ -4,7 +4,7 @@
 <div class="wrapper">
     <header class="main-header">
         <!-- Logo -->
-        <a href="../../index2.html" class="logo">
+        <a href="#" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>K</b>T</span>
             <!-- logo for regular state and mobile devices -->
@@ -87,6 +87,15 @@
                             <a href="cheque.php?job=cheque_select_form"><i class="fa fa-cc"></i> Cheque Reconciliation</a>
                         </li>
                     </ul>
+
+                </li>
+
+				<li class="treeview">
+                    <a href="bank.php?job=bank"><i class="fa fa-university"></i><span> Bank</span>
+                        <span class="pull-right-container">
+			            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
 
                 </li>
 
@@ -503,6 +512,12 @@
                         </li>
 
                     </ul>
+
+                <li class="scroll">
+                    <a href="settings.php?job=settings"><i class="fa fa-cogs"></i><span>Settings</span></a>
+                </li>
+
+
                 <li class="scroll">
                     <a href="login.php?job=logout"><i class="fa fa-sign-out"></i><span>logout</span></a>
                 </li>

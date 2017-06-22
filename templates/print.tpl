@@ -12,7 +12,7 @@
 <style type="text/css">
 
 </style>
-    <title>DoIt Office || {$page}</title>
+    <title>Kticketing || {$page}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">

@@ -2,49 +2,35 @@
 <div style="width: 210mm;">
 	<div class="row" style="margin-left: 1px;">
 		<div class="col-xs-4">
-			<img src="images/nation_logo.png" alt="Nation Popular Travels & Tours" style="width: 55mm;"/>
+			<img src="images/nation_logo.png" alt="Kticket" style="width: 55mm;"/>
 		</div>
-		<div class="col-xs-8">
-			<div style="font-size: 13px; margin-top: -10px;">
-				<h1><strong>NATION POPULAR TRAVELS & TOURS</strong></h1>
-					16 1/2, E.S. Fernando Mawatha, Colombo 06<br />
-					<strong>Hot Line :</strong> +94 11 4651199 <strong>Tel :</strong> +94 11 4375357 <strong>Fax :</strong> +94 11 4505532<br />
-					<strong>E-mail :</strong> online@nationtravels.com <br />
-					<strong>Web :</strong> nationtravels.com <br />
+		<div class="col-xs-8" style="margin-top: 15px;">
+			<div>
+				<h1><strong>K-Ticketing TRAVELS & TOURS</strong></h1>	
 			</div>
+				
+
 		</div>
+
 	</div>
-	<div class="row" style="margin-left: 1px;">
-		<div class="col-xs-12" style="text-align: center; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; margin-top: -20px; padding-top: 5px;">
-			<h1 style="margin-top: -1px;"><strong>Branches</strong></h1>
-		</div>
-	</div>
+
 	<div class="row" style="border: 1px solid black; margin-left: 1px;">
 		<div class="col-xs-4">
 			<div style="font-size: 11px;  margin-top: -10px;">
-				<h1><strong>Jaffna</strong></h1>
-				128, Brown Road, Jaffna<br />
-				<strong>Hot Line :</strong> +94 21 4920920 <br />
-				<strong>Tel :</strong> +94 21 4920505 <br />
-				<strong>Fax :</strong> +94 21 7538325<br />
-				<strong>E-Mail :</strong> jaffna@nationtravels.com <br />
+				<h1><strong>City 01</strong></h1>
+				
 			</div>
 		</div>
 		<div class="col-xs-4" style="text-align: center; margin-top: -10px;">
 			<div style="font-size: 11px;">
-				<h1><strong>Vavuniya</strong></h1>
-				179A, Railway Station Road, Vairavapuliyankulam<br />
-				<strong>Hot Line :</strong> +94 24 4930830 <br />
-				<strong>Fax :</strong> +94 24 4930831<br />
-				<strong>E-Mail :</strong> va@nationtravels.com <br />
+				<h1><strong>City 02</strong></h1>
+				
 			</div>
 		</div>
 		<div class="col-xs-4" style="text-align: right;">
 			<div style="font-size: 11px;  margin-top: -10px;">
-				<h1><strong>Modera</strong></h1>
-				27, Lower St.Andrews Place, <br />Colombo-15<br />
-				<strong>Hot Line :</strong> +94 11 4375357 <br />
-				<strong>E-Mail :</strong> de@nationtravels.com <br />
+				<h1><strong>City 03</strong></h1>
+				
 			</div>
 		</div>
 	</div>
@@ -204,7 +190,7 @@
 	</div>
 	<div class="row" style="margin-left: 1px;">
 		<div class="col-xs-12" style="text-align: center;">
-			<strong>We are the wings for your flight <br /> www.nationtravels.com</strong>
+			<strong>We are the wings for your flight <br /> www.abcdefgh.com</strong>
 		</div>
 	</div>
 </div>

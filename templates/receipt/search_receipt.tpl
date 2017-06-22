@@ -1,16 +1,7 @@
 {include file="header.tpl"}
 {include file="navigation.tpl"}
-{literal}
-<script type="text/javascript">
-$(document).ready(function() {
-$('input.customer').typeahead({
-  name: 'customer',
-  remote : 'ajax/customer.php?query=%QUERY'
 
-});
-})
-</script>
-{/literal}
+
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">

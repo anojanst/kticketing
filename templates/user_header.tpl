@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="css/daterangepicker.css">
 
 <head>
-    <title>Hotel Management | {$page}</title>
+    <title>KTicketing | {$page}</title>
 </head>
 
 <body>
