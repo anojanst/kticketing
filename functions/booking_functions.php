@@ -962,7 +962,7 @@ function complete_booking($booking_no, $pnr, $al_ref, $issue_date, $transits, $f
 function check_customer($customer) {
     include 'conf/config.php';
     include 'conf/opendb.php';
-    
+
     if (mysqli_num_rows ( mysqli_query ($conn, "SELECT id FROM customer WHERE customer_name = '$customer' AND cancel_status='0'" ) )) {
         return 1;
     }
