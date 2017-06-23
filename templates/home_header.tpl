@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <head>
-<title>Poobalasingham| {$page}</title>
+<title>KTicketing| {$page}</title>
 </head>
 <!-- Bootstrap Core CSS -->
 

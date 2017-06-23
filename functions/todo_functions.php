@@ -99,12 +99,15 @@ function secondsToTime($seconds) {
 function save_task($task_name, $description, $deadline, $amount, $received, $user_name, $status, $ref_no, $type, $saved_by) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
+
+	echo "INSERT INTO todo (id, task_name, description, deadline, amount, received, user_name, status, ref_no, type, saved_by, telephone_directory_id)
+	VALUES ('', '$task_name', '$description', '$deadline', '$amount', '$received', '$user_name', '$status', '$ref_no', '$type', '$saved_by', '$call_id')";
 	
 	$call_id = $_SESSION [call_id];
-	mysqli_select_db ( $dbname );
+	mysqli_select_db ($conn, $dbname );
 	$query = "INSERT INTO todo (id, task_name, description, deadline, amount, received, user_name, status, ref_no, type, saved_by, telephone_directory_id)
 	VALUES ('', '$task_name', '$description', '$deadline', '$amount', '$received', '$user_name', '$status', '$ref_no', '$type', '$saved_by', '$call_id')";
-	mysqli_query ( $query ) or die ( mysqli_connect_error () );
+	mysqli_query ($conn, $query ) or die ( mysqli_connect_error () );
 }
 function next_work_javascript($user_name) {
 	include 'conf/config.php';
@@ -230,13 +233,13 @@ function task_history($task_name, $user_name, $ref_no, $from_date, $to_date) {
 		$due_format = secondsToTime ( $due );
 		
 		if ($due <= '46800') {
-			echo "<div class='alert alert-danger blink' style='text-decoration: blink; margin-top: 2px;'>";
+			echo "<div class='alert alert blink' style='text-decoration: blink; margin-top: 2px;'>";
 		} elseif ($due <= '86400') {
-			echo "<div class='alert alert-danger' style='margin-top: 2px;'>";
+			echo "<div class='alert alert' style='margin-top: 2px;'>";
 		} elseif ($due <= "259200") {
-			echo "<div class='alert alert-warning' style='margin-top: 2px;'>";
+			echo "<div class='alert alert' style='margin-top: 2px;'>";
 		} else {
-			echo "<div class='alert alert-success' style='margin-top: 2px;'>";
+			echo "<div class='alert alert' style='margin-top: 2px;'>";
 		}
 		echo '
 		<p><strong>Task : </strong>' . $row [task_name] . '</p>

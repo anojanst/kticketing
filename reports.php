@@ -6,9 +6,15 @@ $module_no = 7;
 
 if ($_SESSION ['login'] == 1) {
 	if (check_access ( $module_no, $_SESSION ['user_id'] ) == 1) {
+		
+		if ($_REQUEST ['job'] == "report") {
+			
+			$smarty->assign ( 'page', "Report" );
+			$smarty->display ( 'report/report.tpl' );
+		}
+		
 		$smarty->assign ( 'org_name', "$_SESSION[org_name]" );
-		$smarty->assign ( 'page', "Reports" );
-		$smarty->display ( 'reports/reports.tpl' );
+
 	} else {
 		$user_name = $_SESSION ['user_name'];
 		$smarty->assign ( 'org_name', "$_SESSION[org_name]" );
@@ -17,7 +23,10 @@ if ($_SESSION ['login'] == 1) {
 		$smarty->assign ( 'page', "Access Error" );
 		$smarty->display ( 'user_home/access_error.tpl' );
 	}
-} else {
+}
+
+
+else {
 	$smarty->assign ( 'page', "Home" );
 	$smarty->display ( 'index.tpl' );
 }

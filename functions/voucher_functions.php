@@ -109,7 +109,7 @@ function check_waiting_pax_to_issue($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	if (mysql_num_rows ( mysqli_query ( "SELECT id FROM booking_has_passengers WHERE booking_no = '$booking_no' AND issue_status='0' AND cancel_status='0'" ) )) {
+	if (mysqli_num_rows ( mysqli_query ( $conn, "SELECT id FROM booking_has_passengers WHERE booking_no = '$booking_no' AND issue_status='0' AND cancel_status='0'" ) )) {
 		return 1;
 	} else {
 		return 0;

@@ -90,8 +90,10 @@
 				<div class="panel-heading">
 					Users
 				</div>
-				<div class="panel-body">
-                    {php}task_history($_SESSION['task_name'],$_SESSION['search_user_name'],$_SESSION['ref_no'],$_SESSION['from_date'],$_SESSION['to_date']);{/php}
+				<div class="row">
+					<div class="col-lg-12">
+                    	{php}task_history($_SESSION['task_name'],$_SESSION['search_user_name'],$_SESSION['ref_no'],$_SESSION['from_date'],$_SESSION['to_date']);{/php}
+					</div>
 				</div>
 
 				<div class="panel-footer">

@@ -618,7 +618,9 @@ function search_cab_report($cab_booking_no, $name, $from_date, $to_date) {
 	
 	
 }
+
 function list_Cab($cab_booking_no, $name, $from_date, $to_date) {
+	
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
@@ -645,7 +647,7 @@ function list_Cab($cab_booking_no, $name, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+               <table id="example1" class="table table-bordered table-striped">
                   <thead>
                        <tr class="info">
 						   <th>B.No</th>
@@ -679,7 +681,7 @@ function list_Cab($cab_booking_no, $name, $from_date, $to_date) {
 		
 		echo '
 
-				<td>
+		<td>
 		' . $row [cab_booking_no] . '
 		</td>
 				

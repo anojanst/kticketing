@@ -92,5 +92,20 @@
 		$(function () {
 			$("#example1").DataTable();
 		});
-	</script>
+	});
+</script>
+<script>
+	$(function () {
+		$('#datepicker1').datepicker({
+		 format: 'yyyy-mm-dd',
+		  autoclose: true
+		});
+	});
+</script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+        });
+    </script>
 {/literal}

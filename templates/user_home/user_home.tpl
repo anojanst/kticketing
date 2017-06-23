@@ -251,6 +251,115 @@
             </div>
         </div>
     -->
+<!--
+	<div class="row">
+		<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel-heading">
+			</div>
+			<div class="panel-body">
+                {php}list_quick_links_home();{/php}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-9" style="margin-top: 10px;">
+			<div class="panel panel-default" style="margin-top: 10px;">
+				<div class="panel-heading">
+					Booking Without Visa & Passport
+				</div>
+				<div class="panel-body">
+					<div class="col-lg-12"><h5> Visa </h5></div>
+					<div style="margin-bottom: 20px;">{php}booking_without_visa($_SESSION['user_name']);{/php}</div>
+					<div class="col-lg-12"><h5> Passport </h5></div>
+					<div>{php}booking_without_passport($_SESSION['user_name']);{/php}</div>
+				</div>
+			</div>
+			<div class="panel panel-info" style="margin-top: 10px;">
+				<div class="panel-heading">
+					Add new task
+				</div>
+				<div class="panel-body">
+					<form role="form" action="add_new_todo.php?job=save" method="post">
+						<div class="form-group">
+							<input class="form-control" name="task_name" placeholder="Task Name">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows="3" name="description" placeholder="Description"></textarea>
+						</div>
+						<div class="control-group">
+							<label class="control-label">DateTime Picking</label>
+							<div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
+								<input type="text" name="deadline" readonly placeholder="Deadline" style="width: 100%;">
+								<span class="add-on"><i class="icon-remove"></i></span>
+								<span class="add-on"><i class="icon-th"></i></span>
+							</div>
+							<input type="hidden" id="dtp_input1" value="" /><br/>
+						</div>
+						<div class="form-group">
+							<input class="form-control user" name="to_user" placeholder="Assign This Task To">
+						</div>
+						<div class="form-group">
+							<input class="form-control" name="ref_no" placeholder="Ref No">
+						</div>
+						<div class="form-group">
+							<select class="form-control" name="type">
+								<option value="">Task Type</option>
+								<option value="Booking">Booking</option>
+								<option value="Itinerary">Itinerary</option>
+								<option value="Insurance">Insurance</option>
+								<option value="VISA">VISA</option>
+								<option value="Cab">Cab</option>
+								<option value="Date Change">Date Change</option>
+								<option value="Refund">Refund</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<select class="form-control" name="status">
+								<option>Task Status</option>
+								<option>Done</option>
+								<option>Pending</option>
+							</select>
+						</div>
+						<div class="form-group input-group">
+							<input class="form-control" name="amount" placeholder="Task Amount">
+							<span class="input-group-addon">.00</span>
+						</div>
+						<div class="form-group input-group">
+							<input class="form-control" name="received" placeholder="Received Amount">
+							<span class="input-group-addon">.00</span>
+						</div>
+						<div class="form-group input-group">
+							<input class="form-control" type="hidden" name="from" value="user">
+						</div>
+
+						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="reset" class="btn btn-default">Reset</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-lg-3">
+			<div class="panel panel-red" style="margin-top: 10px;">
+				<div class="panel-heading">
+					Next 5 Tasks
+				</div>
+				<div class="panel-body">
+                    {php}list_next_five_task($_SESSION['user_name']);{/php}
+				</div>
+				<div class="panel-footer">
+					<a href="view_list.php">View all</a>
+				</div>
+			</div>
+		</div>
+		<!-- /.col-lg-12 -->
+
+	</div>
+	<!-- /.row -->
+
+
+	</div>
 </section>
 
 <!-- /.row -->

@@ -90,6 +90,15 @@
 
                 </li>
 
+				<li class="treeview">
+                    <a href="bank.php?job=bank"><i class="fa fa-university"></i><span> Bank</span>
+                        <span class="pull-right-container">
+			            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+
+                </li>
+
 
                 <li class="treeview">
                     <a href="#"><i class="fa fa-money"></i><span>Cash Box </span>
@@ -312,8 +321,14 @@
                 </li>
 
                 <li class="treeview">
+                    <a href="reports.php?job=report"><i class="fa fa-reply-all"></i><span> Report</span><span class="pull-right-container">
+					<i class="fa fa-angle-left pull-right"></i></span></a>
+
+                </li>
+
+                <li class="treeview">
                     <a href="#"><i class="fa fa-bar-chart"></i><span> Reports</span><span class="pull-right-container">
-			<i class="fa fa-angle-left pull-right"></i></span></a>
+						<i class="fa fa-angle-left pull-right"></i></span></a>
                     <ul class="treeview-menu menu-open">
                         <li>
                             <a href="profit_by_staff.php"><i class="fa fa-money"></i> Profit By Staff</a>
@@ -497,6 +512,12 @@
                         </li>
 
                     </ul>
+
+                <li class="scroll">
+                    <a href="settings.php?job=settings"><i class="fa fa-cogs"></i><span>Settings</span></a>
+                </li>
+
+
                 <li class="scroll">
                     <a href="login.php?job=logout"><i class="fa fa-sign-out"></i><span>logout</span></a>
                 </li>

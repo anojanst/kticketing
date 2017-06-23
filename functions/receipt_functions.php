@@ -774,10 +774,10 @@ function list_receipt_invoice_no($rec_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	$result = mysqli_query ( "
+	$result = mysqli_query ($conn,  "
 	SELECT invoice_no 
 	FROM receipt_has_invoice 
-	WHERE rec_no='$rec_no'AND cancel_status='0'", $conn );
+	WHERE rec_no='$rec_no'AND cancel_status='0'");
 	
 	$i = 1;
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {

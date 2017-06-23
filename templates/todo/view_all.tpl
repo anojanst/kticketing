@@ -25,11 +25,21 @@
         -->
     </style>
 {/literal}
-<div class="row">
-    <div class="col-lg-12" style="margin-top: 10px;">
-        <div class="panel panel-red" style="margin-top: 10px;">
-            <div class="panel-heading">
-                Saved Tasks
+		 <div class="row">
+                <div class="col-lg-12" style="margin-top: 10px;">
+					<div class="panel panel-red" style="margin-top: 10px;">
+                        <div class="panel-heading">
+                            Saved Tasks
+                        </div>
+                        <div class="panel-body">
+							<div class="row">
+                            	{php}list_all_task($_SESSION['user_name']);{/php}
+							</div>
+                        </div>
+                    </div> 
+	
+                </div>
+                <!-- /.col-lg-12 -->
             </div>
             <div class="panel-body">
                 {php}list_all_task($_SESSION['user_name']);{/php}
