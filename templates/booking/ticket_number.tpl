@@ -8,7 +8,6 @@
             $('input.booking_no').typeahead({
                 name: 'booking_no',
                 remote : 'ajax/booking_no_confirm.php?query=%QUERY'
-
             });
         })
     </script>

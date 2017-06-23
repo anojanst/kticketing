@@ -12,9 +12,6 @@ $(function() {
 
 });
 </script>
-
-
-
 {/literal}
 
 <section class="content">
@@ -34,8 +31,7 @@ $(function() {
 						<div class="form-group">
 	                        <input class="form-control" name="acc_num" value="{$acc_num}" required placeholder="Account Number">
 	                    </div>
-	                    
-	                    	
+
 						{if $edit=='on'}
 							<button type="submit" name="ok" value="Update" class="btn btn-primary">Update</button>
 						{else}

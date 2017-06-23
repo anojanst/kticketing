@@ -9,21 +9,21 @@ function list_receipt_not_deposit($deposit_date) {
 		
 		echo '<h1>' . $che_date . '</h1>';
 		echo '<div class="table-responsive">
-               <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-					<tr>
-					<th>Deposit</th>
-					<th>Cheque No</th>
-					<th>Amount</th>
-					<th>Receipt No</th>
-					<th>Receipt Type</th>
-					<th>Bank</th>
-					<th>Branch</th>
-					<th>Date</th>
-					</tr>
-					</thead>
-					<tbody>
-					';
+                <div class="box-body">
+                   <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                      <thead>
+                        <tr>
+                            <th>Deposit</th>
+                            <th>Cheque No</th>
+                            <th>Amount</th>
+                            <th>Receipt No</th>
+                            <th>Receipt Type</th>
+                            <th>Bank</th>
+                            <th>Branch</th>
+                            <th>Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>';
 		
 		$result = mysqli_query ($conn, "SELECT * FROM cheque_inventory WHERE status='RECEIVED' AND che_date = '$che_date' AND cancel_status='0' ORDER BY che_date ASC" );
 		while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -37,38 +37,22 @@ function list_receipt_not_deposit($deposit_date) {
 			echo '
 			<form name="deposit_cheque_' . $row [id] . '" action="cheque_deposit.php?job=deposit_cheque&id=' . $row [id] . '"	method="post">
 			<tr>
-
-			<td>
-			<input	type="submit" name="ok" value="Deposit" class="btn btn-danger" />
-			</td>
-
-			<td>
-			<a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . '" class="btn btn-danger">' . $row [che_no] . '</a>
-			</td>
-
-			<td id="amount_td">
-			' . $che_amount . '
-			</td>
-
-			<td>
-			<a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . '" class="btn btn-danger">' . $row [rec_ref] . '</a>
-			</td>
-
-			<td>
-			' . $row [rec_type] . '
-			</td>
 			
-			<td>
-			' . $row [che_bank] . '
-			</td>
+			<td><input	type="submit" name="ok" value="Deposit" class="btn btn-danger" /></td>
 
-			<td>
-			' . $row [che_branch] . '
-			</td>
+			<td><a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . '" class="btn btn-danger">' . $row [che_no] . '</a></td>
 
-			<td>
-			' . $row [che_date] . '
-			</td>
+			<td id="amount_td">' . $che_amount . '</td>
+
+			<td><a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . '" class="btn btn-danger">' . $row [rec_ref] . '</a></td>
+
+			<td>' . $row [rec_type] . '</td>
+			
+			<td>' . $row [che_bank] . '</td>
+
+			<td>' . $row [che_branch] . '</td>
+
+			<td>' . $row [che_date] . '</td>
 			</tr>
 			</form>';
 		}
@@ -76,31 +60,32 @@ function list_receipt_not_deposit($deposit_date) {
 	echo '</tbody>
           </table>
           </div>';
-	
+
 
 }
+
 function list_receipt_deposit() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-               <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-	<tr>
-	<th>Remove</th>
-	<th>Cheque No</th>
-	<th>Amount</th>
-	<th>Receipt No</th>
-	<th>Receipt Type</th>
-	<th>Bank</th>
-	<th>Branch</th>
-	<th>Date</th>
-	<th>Deposit Date</th>
-	<th>Deposit Bank</th>
-	</tr>
-	</thead>
-	<tbody>
-	';
+	echo '    <div class="table-responsive">
+                <div class="box-body">
+                    <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                        <thead>
+                            <tr>
+                                <th>Remove</th>
+                                <th>Cheque No</th>
+                                <th>Amount</th>
+                                <th>Receipt No</th>
+                                <th>Receipt Type</th>
+                                <th>Bank</th>
+                                <th>Branch</th>
+                                <th>Date</th>
+                                <th>Deposit Date</th>
+                                <th>Deposit Bank</th>
+                            </tr>
+                        </thead>
+                    <tbody>';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM cheque_inventory WHERE status='DEPOSITED' AND cancel_status='0' ORDER BY che_date ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -115,45 +100,25 @@ function list_receipt_deposit() {
 			<form name="remove_receipt_' . $row [id] . '" action="cheque_deposit.php?job=remove_receipt&id=' . $row [id] . '"	method="post">
 			<tr>
 
-			<td>
-			<input	type="submit" name="ok" value="Remove" class="btn btn-danger" />
-			</td>
-
-			<td>
-			<a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . 'class="btn btn-danger">' . $row [che_no] . '</a>
-			</td>
-
-			<td id="amount_td">
-			' . $che_amount . '
-			</td>
-
-			<td>
-			<a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . 'class="btn btn-danger">' . $row [rec_ref] . '</a>
-			</td>
-
-			<td>
-			' . $row [rec_type] . '
-			</td>
-			
-			<td>
-			' . $row [che_bank] . '
-			</td>
-			
-			<td>
-			' . $row [che_branch] . '
-			</td>
-			
-			<td>
-			' . $row [che_date] . '
-			</td>
-			
-			<td>
-			' . $row [dep_account_no] . '
-			</td>
-
-			<td>
-			' . $row [dep_date] . '
-			</td>
+                <td><input	type="submit" name="ok" value="Remove" class="btn btn-danger" /></td>
+    
+                <td><a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . 'class="btn btn-danger">' . $row [che_no] . '</a></td>
+    
+                <td id="amount_td">' . $che_amount . '</td>
+    
+                <td><a href="' . $type . '.php?job=' . $type_job . '&' . $type_no . '=' . $row [rec_ref] . 'class="btn btn-danger">' . $row [rec_ref] . '</a></td>
+    
+                <td>' . $row [rec_type] . '</td>
+                
+                <td>' . $row [che_bank] . '</td>
+                
+                <td>' . $row [che_branch] . '</td>
+                
+                <td>' . $row [che_date] . '</td>
+                
+                <td>' . $row [dep_account_no] . '</td>
+    
+                <td>' . $row [dep_date] . '</td>
 			</tr>
 			</form>';
 	}
