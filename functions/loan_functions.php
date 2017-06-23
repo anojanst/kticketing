@@ -376,14 +376,14 @@ function complete_loan($loan_no, $amount, $off, $total, $first_time) {
 
 }
 function check_customer($customer) {
-	include 'conf/config.php';
-	include 'conf/opendb.php';
-	
-	if (mysqli_num_rows ( mysqli_query ( "SELECT id FROM customer WHERE customer_name = '$customer' AND cancel_status='0'" ) )) {
-		return 1;
-	} else {
-		return 0;
-	}
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+    if (mysqli_num_rows ( mysqli_query ( "SELECT id FROM customer WHERE customer_name = '$customer' AND cancel_status='0'" ) )) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 function check_repetive_passport_no($loan_no, $passport_no) {
 	include 'conf/config.php';

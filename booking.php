@@ -36,18 +36,11 @@ if ($_SESSION ['login'] == 1) {
 			$air_line_code = $_POST ['air_line_code'];
 			$class = $_POST ['class'];
 			$type = $_POST ['type'];
-			$adult_fare = $_POST ['adult_fare'];
-			$adult_tax = $_POST ['adult_tax'];
-			$adult_markup = $_POST ['adult_markup'];
-			$adult_total = $_POST ['adult_total'];
-			$child_fare = $_POST ['child_fare'];
-			$child_tax = $_POST ['child_tax'];
-			$child_markup = $_POST ['child_markup'];
-			$child_total = $_POST ['child_total'];
-			$infant_fare = $_POST ['infant_fare'];
-			$infant_tax = $_POST ['infant_tax'];
-			$infant_markup = $_POST ['infant_markup'];
-			$infant_total = $_POST ['infant_total'];
+			$fare = $_POST ['fare'];
+            $markup = $_POST ['markup'];
+            $tax = $_POST ['tax'];
+			$total = $_POST ['total'];
+			$passenger_type=$_POST['passenger_type'];
 			$dep_time = $_POST ['dep_time'];
 			$arr_time = $_POST ['arr_time'];
 			$rtn_dep_time = $_POST ['rtn_dep_time'];
@@ -58,7 +51,7 @@ if ($_SESSION ['login'] == 1) {
 			$booking_no = $_SESSION ['booking_no'];
 			$booking_info = get_booking_info_by_booking_no ( $booking_no );
 			
-			save_booking_item ( $booking_no, $serial_no, $booking_type, $air_line_code, $class, $type, $adult_fare, $adult_tax, $adult_markup, $adult_total, $child_fare, $child_tax, $child_markup, $child_total, $infant_fare, $infant_tax, $infant_markup, $infant_total, $dep_time, $arr_time, $rtn_dep_time, $rtn_arr_time, $offer_code, $user_name );
+			save_booking_item ( $booking_no, $serial_no, $booking_type, $air_line_code, $class, $type, $fare, $tax, $markup, $passenger_type, $total, $dep_time, $arr_time, $rtn_dep_time, $rtn_arr_time, $offer_code, $user_name );
 			
 			if ($booking_info) {
 				$smarty->assign ( 'customer', "$booking_info[name] | $booking_info[customer_id]" );
@@ -270,12 +263,12 @@ if ($_SESSION ['login'] == 1) {
 
 		elseif ($_REQUEST ['job'] == 'passenger_detail') {
 			
-			$booking_no = $_SESSION ['booking_no'];
+			$booking_no = $_SESSION ['booking_no'] =  $_REQUEST ['booking_no'];
 			$id = $_SESSION ['id'] = $_REQUEST ['id'];
 			$booking_info = get_booking_info_by_booking_no ( $booking_no );
 			$fare_info = get_fare_detail ( $id );
 			
-			if (check_customer ( $booking_info ['name'] ) == 1) {
+			if (check_customer( $booking_info ['name'] ) == 1) {
 				
 				$_SESSION ['passenger_total'] = $booking_info ['adult'] + $booking_info ['child'] + $booking_info ['infant'];
 				$passenger_count = get_passenger_count ( $booking_no );

@@ -24,7 +24,7 @@
         function calculateDiscountAdult()
         {
             var xmlhttp;
-            var pass = document.getElementById("adult_fare").value;
+            var pass = document.getElementById("fare").value;
             if (pass=="")
             {
                 document.getElementById("afterDiscountAdult").innerHTML="";
@@ -216,7 +216,7 @@
                 <div class="panel-body">
                     <form role="form" action="booking.php?job=add_item" method="post" name="add_item">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <div class="form-group">
                                     <select class="form-control" id="offer" name="offer" required>
                                         {if $air_line}
@@ -229,12 +229,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input class="form-control offer_code" name="offer_code" value="{$offer_code}" id="offer_code" placeholder="Offer Code">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <div class="form-group">
                                     <select class="form-control" id="air_line_code" name="air_line_code" onchange="calculateDiscountAdult(); calculateDiscountInfant(); calculateDiscountChild();" required placeholder="Air Line" >
                                         {if $air_line}
@@ -304,84 +299,40 @@
                         <div class="row">
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <input class="form-control" name="adult_fare" value="{$adult_fare}" id="adult_fare" onkeyup="calculateDiscountAdult();" required placeholder="Fare for adult">
+                                    <input class="form-control" name="fare" value="{$fare}" id="fare" onkeyup="calculateDiscountAdult();" required placeholder="Fare">
                                 </div>
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <span id="afterDiscountAdult" class="alert-info col-lg-12" onclick="findTotalAdult()"  style="height: 30px; text-align: right; padding: 5px;"></span>
+                                    <input class="form-control" name="tax" value="{$tax}" id="tax" onkeyup="findTotalAdult()" required placeholder="Tax">
                                 </div>
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <input class="form-control" name="adult_tax" value="{$adult_tax}" id="adult_tax" onkeyup="findTotalAdult()" required placeholder="Tax for adult">
+                                    <input class="form-control" name="markup" onkeyup="findTotalAdult()" id="markup" value="{$markup}" required placeholder="Markup">
                                 </div>
                             </div>
                             <div class="col-lg-3">
-                                <div class="form-group">
-                                    <input class="form-control" name="adult_markup" onkeyup="findTotalAdult()" id="adult_markup" value="{$adult_markup}" required placeholder="Markup for adult">
-                                </div>
+                                <select class="form-control" name="passenger_type" required placeholder="Passsenger" >
+                                    {if $passenger_type}
+                                        <option value="{$passenger_type}">{$passenger_type}</option>
+                                    {else}
+                                        <option value="" disabled selected>Passenger_type</option>
+                                    {/if}
+                                    <option value="ADULT">Adult</option>
+                                    <option value="CHILD">Child</option>
+                                    <option value="INFANT">Infant</option>
+                                    <option value="NO_OF_TICKETS">No of Tickets</option>
+                                </select>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <input class="form-control" name="adult_total" value="{$adult_total}" id="totalAdult" required placeholder="Total for adult" readonly>
+                                    <input class="form-control" name="total" value="{$total}" id="total" required placeholder="Total" readonly>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input class="form-control" name="child_fare" value="{$child_fare}" id="child_fare" onkeyup="calculateDiscountChild();" placeholder="Fare for child">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <span id="afterDiscountChild" class="alert-danger col-lg-12" onclick="findTotalChild()" style="height: 30px; text-align: right; padding: 5px;" ></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input class="form-control" name="child_tax" value="{$child_tax}" onkeyup="findTotalChild()" id="child_tax" placeholder="Tax for child">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <input class="form-control" name="child_markup" value="{$child_markup}" onkeyup="findTotalChild()" id="child_markup" placeholder="Markup for child">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <input class="form-control" name="child_total" value="{$child_total}" id="totalChild" placeholder="Total for child" readonly>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input class="form-control" name="infant_fare" value="{$infant_fare}" id="infant_fare" onkeyup="calculateDiscountInfant();" placeholder="Fare for infant">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <span id="afterDiscountInfant" class="alert-success col-lg-12" onclick="findTotalInfant()" style="height: 30px; text-align: right; padding: 5px;" ></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input class="form-control" name="infant_tax" value="{$infant_tax}" onkeyup="findTotalInfant()" id="infant_tax" placeholder="Tax for infant">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <input class="form-control" name="infant_markup" value="{$infant_markup}" onkeyup="findTotalInfant()" id="infant_markup" placeholder="Markup for infant">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <input class="form-control" name="infant_total" value="{$infant_total}"  id="totalInfant" placeholder="Total for infant" readonly>
-                                </div>
-                            </div>
-                        </div>
+
+
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="form-group">
@@ -406,7 +357,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group" id="returnDepartureTime" style="visibility:visible;">
                                     <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-                                        <input type="text" name="rtn_dep_time" class="form-control" id="timepicker2" readonly placeholder="Return departure time" style="width: 100%;">
+                                        <input type="text" name="rtn_dep_time" class="form-control" id="timepicker2"  placeholder="Return departure time" style="width: 100%;">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
                                     </div>
@@ -416,7 +367,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group" id="returnArrivalTime" style="visibility:visible;">
                                     <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-                                        <input type="text" name="rtn_arr_time" class="form-control" id="timepicker3" readonly placeholder="Return arrival time" style="width: 100%;">
+                                        <input type="text" name="rtn_arr_time" class="form-control" id="timepicker3"  placeholder="Return arrival time" style="width: 100%;">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
                                     </div>
@@ -440,7 +391,6 @@
                 </div>
                 <div class="panel-body">
                     <form role="form" action="booking.php?job=save" method="post">
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <label>Flight Details</label>
@@ -488,7 +438,6 @@
                                     </select>
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-lg-2">
@@ -586,15 +535,12 @@
                                 </div>
                             </div>
                         </div>
-
-
                         {if $search=='On'}
                             <button type="submit" name="main_ok" value="Update" class="btn btn-primary">Update</button>
                         {else}
                             <button type="submit" name="main_ok" value="Save" class="btn btn-primary">Create Non Confirm</button>
                         {/if}
                         <button type="reset" class="btn btn-primary">Reset</button>
-
                     </form>
                 </div>
             </div>
@@ -621,6 +567,7 @@
         $(function () {
 
             $('#timepicker').timepicker({
+                timeFormat: 'HH:mm:ss'
             });
         });
     </script>
@@ -628,6 +575,7 @@
         $(function () {
 
             $('#timepicker1').timepicker({
+                timeFormat: 'HH:mm:ss'
             });
         });
     </script>
@@ -635,12 +583,14 @@
         $(function () {
 
             $('#timepicker2').timepicker({
+                timeFormat: 'HH:mm:ss'
             });
         });
     </script>
     <script>
         $(function () {
             $('#timepicker3').timepicker({
+                timeFormat: 'HH:mm:ss'
             });
         });
     </script>

@@ -27,13 +27,13 @@ function list_air_ports() {
 	
 	
 }
-function save_booking_item($booking_no, $serial_no, $booking_type, $air_line_code, $class, $type, $adult_fare, $adult_tax, $adult_markup, $adult_total, $child_fare, $child_tax, $child_markup, $child_total, $infant_fare, $infant_tax, $infant_markup, $infant_total, $dep_time, $arr_time, $rtn_dep_time, $rtn_arr_time, $offer_code, $user_name) {
+function save_booking_item ( $booking_no, $serial_no, $booking_type, $air_line_code, $class, $type, $fare, $tax, $markup, $passenger_type, $total, $dep_time, $arr_time, $rtn_dep_time, $rtn_arr_time, $offer_code, $user_name ) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
 	mysqli_select_db ( $conn, $dbname );
-	$query = "INSERT INTO booking_has_items (id, booking_no, serial_no, booking_type, air_line_code, class, type, adult_fare, adult_tax, adult_markup, adult_total, child_fare, child_tax, child_markup, child_total, infant_fare, infant_tax, infant_markup, infant_total, dep_time, arr_time, rtn_dep_time, rtn_arr_time, offer_code, branch, saved_by)
-	VALUES ('', '$booking_no', '$serial_no', '$booking_type', '$air_line_code', '$class', '$type', '$adult_fare', '$adult_tax', '$adult_markup', '$adult_total', '$child_fare', '$child_tax', '$child_markup', '$child_total', '$infant_fare', '$infant_tax', '$infant_markup', '$infant_total', '$dep_time', '$arr_time', '$rtn_dep_time', '$rtn_arr_time', '$offer_code', '$_SESSION[branch]', '$user_name')";
+	$query = "INSERT INTO booking_has_items (id, booking_no, serial_no, booking_type, air_line_code, class, type, fare, tax, markup, passenger_type, total, dep_time, arr_time, rtn_dep_time, rtn_arr_time, offer_code, branch, saved_by)
+	VALUES ('', '$booking_no', '$serial_no', '$booking_type', '$air_line_code', '$class', '$type', '$fare', '$tax', '$markup','$passenger_type', '$total', '$dep_time', '$arr_time', '$rtn_dep_time', '$rtn_arr_time', '$offer_code', '$_SESSION[branch]', '$user_name')";
 	mysqli_query ($conn, $query ) or die ( mysqli_connect_error () );
 	
 
@@ -188,10 +188,9 @@ function list_booking_has_items($booking_no) {
 						   <th rowspan="2" class="warning"></th>
                            <th rowspan="2" colspan="3" style="text-align: center;" class="warning">Air Line</th>
 						   <th colspan="4" style="text-align: center;" class="success">Flight Time</th>
-                           <th rowspan="2" style="text-align: center;" class="danger">Adult Fare</th>
-                           <th rowspan="2" style="text-align: center;" class="info">Child Fare</th>
-                           <th rowspan="2" style="text-align: center;" class="success">Infant Fare</th>
-                       </tr>
+						   <th rowspan="2" style="text-align: center;" class="danger">Passenger Type</th>
+                           <th rowspan="2" style="text-align: center;" class="danger">Fare</th>
+                           </tr>
 					   <tr>
                            <th class="success">Dep</th>
                            <th class="success">Arr</th>
@@ -202,7 +201,7 @@ function list_booking_has_items($booking_no) {
 	$result = mysqli_query ( $conn, "SELECT * FROM booking_has_items WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<tr>
-				<td><a href="booking.php?job=passenger_detail&id=' . $row [id] . '&booking_no=' . $booking_no . '"  ><i class="fa fa-check-square-o fa-2x"></i></a></td>
+				<td><a href="booking.php?job=passenger_detail&id='.$row [id].'&booking_no='.$booking_no.'"  ><i class="fa fa-check-square-o fa-2x"></i></a></td>
 				<td>' . $row ['air_line_code'] . '</td>
 				<td>' . $row ['class'] . '</td>
 				<td>' . $row ['type'] . '</td>
@@ -210,10 +209,9 @@ function list_booking_has_items($booking_no) {
 				<td>' . $row ['arr_time'] . '</td>
 				<td>' . $row ['rtn_dep_time'] . '</td>
 				<td>' . $row ['rtn_arr_time'] . '</td>
-				<td style="text-align: right;">' . $row ['adult_fare'] . '<br />' . $row ['adult_tax'] . ' <br />' . $row ['adult_markup'] . '<br/ ><strong><font color="red">' . $row ['adult_total'] . '</font></strong></td>
-				<td style="text-align: right;">' . $row ['child_fare'] . '<br />' . $row ['child_tax'] . ' <br />' . $row ['child_markup'] . '<br/ ><strong><font color="blue">' . $row ['child_total'] . '</font></strong></td>
-				<td style="text-align: right;">' . $row ['infant_fare'] . '<br />' . $row ['infant_tax'] . ' <br />' . $row ['infant_markup'] . '<br/ ><strong><font color="green">' . $row ['infant_total'] . '</font></strong></td>
-			</tr>';
+				<td>' . $row ['passenger_type'] . '</td>
+				<td style="text-align: right;">' . $row ['fare'] . '<br />' . $row ['tax'] . ' <br />' . $row ['markup'] . '<br/ ><strong><font color="red">' . $row ['total'] . '</font></strong></td>
+            </tr>';
 	}
 	echo '
               	</table>
@@ -959,16 +957,20 @@ function complete_booking($booking_no, $pnr, $al_ref, $issue_date, $transits, $f
 	
 
 }
+
+
 function check_customer($customer) {
-	include 'conf/config.php';
-	include 'conf/opendb.php';
-	
-	if (mysqli_num_rows ( mysqli_query ( "SELECT id FROM customer WHERE customer_name = '$customer' AND cancel_status='0'" ) )) {
-		return 1;
-	} else {
-		return 0;
-	}
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+    
+    if (mysqli_num_rows ( mysqli_query ($conn, "SELECT id FROM customer WHERE customer_name = '$customer' AND cancel_status='0'" ) )) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
 }
+
 function check_repetive_passport_no($booking_no, $passport_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
