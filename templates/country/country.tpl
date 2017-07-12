@@ -14,9 +14,9 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-6" style="margin-top: 10px;">
-            <div class="box box-primary">
+            <div class="panel panel-info">
                 <div class="panel-heading">
-                    Add new country
+                    <strong>Add new country</strong>
                 </div>
                 <div class="panel-body">
 
@@ -37,9 +37,9 @@
         </div>
 
         <div class="col-lg-6">
-            <div class="panel panel-red" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Nationalities
+                    <strong>Nationalities</strong>
                 </div>
                 <div class="panel-body">
                     {php}list_country();{/php}

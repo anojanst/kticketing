@@ -3,9 +3,9 @@
 
 
 <div class="col-lg-12">
-    <div class="panel panel-red" style="margin-top: 10px;">
+    <div class="panel panel-info" style="margin-top: 10px;">
         <div class="panel-heading">
-            Customer List
+           <strong> Customer List</strong>
         </div>
         <div class="panel-body">
             {php}list_customer_gift_voucher();{/php}

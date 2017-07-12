@@ -3,18 +3,16 @@
 
 
 <div class="row">
-	<div class="panel panel-primary" style="margin-top: 10px;">
+	<div class="panel panel-info" style="margin-top: 10px;">
 		<div class="panel-heading">
-			Flight Date Report
+			<strong>Flight Date Report</strong>
 		</div>
 		<div class="panel-body">
-
 			<form role="form" action="flight_date.php?job=search" method="post">
-
 				<div class="col-lg-3">
 					<div class="form-group" style="visibility:visible;">
 						<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-							<input type="text" name="date" value="{$date}"  placeholder="Date" style="width: 100%;">
+							<input type="text" class="form-control" name="date" value="{$date}" id="datepicker" placeholder="Date" style="width: 100%;">
 							<span class="add-on"><i class="icon-remove"></i></span>
 							<span class="add-on"><i class="icon-th"></i></span>
 						</div>
@@ -31,9 +29,9 @@
 
 {if $search=="on"}
 	<div class="row">
-		<div class="panel panel-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Departure Date
+				<strong>Departure Date</strong>
 			</div>
 			<div class="panel-body">
                 {php} customer_dep_date($_SESSION['date']);{/php}
@@ -45,9 +43,9 @@
 	</div>
 
 	<div class="row">
-		<div class="panel panel-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Arrival Date
+				<strong>Arrival Date</strong>
 			</div>
 			<div class="panel-body">
                 {php} customer_arr_date($_SESSION['date']);{/php}
@@ -67,5 +65,19 @@
         $(function () {
             $("#example1").DataTable();
         });
+	</script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
+        });
+	</script>
+	<script>
+	  $(function () {
+
+	    $('#datepicker').datepicker({
+	     format: 'yyyy-mm-dd',
+	      autoclose: true
+	    });
+	 });
 	</script>
 {/literal}

@@ -15,9 +15,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Search Your Bookings
+					<strong>Search Your Bookings</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="booking_transfer.php?job=search" method="post" name="add_item">
@@ -58,11 +58,21 @@
 						</div>
 					</form>
 				</div>
-
 			</div>
 		</div>
 	</div>
-    {php}list_your_booking($_SESSION['search_booking_no'], $_SESSION['search_customer'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
+	<div class="row">
+		<div class="col-lg-12" style="margin-top: 10px;">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<strong>Bookings</strong>
+				</div>
+				<div class="panel-body">
+                    {php}list_your_booking($_SESSION['search_booking_no'], $_SESSION['search_customer'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 {include file="footer.tpl"}
 {literal}

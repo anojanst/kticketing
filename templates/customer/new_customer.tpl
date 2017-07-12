@@ -32,9 +32,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Add New Customer
+					<strong>Add New Customer</strong>
 				</div>
 				<div class="panel-body">
 					<form name="add_product" action="customer.php?job=add" method="post" enctype="multipart/form-data">
@@ -167,9 +167,9 @@
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Customers
+					<strong>Customers</strong>
 				</div>
 				<div class="panel-body">
 					<form name="add_product" action="customer.php?job=search" method="post">
@@ -231,4 +231,9 @@
 		$("#example1").DataTable();
 	});
 </script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
+        });
+	</script>
 {/literal}

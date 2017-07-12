@@ -16,9 +16,9 @@
 
 <section class="content">
     <div class="row">
-        <div class="box box-primary" style="margin-top: 10px;">
+        <div class="panel panel-info" style="margin-top: 10px;">
             <div class="panel-heading">
-                PNR
+                <strong>PNR</strong>
             </div>
             <div class="panel-body">
                 <form role="form" action="pnr.php?job=search" method="post">
@@ -38,9 +38,9 @@
 
     {if $search=="on"}
         <div class="row">
-            <div class="panel panel-red" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    PNR
+                    <strong>PNR</strong>
                 </div>
                 <div class="panel-body">
                     {php}search_pnr_report($_SESSION['pnr']);{/php}
@@ -57,6 +57,24 @@
     <script>
         $(function () {
             $("#example1").DataTable();
+        });
+    </script>
+    <script>
+      $(function () {
+
+        $('#datepicker1').datepicker({
+         format: 'yyyy-mm-dd',
+          autoclose: true
+        });
+     });
+    </script>
+    <script>
+        $(function () {
+
+            $('#datepicker2').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
         });
     </script>
 {/literal}

@@ -83,9 +83,9 @@
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Fare Details
+					<strong>Fare Details</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="date_change.php?job=add_item" method="post" name="add_item">
@@ -231,9 +231,9 @@
     {if $date_change_no}
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					General Information | <strong>Date Change No : {$date_change_no}</strong>
+					<strong>General Information | <strong>Date Change No : {$date_change_no}</strong></strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="date_change.php?job=save" method="post">
@@ -368,8 +368,6 @@
 								</div>
 							</div>
 						</div>
-
-
 
                         {if $search=='On'}
 							<button type="submit" name="main_ok" value="Update" class="btn btn-primary">Update</button>

@@ -26,9 +26,9 @@ $('input.account').typeahead({
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Search By withdraw No
+					<strong>Search By withdraw No</strong>
 				</div>
 				<div class="panel-body">
 					<form name="withdraw_form" action="withdraw.php?job=save" method="post">
@@ -77,9 +77,9 @@ $('input.account').typeahead({
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Latest withdraws
+					<strong>Latest withdraws</strong>
 				</div>
 				<div class="panel-body">
                     {php}list_withdraw();{/php}

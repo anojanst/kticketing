@@ -1,19 +1,5 @@
 {include file="header.tpl"}
-<div style="max-width: 210mm;">
-	<div class="row" style="margin-left: 1px;">
-		<div class="col-xs-4">
-			<img src="images/nation_logo.png" alt="Nation Popular Travels & Tours" style="width: 55mm;"/>
-		</div>
-		<div class="col-xs-7">
-			<div style="font-size: 12px; margin-top: -10px;">
-				<h3><strong>NATION POPULAR TRAVELS & TOURS</strong></h3>
-				16 1/2, E.S. Fernando Mawatha, Colombo 06<br />
-				<strong>Hot Line :</strong> +94 11 4651199 <strong>Tel :</strong> +94 11 4375357 <strong>Fax :</strong> +94 11 4505532<br />
-				<strong>E-mail :</strong> online@nationtravels.com <br />
-				<strong>Web :</strong> nationtravels.com <br />
-			</div>
-		</div>
-	</div>
+{include file ="print_company_detail.tpl"}
 
 	<div class="row" style="margin-left: 1px;">
 		<div class="col-xs-12" style="text-align: center; margin-top: -10px;">

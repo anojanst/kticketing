@@ -5,7 +5,7 @@ function customer_receipt_detail($customer_id) {
 	
 	$i = 1;
 	
-	echo "SELECT * FROM invoice WHERE customer_id='$customer_id' AND due > 0 AND cancel_status='0'";
+
 	
 	$result = mysqli_query ($conn, "SELECT * FROM invoice WHERE customer_id='$customer_id' AND due > 0 AND cancel_status='0'" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -120,9 +120,9 @@ function list_receipt_invoices($random_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
-                       <tr class="info">
+                       <tr>
 						    <th>Invoice No</th>
 						    <th>Invoice Date</th>
 						    <th>Paid</th>
@@ -138,14 +138,14 @@ function list_receipt_invoices($random_no) {
 		<td>' . $row [invoice_no] . '</td>
 		<td>' . $row [invoice_date] . '</td>
 		<td>' . $row [amount] . '</td>
-		<td><a href="receipt.php?job=delete_invoice&id=' . $row [id] . '&invoice_no=' . $row [invoice_no] . '" ><i class="fa fa-times fa-2x"></i></a></td>
+		<td><a href="receipt.php?job=delete_invoice&id='.$row [id].'&invoice_no=' . $row [invoice_no] . '" ><i class="fa fa-times fa-2x"></i></a></td>
 		</tr>';
 	}
 	
 	echo '<tr class="danger">
 	<td><strong>Total</strong></td>
 	<td></td>
-	<td><span id="total"><strong>' . get_receipt_invoice_total ( $random_no ) . '</strong></span></td>
+	<td><span id="total"><strong>'.get_receipt_invoice_total($random_no).'</strong></span></td>
 	<td></td>
 	</tr>';
 	
@@ -266,22 +266,24 @@ function list_receipt() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-	
-	<td>Print</td>
-	<td>View</td>
-	<td>Cancel</td>
-	<td>No</td>	
-	<td>Customer</td>
-	<td align="right">Cheque</td>
-	<td align="right">Bank</td>
-	<td align="right">Cash</td>
-	<td align="right">Card</td>
-	<td align="right">Ez Cash</td>
-	<td align="right">Total</td>
-	</tr>';
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                    <tr class="danger" style="font-weight: bold;">
+                        <td>Print</td>
+                        <td>View</td>
+                        <td>Cancel</td>
+                        <td>No</td>	
+                        <td>Customer</td>
+                        <td align="right">Cheque</td>
+                        <td align="right">Bank</td>
+                        <td align="right">Cash</td>
+                        <td align="right">Card</td>
+                        <td align="right">Ez Cash</td>
+                        <td align="right">Total</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$today = date ( "Y-m-d" );
 	$total = 0;
@@ -372,7 +374,7 @@ function list_receipt() {
 		 <strong>' . $formated . '</strong>
 		</td>
 	
-		</tr></table></div>';
+		</tr></tbody></table></div>';
 	
 	
 }
@@ -405,22 +407,24 @@ function search_receipt($rec_no, $customer, $from_date, $to_date) {
 		$limit = "LIMIT 50";
 	}
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>Print</td>
-	<td>View</td>
-	<td>Cancel</td>
-	<td>No</td>
-	<td>Customer</td>
-	<td align="right">Cheque</td>
-	<td align="right">Bank</td>
-	<td align="right">Cash</td>
-	<td align="right">Card</td>
-	<td align="right">Ez Cash</td>
-	<td align="right">Total</td>
-	</tr>';
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                    <thead>
+                    <tr>
+                        <td>Print</td>
+                        <td>View</td>
+                        <td>Cancel</td>
+                        <td>No</td>
+                        <td>Customer</td>
+                        <td align="right">Cheque</td>
+                        <td align="right">Bank</td>
+                        <td align="right">Cash</td>
+                        <td align="right">Card</td>
+                        <td align="right">Ez Cash</td>
+                        <td align="right">Total</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$today = date ( "Y-m-d" );
 	$total = 0;
@@ -512,9 +516,7 @@ function search_receipt($rec_no, $customer, $from_date, $to_date) {
 		 <strong>' . $formated . '</strong>
 		</td>
 
-		</tr></table></div>';
-	
-	
+		</tr></tbody></table></div>';
 }
 
 

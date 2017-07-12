@@ -15,6 +15,7 @@ if ($_SESSION ['login'] == 1) {
 			
 			$smarty->assign ( 'page', 'Cheque Deposit' );
 			$smarty->display ( 'cheque_deposit/cheque_deposit_select.tpl' );
+
 		} elseif ($_REQUEST ['job'] == "set_date") {
 			$_SESSION ['deposit_date'] = $_REQUEST ['deposit_date'];
 			$_SESSION ['account'] = $_REQUEST ['account'];
@@ -23,6 +24,7 @@ if ($_SESSION ['login'] == 1) {
 			$smarty->assign ( 'account', $_SESSION ['account'] );
 			$smarty->assign ( 'page', 'Cheque Deposit' );
 			$smarty->display ( 'cheque_deposit/cheque_deposit.tpl' );
+
 		} elseif ($_REQUEST ['job'] == "inquiry") {
 			$_SESSION ['che_no'] = $_REQUEST ['che_no'];
 			
@@ -30,6 +32,7 @@ if ($_SESSION ['login'] == 1) {
 			$smarty->assign ( 'deposit_date', $_SESSION ['deposit_date'] );
 			list_specify_cheque ( $_SESSION [deposit_date], $_SESSION [che_no] );
 			$smarty->assign ( 'account', $_SESSION ['account'] );
+
 		} elseif ($_REQUEST ['job'] == "deposit_cheque") {
 			deposit_receipt_cheque ( $_REQUEST ['id'], $_SESSION ['deposit_date'], $_SESSION ['account'] );
 			
@@ -37,6 +40,7 @@ if ($_SESSION ['login'] == 1) {
 			$smarty->assign ( 'account', $_SESSION ['account'] );
 			$smarty->assign ( 'page', 'Cheque Deposit' );
 			$smarty->display ( 'cheque_deposit/cheque_deposit.tpl' );
+
 		} elseif ($_REQUEST ['job'] == "remove_receipt") {
 			remove_receipt ( $_REQUEST ['id'] );
 			delete_cheque_deposit_ledger ( $id );

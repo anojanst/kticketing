@@ -2,9 +2,9 @@
 {include file="navigation.tpl"}
 
 <section class="content"><div class="row">
-	<div class="box box-primary" style="margin-top: 10px;">
+	<div class="panel panel-info" style="margin-top: 10px;">
 		<div class="panel-heading">
-			Customer Birthday Report
+			<strong>Customer Birthday Report</strong>
 		</div>
 		<div class="panel-body">
 			<form role="form" action="customer_birthday.php?job=search" method="post">
@@ -28,9 +28,9 @@
 
 {if $search=="on"}
 	<div class="row">
-		<div class="panel panel-red" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Customer Birthday
+				<strong>Customer Birthday</strong>
 			</div>
 			<div class="panel-body">
 				<div class="col-lg-6">
@@ -42,7 +42,7 @@
 
 			</div
 
-			<div class="panel-footer">
+			<div class="panel-footer"
 			</div>
 		</div>
 	</div>
@@ -65,4 +65,9 @@
 		$("#example1").DataTable();
 	});
 </script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
+        });
+	</script>
 {/literal}

@@ -4,9 +4,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-4" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Add new Message
+					<strong>Add new Message</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="message.php?job=add" method="post">
@@ -38,9 +38,9 @@
 		</div>
 
 		<div class="col-lg-6">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Message
+					<strong>Message</strong>
 				</div>
 				<div class="panel-body">
                     {php}list_message();{/php}
@@ -72,7 +72,7 @@
 </script>
 <script>
 	$(function () {
-		$("#example1").DataTable();
+		$('#example1').DataTable();
 	});
 </script>
 

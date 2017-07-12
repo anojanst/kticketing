@@ -56,9 +56,9 @@
 
     <div class="row">
         <div class="col-lg-12" style="margin-top: 10px;">
-            <div class="panel panel-red" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Save Cab Booking
+                    <strong>Save Cab Booking</strong>
                 </div>
                 <div class="panel-body">
                     <form role="form" action="cab.php?job=save" method="post" name="add_item">

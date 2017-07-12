@@ -3,9 +3,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Add Telephone Directory
+					<strong>Add Telephone Directory</strong>
 				</div>
 				<div class="panel-body">
 					<form name="add_product" action="telephone_directory.php?job=add" method="post" enctype="multipart/form-data">
@@ -37,10 +37,3 @@
 	</div>
 </section>
 {include file="footer.tpl"}
-{literal}
-	<script>
-        $(function () {
-            $("#example1").DataTable();
-        });
-	</script>
-{/literal}

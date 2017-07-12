@@ -6,7 +6,6 @@
             $('input.customer_name').typeahead({
                 name: 'customer_name',
                 remote : 'ajax/customer_id_and_name.php?query=%QUERY'
-
             });
         })
 	</script>
@@ -15,7 +14,6 @@
             $('input.bank').typeahead({
                 name: 'bank',
                 remote : 'ajax/bank.php?query=%QUERY'
-
             });
         })
 	</script>
@@ -50,9 +48,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Choose Customer
+					<strong>Choose Customer</strong>
 				</div>
 				<div class="panel-body">
 					<form name="paybill_customer_form" action="paybill.php?job=customer_form" method="post" onsubmit="return checkTotal();">
@@ -96,9 +94,9 @@
     {if $submit=='true'}
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="panel panel-red" style="margin-top: 10px;">
+				<div class="panel panel-info" style="margin-top: 10px;">
 					<div class="panel-heading">
-						Vouchers
+						<strong>Vouchers</strong>
 					</div>
 					<div class="panel-body">
                         {php}list_paybill_vouchers($_SESSION['random_no']); {/php}
@@ -263,9 +261,9 @@
 
 							<div class="row">
 								<div class="col-lg-12">
-									<div class="panel panel-yellow">
+									<div class="panel panel-info">
 										<div class="panel-heading">
-											paybill Detail
+											<strong>paybill Detail</strong>
 										</div>
 										<div class="panel-body">
 											<div class="col-lg-2">

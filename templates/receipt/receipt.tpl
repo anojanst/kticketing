@@ -48,9 +48,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Choose Customer
+					<strong>Choose Customer</strong>
 				</div>
 				<div class="panel-body">
 					<form name="receipt_customer_form" action="receipt.php?job=customer_form" method="post">
@@ -74,9 +74,9 @@
     {if $submit=='true'}
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="panel panel-red" style="margin-top: 10px;">
+				<div class="panel panel-info" style="margin-top: 10px;">
 					<div class="panel-heading">
-						Invoices
+						<strong>Invoices</strong>
 					</div>
 					<div class="panel-body">
                         {php} list_receipt_invoices($_SESSION['random_no']); {/php}
@@ -236,9 +236,9 @@
 
 							<div class="row">
 								<div class="col-lg-12">
-									<div class="panel panel-yellow">
+									<div class="panel panel-info">
 										<div class="panel-heading">
-											Receipt Detail
+											<strong>Receipt Detail</strong>
 										</div>
 										<div class="panel-body">
 											<div class="col-lg-2">
@@ -280,9 +280,9 @@
     {else}
 		<div class="row">
 			<div class="col-lg-12" style="margin-top: 10px;">
-				<div class="panel panel-red">
+				<div class="panel panel-info">
 					<div class="panel-heading">
-						Latest Receipt
+						<strong>Latest Receipt</strong>
 					</div>
 					<div class="panel-body">
                         {php}list_receipt();{/php}

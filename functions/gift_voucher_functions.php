@@ -4,7 +4,7 @@ function list_customer_gift_voucher(){
 	include 'conf/opendb.php';
 
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                           <th>Customer Id</th>
@@ -97,7 +97,7 @@ function list_customer_gift_voucher_list(){
 	include 'conf/opendb.php';
 
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                           <th>Customer Id</th>

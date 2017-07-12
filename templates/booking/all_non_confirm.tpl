@@ -14,9 +14,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Search All Non Confirm Bookings
+					<strong>Search All Non Confirm Bookings</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="all_non_confirm_booking.php?job=search" method="post" name="add_item">
@@ -71,7 +71,19 @@
 			</div>
 		</div>
 	</div>
-    {php}list_all_non_confirm($_SESSION['search_branch'], $_SESSION['search_user_name'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
+	<div class="row">
+		<div class="col-lg-12" style="margin-top: 10px;">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<strong>Non Confirm Bookings</strong>
+				</div>
+				<div class="panel-body">
+                    {php}list_all_non_confirm($_SESSION['search_branch'], $_SESSION['search_user_name'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
+				</div>
+			</div>
+		</div>
+	</div>
+
 </section>
 {include file="footer.tpl"}
 {literal}

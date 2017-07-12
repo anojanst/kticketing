@@ -27,7 +27,7 @@
 </div>
 <div class="row">
     <div class="col-lg-12" style="margin-top: 10px;">
-        <div class="panel panel-primary" style="margin-top: 10px;">
+        <div class="panel panel-info" style="margin-top: 10px;">
             <div class="panel-heading">
                 Booking Details
             </div>

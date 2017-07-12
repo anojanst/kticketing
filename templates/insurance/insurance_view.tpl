@@ -13,9 +13,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Search Insurance
+					<strong>Search Insurance</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="insurance.php?job=search" method="post" name="add_item">
@@ -41,9 +41,9 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					INSURANCE LIST
+					<strong>INSURANCE LIST</strong>
 				</div>
 				<div class="panel-body">
                     {php}list_insurance($_SESSION['search_insurance_no'], $_SESSION['search_customer']);{/php}

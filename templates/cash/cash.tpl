@@ -4,12 +4,11 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-12" style="margin-top: 10px;">
-            <div class="box box-primary">
+            <div class="panel panel-info">
                 <div class="panel-heading">
-                    Select Branch
+                    <strong>Select Branch</strong>
                 </div>
                 <div class="panel-body">
-
                     <form role="form" action="cash.php?job=list" method="post">
                         <div class="row">
                             <div class="col-lg-2">
@@ -63,7 +62,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </form>
                         {php}list_latest_activities($_SESSION['search_branch'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
                     {/if}
@@ -76,10 +74,9 @@
 {literal}
     <script>
         $(function () {
-            $("#example2").DataTable();
+            $("#example1").DataTable();
         });
     </script>
-
     <script>
         $(function () {
             $('#datepicker1').datepicker({
@@ -96,9 +93,5 @@
             });
         });
     </script>
-    <script>
-        $(function () {
-            $("#example1").DataTable();
-        });
-    </script>
+
 {/literal}

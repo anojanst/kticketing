@@ -24,7 +24,7 @@
 
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-primary">
+		<div class="panel panel-info">
 			<div class="panel-heading">
 				<div class="row">
 					<div class="col-lg-3">
@@ -58,19 +58,19 @@
                    </form>-->
 				<div class="row">
 					<div class="col-lg-12">
-						<h1><u>Not Realised Cheques</u></h1><br />
+						<strong>Not Realised Cheques</strong><br />
                         {php}list_cheque_not_realised($_SESSION['statement_date'], $_SESSION['account']);{/php}
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<h1><u>Realised Cheques</u></h1><br />
+						<strong>Realised Cheques</strong><br />
                         {php}list_realised_cheques();{/php}
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<h1><u>Return Cheques</u></h1><br />
+						<strong>Return Cheques</strong><br />
                         {php}list_returned_cheques();{/php}
 					</div>
 				</div>
@@ -86,6 +86,11 @@
 <script>
     $(function () {
         $("#example1").DataTable();
+    });
+</script>
+<script>
+    $(function () {
+        $("#example2").DataTable();
     });
 </script>
 {/literal}

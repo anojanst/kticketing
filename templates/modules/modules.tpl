@@ -23,14 +23,12 @@
 						<button type="submit" name="ok" value="Save" class="btn btn-default">Save</button>
                     {/if}
 					<button type="reset" class="btn btn-default">Reset</button>
-
 				</form>
-
 			</div>
 		</div>
 	</div>
 	<div class="col-lg-6" style="margin-top: 10px;">
-		<div class="panel panel-success">
+		<div class="panel panel-info">
 			<div class="panel-heading">
 				<strong>Modules</strong>
 			</div>

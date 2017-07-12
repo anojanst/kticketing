@@ -3,9 +3,9 @@
 
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Customer Invoice Due
+				<strong>Search Customer Invoice Due</strong>
 			</div>
 			<div class="panel-body">
 				<form role="form" action="customer_invoice_due.php?job=search" method="post">
@@ -42,9 +42,9 @@
 
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Customer Invoice Due
+					<strong>Customer Invoice Due</strong>
 				</div>
 				<div class="panel-body">
                     {php}customer_invoice_due($_SESSION['from_date'], $_SESSION['to_date']);{/php}

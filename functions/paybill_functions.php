@@ -709,21 +709,23 @@ function search_paybill($paybill_no, $customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>Print</td>
-	<td>View</td>
-	<td>Cancel</td>
-	<td>No</td>
-	<td>Customer</td>
-	<td align="right">Cheque</td>
-	<td align="right">Bank</td>
-	<td align="right">Cash</td>
-	<td align="right">Card</td>
-	<td align="right">Ez Cash</td>
-	<td align="right">Total</td>
-	</tr>';
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                <tr class="danger" style="font-weight: bold;">
+                    <td>Print</td>
+                    <td>View</td>
+                    <td>Cancel</td>
+                    <td>No</td>
+                    <td>Customer</td>
+                    <td align="right">Cheque</td>
+                    <td align="right">Bank</td>
+                    <td align="right">Cash</td>
+                    <td align="right">Card</td>
+                    <td align="right">Ez Cash</td>
+                    <td align="right">Total</td>
+                </tr>
+                </thead>
+                <tbody>';
 	
 	$today = date ( "Y-m-d" );
 	$total = 0;
@@ -815,7 +817,7 @@ function search_paybill($paybill_no, $customer, $from_date, $to_date) {
 		 <strong>' . $formated . '</strong>
 		</td>
 
-		</tr></table></div>';
+		</tr></tbody></table></div>';
 	
 	
 }

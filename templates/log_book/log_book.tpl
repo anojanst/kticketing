@@ -25,9 +25,9 @@
 
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Outstanding Invoice
+				<strong>Search Outstanding Invoice</strong>
 			</div>
 			<div class="panel-body">
 				<form role="form" action="log_book.php?job=search" method="post">
@@ -68,7 +68,19 @@
 			</div>
 		</div>
 	</div>
-    {php}list_Cab($_SESSION['cab_booking_no'],$_SESSION['name'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
+	<div class="row">
+		<div class="col-lg-12" style="margin-top: 10px;">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<strong>Outstanding Invoice</strong>
+				</div>
+				<div class="panel-body">
+                    {php}list_Cab($_SESSION['cab_booking_no'],$_SESSION['name'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
+				</div>
+			</div>
+		</div>
+	</div>
+
 </section>
 {include file="footer.tpl"}
 {literal}

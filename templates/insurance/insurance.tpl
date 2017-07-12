@@ -54,7 +54,7 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-12" style="margin-top: 10px;">
-            <div class="panel panel-yellow" style="margin-top: 10px;">
+            <div class="box box-info" style="margin-top: 10px;">
                 <div class="panel-heading">
                     <form role="form" action="insurance.php?job=search" method="post" name="add_item">
                         <div class="form-group">
@@ -68,9 +68,9 @@
 
     <div class="row">
         <div class="col-lg-12" style="margin-top: 10px;">
-            <div class="panel panel-red" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Save Insurance
+                    <strong>Save Insurance</strong>
                 </div>
                 <div class="panel-body">
                     <form role="form" action="insurance.php?job=save" method="post" name="add_item">

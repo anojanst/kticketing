@@ -13,9 +13,9 @@
 {/literal}
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="box box-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Chat
+				<strong>Search Chat</strong>
 			</div>
 			<div class="panel-body">
 				<form role="form" action="chat_history.php?job=search" method="post">

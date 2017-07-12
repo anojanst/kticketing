@@ -63,8 +63,9 @@ function list_users_full() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+				<thead>
 				<tr>
 					<td>Name</td>
 					<td>Full Name</td>
@@ -75,7 +76,9 @@ function list_users_full() {
 					<td>Edit</td>
 					<td>Access</td>
 					<td>Delete</td>
-					</tr>';
+					</tr>
+                </thead>
+                <tbody>';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM users WHERE cancel_status='0' ORDER BY department DESC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -92,7 +95,8 @@ function list_users_full() {
 		<td><a href="users.php?job=delete&id=' . $row [id] . '" onclick="javascript:return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa fa-times fa-lg"></i></a></td>
 		</tr>';
 	}
-	echo '    	</table>
+	echo '    	</tbody>
+    	    </table>
             </div>';
 	
 }
@@ -106,10 +110,8 @@ function list_users_full_for_user_add() {
 				<thead>
 					<tr>
 						<td>Full Name</td>
-					
 						<td>Mobile</td>
 						<td>E-mail</td>
-					
 						<td>Edit</td>
 						<td>Access</td>
 						<td>Delete</td>

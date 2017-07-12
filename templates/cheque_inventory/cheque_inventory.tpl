@@ -13,9 +13,9 @@
 {/literal}
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Cheque Inventory
+				<strong>Search Cheque Inventory</strong>
 			</div>
 			<div class="panel-body">
 				<form role="form" action="cheque_inventory.php?job=list" method="post">
@@ -58,9 +58,9 @@
 
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Cheque Inventory
+					<strong>Cheque Inventory</strong>
 				</div>
 				<div class="panel-body">
                     {php}cheque_inventory_report($_SESSION['status'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}

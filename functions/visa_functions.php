@@ -76,8 +76,8 @@ function list_visa($visa_no, $customer) {
 		$branch_check = "AND branch LIKE '%$branch%'";
 	}
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="danger">
 						   <th>Delete</th>
@@ -111,6 +111,7 @@ function list_visa($visa_no, $customer) {
 		</tr>';
 	}
 	echo '
+              	</tbody>
               	</table>
             </div>';
 	
@@ -341,8 +342,8 @@ function list_visa_logbook($visa_no, $customer) {
 	}
 
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="info">
 						   <th>V.No</th>

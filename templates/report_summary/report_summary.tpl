@@ -2,9 +2,9 @@
 {include file="navigation.tpl"}
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Outstanding Invoice
+				<strong>Search Outstanding Invoice</strong>
 			</div>
 			<div class="panel-body">
 				<form role="form" action="report_summary.php?job=search" method="post">
@@ -40,9 +40,9 @@
 
 
 	<div class="row">
-		<div class="panel panel-red" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Outstanding Invoice
+				<strong>Outstanding Invoice</strong>
 			</div>
 			<div class="panel-body">
                 {php}final_outstanding_invoice_report($_SESSION['customer'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
@@ -52,9 +52,9 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="panel panel-red" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Outstanding Other Expenses
+				<strong>Outstanding Other Expenses</strong>
 			</div>
 			<div class="panel-body">
                 {php}final_outstanding_other_expenses_report($_SESSION['customer'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
@@ -64,9 +64,9 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="panel panel-red" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Outstanding Voucher
+				<strong>Outstanding Voucher</strong>
 			</div>
 			<div class="panel-body">
                 {php}final_outstanding_voucher_report($_SESSION['travels'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
@@ -100,6 +100,16 @@
 	    $(function () {
 	        $("#example1").DataTable();
 	    });
+	</script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
+        });
+	</script>
+	<script>
+        $(function () {
+            $("#example3").DataTable();
+        });
 	</script>
 
 {/literal}

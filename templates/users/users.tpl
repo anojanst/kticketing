@@ -17,9 +17,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-5" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Add new user
+					<strong>Add new user</strong>
 				</div>
 				<div class="panel-body">
 
@@ -96,9 +96,9 @@
 		</div>
 
 		<div class="col-lg-7">
-			<div class="box box-primary" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Users
+					<strong>Users</strong>
 				</div>
 				<div class="panel-body">
 					<!--

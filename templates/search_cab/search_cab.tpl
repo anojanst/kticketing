@@ -25,9 +25,9 @@
 
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Outstanding Invoice
+				<strong>Search Outstanding Invoice</strong>
 			</div>
 			<div class="panel-body">
 				<form role="form" action="search_cab.php?job=search" method="post">
@@ -72,9 +72,9 @@
 
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					search cab
+					<strong>search cab</strong>
 				</div>
 				<div class="panel-body">
                     {php}search_cab_report($_SESSION['cab_booking_no'],$_SESSION['name'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}

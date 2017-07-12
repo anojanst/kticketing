@@ -4,7 +4,7 @@ function income_expence_report($branch, $from_date, $to_date) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				
 	<thead><th>Date</th>
 	<th>Ref No</th>
@@ -176,7 +176,7 @@ function cheque_inventory_report($status, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 				<tr style="font-weight: bold;">
 	<td colspan="5" class="danger">Cheque Detail</td>
 	<td colspan="3" class="success">Referrence Detail</td>
@@ -235,10 +235,10 @@ function search_pnr_report($pnr) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo "<h1><B>Booking Details By PNR</B></h1>";
+	echo "<strong>Booking Details By PNR</strong>";
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 
 	<td>ID</td>
@@ -275,9 +275,9 @@ function search_pnr_report($pnr) {
 	
 	echo '</tr></table></div>';
 	
-	echo "<h1><B>PNR Details Updates</B></h1>";
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo "<strong>PNR Details Updates</strong>";
+	echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
 	<tr class="danger" style="font-weight: bold;">
 		
 	<td>ID</td>

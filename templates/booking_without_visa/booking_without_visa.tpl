@@ -14,9 +14,9 @@
 
 <section class="content">
     <div class="row">
-        <div class="box box-primary" style="margin-top: 10px;">
+        <div class="panel panel-info" style="margin-top: 10px;">
             <div class="panel-heading">
-                Booking Without Visa & Passport
+                <strong>Booking Without Visa & Passport</strong>
             </div>
             <div class="panel-body">
                 <form role="form" action="booking_without_visa.php?job=search" method="post">
@@ -38,9 +38,9 @@
 
     {if $search=="on"}
         <div class="row">
-            <div class="panel panel-default" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Booking Without Visa
+                    <strong> Booking Without Visa </strong>
                 </div>
                 <div class="panel-body">
                     {php}booking_without_visa($_SESSION['staff_name']);{/php}
@@ -52,9 +52,9 @@
         </div>
 
         <div class="row">
-            <div class="panel panel-default" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Booking Without Passport
+                    <strong>Booking Without Passport</strong>
                 </div>
                 <div class="panel-body">
                     {php}booking_without_passport($_SESSION['staff_name']);{/php}
@@ -67,11 +67,3 @@
     {/if}
 </section>
 {include file="footer.tpl"}
-
-{literal}
-    <script>
-        $(function () {
-            $("#example1").DataTable();
-        });
-    </script>
-{/literal}

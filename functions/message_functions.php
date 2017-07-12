@@ -17,48 +17,42 @@ function list_message(){
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 
-	echo '<div class="table-responsive">
-              <table class="table">
-                  <thead>
+	echo '<div class="box-body">
+                <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">                  <thead>
                        <tr>
-
                            <th>Message</th>
                            <th>Start_Date</th>
                            <th>End Date</th>
 							<th>Saved By</th>
-						  
                        </tr>
-                  </thead>
-                  <tbody>';
-
-
+                </thead>
+                <tbody>';
 
 	$i=1;
 	$result=mysqli_query($conn, "SELECT * FROM message WHERE cancel_status='0'" );
 	while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 	{
 
-		echo '
+		echo '<tr>
 
-		<td>'.$row[message].'</td>
+                <td>'.$row[message].'</td>
+        
+                <td>'.$row[start_date].'</td>
+        
+                <td>'.$row[end_date].'</td>
+        
+                <td>'.$row[saved_by].'</td>
+                
+                <td><a href="message.php?job=delete&id='.$row[id].'" onclick="javascript:return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa fa-times fa-2x"></i></a></td>
 
-		<td>'.$row[start_date].'</td>
-
-		<td>'.$row[end_date].'</td>
-
-		<td>'.$row[saved_by].'</td>
-
-
-		<td><a href="message.php?job=delete&id='.$row[id].'" onclick="javascript:return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa fa-times fa-2x"></i></a></td>
-
-		</tr>';
+		    </tr>';
 
 		$i++;
 
 	}
 
-	echo '</tbody>
-          </table>
+	echo '    </tbody>
+            </table>
           </div>';
 
 	

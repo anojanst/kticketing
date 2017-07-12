@@ -26,8 +26,9 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-12" style="margin-top: 10px;">
-            <div class="box box-primary" style="margin-top: 10px;">
-                <div class="panel-heading">Search By Booking No
+            <div class="panel panel-info" style="margin-top: 10px;">
+                <div class="panel-heading">
+                    <strong>Search By Booking No</strong>
                 </div>
                 <div class="panel-body">
                     <form role="form" action="ticket_number.php?job=list_passenger" method="post">
@@ -49,12 +50,11 @@
     {if $booking_no}
         <div class="row">
             <div class="col-lg-12" style="margin-top: 10px;">
-                <div class="panel panel-red" style="margin-top: 10px;">
+                <div class="panel panel-info" style="margin-top: 10px;">
                     <div class="panel-heading">
-                        Passengers | <strong>Booking No : {$booking_no}</strong>
+                        <strong>Passengers | <strong>Booking No : {$booking_no}</strong></strong>
                     </div>
                     <div class="panel-body">
-
                         {php}list_passengers_details_ticket($_SESSION['booking_no']);{/php}
                     </div>
                 </div>

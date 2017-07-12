@@ -25,7 +25,7 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-lg-3">
@@ -35,7 +35,7 @@
 							Deposit Date : {$deposit_date}
 						</div>
 						<div class="col-lg-1">
-							<a class="btn btn-default" href="cheque_deposit.php?job=print">Print</a></b>
+							<a class="btn btn-default" target="_blank" href="cheque_deposit.php?job=print">Print</a></b>
 						</div>
 						<div class="col-lg-3">
 							<a class="btn btn-default" href="cheque_deposit.php?job=cheque_deposit_select_form">New Date</a></b>
@@ -59,13 +59,13 @@
                    </form>-->
 				<div class="row">
 					<div class="col-lg-12">
-						<h1><u>Not Deposited Cheques</u></h1>
+                        <strong>Not Deposited Cheques</strong>
                         {php}list_receipt_not_deposit($_SESSION['deposit_date']);{/php}
-					</div>
-				</div>
+                    </div>
+                </div>
 				<div class="row">
 					<div class="col-lg-12">
-						<h1><u>Deposited Cheques</u></h1>
+						<strong>Deposited Cheques</u></strong>
                         {php}list_receipt_deposit();{/php}
 					</div>
 				</div>
@@ -91,4 +91,9 @@
 		});
 	</script>
 
+    <script>
+        $(function () {
+            $("#example2").DataTable();
+        });
+    </script>
 {/literal}

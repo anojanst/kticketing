@@ -4,8 +4,9 @@ function customer_dep_date($date) {
 	include 'conf/opendb.php';
 
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+				<thead>
 				<tr class="danger" style="font-weight: bold;">
 
 				<td>Booking No</td>
@@ -13,7 +14,9 @@ function customer_dep_date($date) {
 				<td>Mobile</td>
 				<td>Dep Date</td>
 				<td>Dep Air Port</td>
-				</tr>';
+				</tr>
+				</thead>
+				<tbody>';
 
 	$result1 = mysqli_query ( $conn, "SELECT * FROM booking WHERE cancel_status='0' AND dep_date = '$date'" );
 	while ( $row1 = mysqli_fetch_array ( $result1, MYSQLI_ASSOC ) ) {
@@ -22,9 +25,8 @@ function customer_dep_date($date) {
 		<td>
 		<a href="booking.php?job=view&booking_no=' . $row1['booking_no'] . '" class="btn btn-xs btn-primary" target="_blank">' . $row1['booking_no'] . '</a></td>
 	
-						<td><div class="col-lg-1" style="color:white;"><a href="customer.php?job=view&customer_id=' . $row1 ['customer_id'] . '" class="btn btn-xs btn-primary" target="_blank">' . $row1 ['name'] . '</a></div></td>
-				
-
+        <td><div class="col-lg-1" style="color:white;"><a href="customer.php?job=view&customer_id=' . $row1 ['customer_id'] . '" class="btn btn-xs btn-primary" target="_blank">' . $row1 ['name'] . '</a></div></td>
+		
 		<td>
 		' . $row1 [mobile] . '
 		</td>
@@ -36,10 +38,10 @@ function customer_dep_date($date) {
 		 ' . $row1 [dep_air_port] . '
 		</td>
 				
-				</tr>';
+        </tr>';
 
 	}
-	echo '</tr></table></div>';
+	echo '</tbody></table></div>';
 
 
 }
@@ -50,8 +52,9 @@ function customer_arr_date($date) {
 	include 'conf/opendb.php';
 
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+				<thead>
 				<tr class="success" style="font-weight: bold;">
 
 				<td>Booking No</td>
@@ -59,7 +62,9 @@ function customer_arr_date($date) {
 				<td>Mobile</td>
 				<td>Rtn Date</td>
 				<td>Arr Air Port</td>
-				</tr>';
+				</tr>
+				</thead>
+				<tbody>';
 
 	$result1 = mysqli_query ($conn, "SELECT * FROM booking WHERE cancel_status='0' AND rtn_date = '$date'" );
 	while ( $row1 = mysqli_fetch_array ( $result1, MYSQLI_ASSOC ) ) {
@@ -86,7 +91,7 @@ function customer_arr_date($date) {
 				</tr>';
 
 	}
-	echo '</tr></table></div>';
+	echo '</tbody></table></div>';
 
 
 }

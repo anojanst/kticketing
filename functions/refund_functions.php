@@ -65,24 +65,26 @@ function list_refund() {
 	
 	$today = date ( 'Y-m-d' );
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>View</td>
-	<td>Cancel</td>
-	<td>Complete</td>
-	<td>Send</td>
-	<td>Print</td>
-	<td>Refund No</td>
-	<td>customer</td>
-	<td>Booking no</td>
-	<td>Apply Date</td>
-	<td>Fund Release Date</td>
-	<td align="right">Amount</td>
-	<td align="right">Markup</td>
-	<td align="right">Amount to Customer</td>
-	</tr>';
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                 <thead>   
+                    <tr>
+                        <td>View</td>
+                        <td>Cancel</td>
+                        <td>Complete</td>
+                        <td>Send</td>
+                        <td>Print</td>
+                        <td>Refund No</td>
+                        <td>customer</td>
+                        <td>Booking no</td>
+                        <td>Apply Date</td>
+                        <td>Fund Release Date</td>
+                        <td align="right">Amount</td>
+                        <td align="right">Markup</td>
+                        <td align="right">Amount to Customer</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$branch = $_SESSION ['branch'];
 	if ($branch == "Head Office") {
@@ -154,10 +156,9 @@ function list_refund() {
 		 <strong>' . $formated . '</strong>
 		</td>
 
-		</tr></table></div>';
-	
-	
+		</tr></tbody></table></div>';
 }
+
 function search_refund($refund_no, $customer, $from_date, $to_date) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
@@ -186,24 +187,26 @@ function search_refund($refund_no, $customer, $from_date, $to_date) {
 		$date_check = "";
 	}
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>View</td>
-	<td>Cancel</td>
-	<td>Complete</td>
-	<td>Send</td>
-	<td>Print</td>
-	<td>Refund No</td>
-	<td>customer</td>
-	<td>Booking no</td>
-	<td>Apply Date</td>
-	<td>Fund Release Date</td>
-	<td align="right">Amount</td>
-	<td align="right">Markup</td>
-	<td align="right">Amount to Customer</td>
-	</tr>';
+	echo '<div class="box-body">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>   
+                    <tr class="danger" style="font-weight: bold;">
+                        <td>View</td>
+                        <td>Cancel</td>
+                        <td>Complete</td>
+                        <td>Send</td>
+                        <td>Print</td>
+                        <td>Refund No</td>
+                        <td>customer</td>
+                        <td>Booking no</td>
+                        <td>Apply Date</td>
+                        <td>Fund Release Date</td>
+                        <td align="right">Amount</td>
+                        <td align="right">Markup</td>
+                        <td align="right">Amount to Customer</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$branch = $_SESSION ['branch'];
 	if ($branch == "Head Office") {
@@ -276,7 +279,7 @@ function search_refund($refund_no, $customer, $from_date, $to_date) {
 		 <strong>' . $formated . '</strong>
 		</td>
 
-		</tr></table></div>';
+		</tr></tbody></table></div>';
 	
 	
 }
@@ -653,8 +656,8 @@ $today = date ( 'Y-m-d' );
 		$date_check = "";
 	}
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="info">
 						   <th>R.No</th>

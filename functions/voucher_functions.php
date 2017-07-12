@@ -119,24 +119,26 @@ function list_voucher() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                <tr class="danger" style="font-weight: bold;">
+                    <td>Print</td>
+                    <td>View</td>
+                    <td>Send</td>
+                    <td>Cancel</td>
+                    <td>No</td>
+                    <td>Travels</td>
+                    <td>Booking</td>
+                    <td>PNR</td>
+                    <td align="right">Fare</td>
+                    <td align="right">BTT/LessCOM</td>
+                    <td align="right">Taxes</td>
+                    <td align="right">Total</td>
+                </tr>
+                </thead>
+                <tbody>';
 
-	<td>Print</td>
-	<td>View</td>
-	<td>Send</td>
-	<td>Cancel</td>
-	<td>No</td>
-	<td>Travels</td>
-	<td>Booking</td>
-	<td>PNR</td>
-	<td align="right">Fare</td>
-	<td align="right">BTT/LessCOM</td>
-	<td align="right">Taxes</td>
-	<td align="right">Total</td>
-	</tr>';
-	
 	$today = date ( "Y-m-d" );
 	$total = 0;
 	$result = mysqli_query ($conn, "SELECT * FROM voucher WHERE cancel_status='0' AND voucher_date='$today' ORDER BY id" );
@@ -223,7 +225,7 @@ function list_voucher() {
 		 <strong>' . $formated . '</strong>
 		</td>
 
-		</tr></table></div>';
+		</tr></tbody></table></div>';
 	
 	
 }
@@ -259,29 +261,32 @@ function search_voucher($voucher_no, $travels, $from_date, $to_date) {
 	} else {
 		$date_check = "AND voucher_date='$today'";
 	}
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>Print</td>
-	<td>View</td>
-	<td>Send</td>
-	<td>Cancel</td>
-	<td>No</td>
-	<td>Travels</td>
-	<td>Booking</td>
-	<td>PNR</td>
-	<td align="right">Fare</td>
-	<td align="right">BTT/LessCOM</td>
-	<td align="right">Taxes</td>
-	<td align="right">Total</td>
-	</tr>';
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                    <tr class="danger" style="font-weight: bold;">
+                    <td>Print</td>
+                    <td>View</td>
+                    <td>Send</td>
+                    <td>Cancel</td>
+                    <td>No</td>
+                    <td>Travels</td>
+                    <td>Booking</td>
+                    <td>PNR</td>
+                    <td align="right">Fare</td>
+                    <td align="right">BTT/LessCOM</td>
+                    <td align="right">Taxes</td>
+                    <td align="right">Total</td>
+                    </tr>
+                </thead>
+                <tbody>';
 	
 	$total = 0;
 	$result = mysqli_query ($conn, "SELECT * FROM voucher WHERE cancel_status='0' $voucher_no_check $travels_check $date_check ORDER BY id" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) ) {
 		
 		echo '
+        <thead>
 		<tr>
 
 		<td>
@@ -331,9 +336,6 @@ function search_voucher($voucher_no, $travels, $from_date, $to_date) {
 		 <td align="right" class="success">
 		 ' . $row [total] . '
 		</td>
-
-
-
 		</tr>
 		<div class="modal fade" id="' . $row [voucher_no] . '" tabindex="-1" role="dialog" aria-labelledby="' . $row [voucher_no] . '" aria-hidden="true">
 			  <div class="modal-dialog modal-lg">
@@ -362,7 +364,7 @@ function search_voucher($voucher_no, $travels, $from_date, $to_date) {
 		 <strong>' . $formated . '</strong>
 		</td>
 
-		</tr></table></div>';
+		</tr></tbody></table></div>';
 	
 	
 }

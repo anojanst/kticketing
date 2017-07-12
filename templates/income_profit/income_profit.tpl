@@ -13,9 +13,9 @@
 {/literal}
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Income
+				<strong>Search Income</strong>
 			</div>
 			<div class="panel-body">
 
@@ -59,9 +59,9 @@
 
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					INCOME EXPENSE REPORT
+					<strong>INCOME EXPENSE REPORT</strong>
 				</div>
 				<div class="panel-body">
                     {php}income_expence_report($_SESSION['search_branch'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
@@ -101,8 +101,8 @@
         });
 	</script>
 	<script>
-		$(function () {
-			$("#example1").DataTable();
-		});
+        $(function () {
+            $("#example1").DataTable();
+        });
 	</script>
 {/literal}

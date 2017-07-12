@@ -23,9 +23,9 @@
 {/literal}
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search salary
+				<strong>Search salary</strong>
 			</div>
 			<div class="panel-body">
 
@@ -71,9 +71,9 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Users
+					<strong>Users</strong>
 				</div>
 				<div class="panel-body">
                     {php}search_telephone_no($_SESSION['customer_name'], $_SESSION['telephone_no'], $_SESSION['from_date'],$_SESSION['to_date']);{/php}

@@ -23,9 +23,9 @@ $('input.account').typeahead({
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
                 <div class="panel-heading">
-                    Select bank and deposit date
+					<strong>Select bank and deposit date</strong>
                 </div>
                 <div class="panel-body">
             		<form name="cheque_deposit_select_form" action="cheque_deposit.php?job=set_date" method="post">
@@ -74,4 +74,9 @@ $('input.account').typeahead({
 		$("#example1").DataTable();
 	});
 </script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
+        });
+	</script>
 {/literal}

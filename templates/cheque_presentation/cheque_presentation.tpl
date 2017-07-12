@@ -24,7 +24,7 @@ $('input.account').typeahead({
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-primary">
+			<div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="row">
 						<div class="col-lg-3">
@@ -58,13 +58,13 @@ $('input.account').typeahead({
                    </form>-->
 					<div class="row">
 						<div class="col-lg-12">
-							<h1><u>Unpresented Cheques</u></h1>
+							<strong>Unpresented Cheques</strong>
 							{php}list_paybill_not_presentation($_SESSION['presentation_date']);{/php}
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							<h1><u>Presented Cheques</u></h1>
+							<strong>Presented Cheques</strong>
 							{php}list_paybill_presented();{/php}
 						</div>
 					</div>
@@ -77,7 +77,7 @@ $('input.account').typeahead({
 {literal}
 <script>
     $(function () {
-        $("#example1").DataTable();
+        $("#example2").DataTable();
     });
 </script>
 {/literal}

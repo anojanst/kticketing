@@ -43,9 +43,9 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-12" style="margin-top: 10px;">
-            <div class="panel panel-green">
+            <div class="panel panel-info">
                 <div class="panel-heading">
-                    Choose Booking No
+                    <strong>Choose Booking No</strong>
                 </div>
                 <div class="panel-body">
                     <form name="booking_no_form" action="refund.php?job=booking_no_form" method="post">
@@ -69,9 +69,9 @@
     {if $submit=='true'}
         <div class="row">
             <div class="col-lg-12">
-                <div class="panel panel-red" style="margin-top: 10px;">
+                <div class="panel panel-info" style="margin-top: 10px;">
                     <div class="panel-heading">
-                        Create refund
+                       <strong>Create refund</strong>
                     </div>
                     <div class="panel-body">
 
@@ -138,9 +138,9 @@
     {else}
         <div class="row">
             <div class="col-lg-12" style="margin-top: 10px;">
-                <div class="panel panel-red">
+                <div class="panel panel-info">
                     <div class="panel-heading">
-                        Latest refunds
+                        <strong>Latest refunds</strong>
                     </div>
                     <div class="panel-body">
                         {php}list_refund();{/php}

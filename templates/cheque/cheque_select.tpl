@@ -22,9 +22,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Search By Deposit No
+					<strong>Search By Deposit No</strong>
 				</div>
 				<div class="panel-body">
 					<form name="cheque_select_form" action="cheque.php?job=set_date" method="post">
@@ -66,10 +66,5 @@
                 autoclose: true
             });
         });
-	</script>
-	<script>
-		$(function () {
-			$("#example1").DataTable();
-		});
 	</script>
 {/literal}

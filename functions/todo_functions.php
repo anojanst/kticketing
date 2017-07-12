@@ -190,7 +190,7 @@ function update_status($id, $status) {
 function task_history($task_name, $user_name, $ref_no, $from_date, $to_date) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
-	
+	$i=2;
 	if ($task_name) {
 		$task_name_check = "AND task_name LIKE '%$task_name%'";
 	} else {
@@ -256,24 +256,24 @@ function task_history($task_name, $user_name, $ref_no, $from_date, $to_date) {
 		<form role="form" action="task_manager.php?job=update&id=' . $row [id] . '" method="post">
 				
 		 <div class="row">
-				 <div class="col-lg-2">
+             <div class="col-lg-2">
 				<div class="form-group" style="visibility:visible;">
-		  
-    							<div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-        							<input type="text" name="deadline" placeholder=" Date" style="width: 100%;">
-        							<span class="add-on"><i class="icon-remove"></i></span>
-									<span class="add-on"><i class="icon-th"></i></span>
-    							</div>
-								<input type="hidden" id="dtp_input1" value="" />
-		                    </div>
-		                    </div>
-				
-						    <div class="col-lg-2">
-								<button type="submit"=" name="ok" value="Search" class="btn btn-primary">Update deadline</button>
-							</div>
-							<div class="col-lg-2">
-			     				<a href="task_manager.php?job=complete_task&id=' . $row [id] . '" class="btn btn-primary" Style="color:white">Complete task</a>
-							</div>';
+
+                <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
+                    <input type="text" class="form-control" name="deadline" id="datepicker'.$i.'" onclick="dat(this.id)" placeholder="Date" style="width: 100%;">
+                    <span class="add-on"><i class="icon-remove"></i></span>
+                    <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+                    <input type="hidden" id="dtp_input1" value="" />
+                </div>
+                </div>
+    
+                <div class="col-lg-2">
+                    <button type="submit"=" name="ok" value="Search" class="btn btn-primary">Update deadline</button>
+                </div>
+                <div class="col-lg-2">
+                    <a href="task_manager.php?job=complete_task&id=' . $row [id] . '" class="btn btn-primary" Style="color:white">Complete task</a>
+                </div>';
 			
 			if ($row [telephone_directory_id] > 0) {
 				echo '<div class="col-lg-2">
@@ -284,26 +284,23 @@ function task_history($task_name, $user_name, $ref_no, $from_date, $to_date) {
 	      </form>';
 			
 			echo '
-		<form role="form" action="task_manager.php?job=change_username&id=' . $row [id] . '" method="post">
-							
-									<div class="row">
-									<div class="col-lg-2">
-									<div class="form-group" style="visibility:visible;">
-							
-									<div class="form-group">
+		<form role="form" action="task_manager.php?job=change_username&id=' . $row [id] . '" method="post">							
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="form-group" style="visibility:visible;">
+                        <div class="form-group">
 	                        <input class="form-control" name="user_name" placeholder="Name">
-							
 	                    </div>
-									<input type="hidden" id="dtp_input1" value="" />
-									</div>
-									</div>
-							
-									<div class="col-lg-2">
-									<button type="submit"=" name="ok" value="Search" class="btn btn-primary">Change username</button>
-									</div>
-							</div>
-	      </form>';
+                            <input type="hidden" id="dtp_input1" value="" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="submit"=" name="ok" value="Search" class="btn btn-primary">Change username</button>
+                    </div>
+                </div>
+        </form>';
 		}
+		$i++;
 		
 		echo '</div>';
 	}

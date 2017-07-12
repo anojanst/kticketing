@@ -14,9 +14,9 @@
 
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Outstanding Voucher
+				<strong>Search Outstanding Voucher</strong>
 			</div>
 			<div class="panel-body">
 
@@ -60,9 +60,9 @@
 
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Outstanding Voucher
+					<strong>Outstanding Voucher</strong>
 				</div>
 				<div class="panel-body">
                     {php}outstanding_voucher_report($_SESSION['travels'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
@@ -78,7 +78,6 @@
 {literal}
 	<script>
         $(function () {
-
             $('#datepicker').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true
@@ -87,7 +86,6 @@
 	</script>
 	<script>
         $(function () {
-
             $('#datepicker1').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true

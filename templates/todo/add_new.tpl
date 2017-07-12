@@ -4,10 +4,9 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-9" style="margin-top: 10px;">
-
-            <div class="box box-primary" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Add new task
+                    <strong>Add new task</strong>
                 </div>
                 <div class="panel-body">
 
@@ -72,10 +71,10 @@
             </div>
 
         </div>
-        <div class="col-lg-3">
-            <div class="panel panel-red" style="margin-top: 10px;">
+        <div class="col-lg-3" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Saved Tasks
+                    <strong>Saved Tasks</strong>
                 </div>
                 <div class="panel-body">
                     {php}list_task($_SESSION['user_name']);{/php}

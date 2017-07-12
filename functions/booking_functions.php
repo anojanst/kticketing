@@ -182,8 +182,8 @@ function list_booking_has_items($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 14px;">
+	echo '<div class="box-body">
+              <table id="example1" class="table" style="font-size: 14px;">
                        <tr>
 						   <th rowspan="2" class="warning"></th>
                            <th rowspan="2" colspan="3" style="text-align: center;" class="warning">Air Line</th>
@@ -317,23 +317,28 @@ function display_booking_detail($booking_no, $id) {
 	
 	
 }
+
 function display_booking_detail_just_view($booking_no, $id) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
 	$result = mysqli_query ($conn, "SELECT * FROM booking WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
-                  <tr class="danger">
-						   <th>Booking No</th>
-						   <th>PNR</th>
-						   <th>Airline Ref</th>
-						   <th>From</th>
-                           <th>To</th>
-						   <th>Departure Time</th>
-                           <th>Arrival Time</th>
-						   <th>Flight No</th>';
+		echo' <div class="box-body">
+			<table   style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <thead>
+               <tr class="danger">
+                   <th>Booking No</th>
+                   <th>PNR</th>
+                   <th>Airline Ref</th>
+                   <th>From</th>
+                   <th>To</th>
+                   <th>Departure Time</th>
+                   <th>Arrival Time</th>
+                   <th>Flight No</th>
+                   </tr>
+                   </thead>
+                   <tbody>';
 		if ($row ['way'] == "Return") {
 			echo '
 							   <th>Rtn Dep Time</th>
@@ -376,6 +381,7 @@ function display_booking_detail_just_view($booking_no, $id) {
 		}
 	}
 	echo '
+              	</tbody>
               	</table>
             </div>';
 	
@@ -514,18 +520,19 @@ function list_passengers_details($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
-                 
-                       <tr>
-						   <th>Delete</th>
-						   <th>Full Name</th>
-                           <th>First Name</th>
-						   <th>Last Name</th>
-                           <th>Passport No</th>
-						   <th>View Visa Copy</th>
-                       </tr>
-				   ';
+	echo '<div class="box-body">
+			<table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead> 
+                   <tr>
+                       <th>Delete</th>
+                       <th>Full Name</th>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Passport No</th>
+                       <th>View Visa Copy</th>
+                   </tr>
+				   </thead>
+				   <tbody>';
 	$result = mysqli_query ( $conn, "SELECT * FROM booking_has_passengers WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		
@@ -557,6 +564,7 @@ function list_passengers_details($booking_no) {
 		}
 	}
 	echo '		
+              	</tbody>
               	</table>
             </div>
 			
@@ -568,9 +576,10 @@ function list_passengers_details_ticket($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
-         
+	echo '<div class="box-body">
+			<table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+            
+                 <thead> 
                        <tr>
 						   <th>Full Name</th>
                            <th>First Name</th>
@@ -579,7 +588,8 @@ function list_passengers_details_ticket($booking_no) {
 						   <th>Ticket Number</th>
 						   <th>Add</th>
                        </tr>
-				   ';
+				    </thead>
+				     <tbody>';
 	$result = mysqli_query ($conn, "SELECT * FROM booking_has_passengers WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		
@@ -604,7 +614,7 @@ function list_passengers_details_ticket($booking_no) {
 			</tr>';
 		}
 	}
-	echo '
+	echo '    </tbody>
               	</table>
             </div>
 		
@@ -653,17 +663,18 @@ function list_passengers_details_just_view($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
-                 
-                       <tr class="info">
+	echo '<div class="box-body">
+              <table id="example2"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                 <thead>
+                       <tr>
 						   <th>Full Name</th>
                            <th>First Name</th>
 						   <th>Last Name</th>
                            <th>Passport No</th>
 						   <th>View Visa Copy</th>
                        </tr>
-				  ';
+				  </thead>
+				  <tbody>';
 	$result = mysqli_query ($conn, "SELECT * FROM booking_has_passengers WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		
@@ -677,13 +688,16 @@ function list_passengers_details_just_view($booking_no) {
 			if ($row [visa_copy]) {
 				echo '<td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#' . $row [id] . '">View</a></td>';
 			} else {
-				echo '<td><form name="add_product" action="booking.php?job=add_visa&booking_no=' . $booking_no . '&passport_no=' . $row [passport_no] . '" method="post" enctype="multipart/form-data">
+				echo '<td>
+                        <form name="add_product" action="booking.php?job=add_visa&booking_no=' . $booking_no . '&passport_no=' . $row [passport_no] . '" method="post" enctype="multipart/form-data">
 						 <div class="form-group">
-							<input class="form-control" type="file" name="visa_copy" id="visa_copy" value="{$visa_copy}" required="required" placeholder="Visa Copy"/>
+							<input  type="file" name="visa_copy" id="visa_copy" value="{$visa_copy}" required="required" placeholder="Visa Copy"/>
 		                 </div>
 						<div class="form-group">
-									<button type="submit" name="ok" value="Save" class="btn btn-success">Add</button>
-								</div></form></td>';
+                            <button type="submit" name="ok" value="Save" class="btn btn-success">Add</button>
+                        </div>
+                    </form>
+                </td>';
 			}
 			echo '
 			</tr>
@@ -704,11 +718,9 @@ function list_passengers_details_just_view($booking_no) {
 			</div>';
 		}
 	}
-	echo '
-              	</table>
-            </div>
-		
-			';
+	echo '</tbody>
+            </table>
+            </div>';
 	
 
 }
@@ -716,7 +728,7 @@ function get_booking_passengers_for_voucher($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
+	echo '<div class="box-body">
               <table class="table" style="font-size: 13px;">
 				<tr><th colspan="3" align="center" class="info">Passengers</th></tr>';
 	$i = 1;
@@ -756,7 +768,7 @@ function get_booking_passengers_for_voucher_view($booking_no, $voucher_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
+	echo '<div class="box-body">
               <table class="table" style="font-size: 13px;">
 				<tr><th colspan="2" align="center" class="info">Passengers</th></tr>';
 	$i = 1;
@@ -785,7 +797,7 @@ function get_booking_details_for_voucher($booking_no) {
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM booking WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-		echo '<div class="table-responsive">
+		echo '<div class="box-body">
               <table class="table" style="font-size: 12px;">
                        <tr class="danger">
 						   <th>No of Pax</th>
@@ -995,6 +1007,7 @@ function check_passengers($booking_no) {
 	
 
 }
+
 function list_non_confirm($booking_no, $customer, $from_date, $to_date) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
@@ -1021,8 +1034,8 @@ function list_non_confirm($booking_no, $customer, $from_date, $to_date) {
 		$date_check = "";
 	}
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+	echo '<div class="box-body">
+              <table id="example1" class="table-responsive table-bordered table-striped dt-responsive" width="100%">
                   <thead>
                        <tr class="info">
 						   <th>Booking No</th>
@@ -1121,8 +1134,8 @@ function list_all_non_confirm($branch, $user, $from_date, $to_date) {
 		$date_check = "";
 	}
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+	echo '<div class="box-body">
+              <table id="example1" class="table-responsive table-bordered table-striped dt-responsive" width="100%">
                   <thead>
                        <tr class="info">
 						   <th>Booking No</th>
@@ -1159,6 +1172,53 @@ function list_all_non_confirm($branch, $user, $from_date, $to_date) {
 	
 
 }
+function list_ads() {
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+    echo '<div class="box-body">
+			<table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                  <thead>
+                       <tr>
+                           <th>Edit</th>
+                           <th>Title</th>
+                           <th>Image</th>
+                           <th>Url</th>
+                           <th>Company Id</th>
+                           <th>Place Id</th>
+                           <th>Start Date</th>
+                           <th>End Date</th>
+                           <th>Marketing Person</th>
+                           <th>Delete</th>
+                       </tr>
+                  </thead>
+                  <tbody valign="top">';
+    $i = 1;
+    $result = mysqli_query ( $conn, "SELECT * FROM ad_companies WHERE cancel_status='0' " );
+    while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
+
+        echo '<td><a href="ad.php?job=edit&id=' . $row [id] . '"  ><i class="fa fa-edit fa-2x"></i></a></td>
+
+		<td>' . $row [title] . '</td>
+		<td>' . $row [image] . '</td>
+		<td>' . $row [url] . '</td>
+		<td>' . $row [company_id] . '</td>
+		<td>' . $row [place_id] . '</td>
+		<td>' . $row [start_date] . '</td>
+		<td>' . $row [end_date] . '</td>
+		<td>' . $row [marketing_person] . '</td>
+		
+		<td><a href="ad.php?job=delete&id=' . $row [id] . '" onclick="javascript:return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa fa-times fa-2x"></i></a></td>
+		</tr>';
+        $i ++;
+    }
+
+    echo '</tbody>
+          </table>
+          </div>';
+
+
+}
 function list_your_booking($booking_no, $customer, $from_date, $to_date) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
@@ -1185,10 +1245,10 @@ function list_your_booking($booking_no, $customer, $from_date, $to_date) {
 		$date_check = "";
 	}
 	
-	echo '<div class="table-responsive" style="min-height: 400px;">
-              <table class="table" style="font-size: 13px;">
+	echo '<div class="box-body" style="min-height: 400px;">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
-                       <tr class="info">
+                       <tr>
 						   <th>Booking No</th>
                            <th>Way</th>
 						   <th>From</th>
@@ -1261,10 +1321,10 @@ function list_booking($booking_no, $customer, $from_date, $to_date) {
 		$date_check = "";
 	}
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+	echo '<div class="box-body">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
-                       <tr class="info">
+                       <tr>
 						   <th>B.No</th>
                            <th>Customer</th>
 						   <th>Invoice</th>
@@ -1378,10 +1438,10 @@ function list_datechange($booking_no, $customer, $from_date, $to_date) {
 		$date_check = "";
 	}
 
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 12px;">
+	echo '<div class="box-body">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
-                       <tr class="info">
+                       <tr>
 						   <th>B.No</th>
                            <th>Customer</th>
 						   <th>Invoice</th>

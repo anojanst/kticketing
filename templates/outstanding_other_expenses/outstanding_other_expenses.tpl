@@ -14,9 +14,9 @@
 
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Outstanding Other Expenses
+				<strong>Search Outstanding Other Expenses</strong>
 			</div>
 			<div class="panel-body">
 
@@ -60,9 +60,9 @@
 
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Outstanding Other Expenses
+					<strong>Outstanding Other Expenses</strong>
 				</div>
 				<div class="panel-body">
                     {php}outstanding_other_expenses_report($_SESSION['customer'],$_SESSION['from_date'], $_SESSION['to_date']);{/php}

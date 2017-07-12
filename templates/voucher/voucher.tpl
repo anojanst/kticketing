@@ -49,9 +49,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Choose Customer
+					<strong>Choose Customer</strong>
 				</div>
 				<div class="panel-body">
 					<form name="booking_no_form" action="voucher.php?job=booking_no_form" method="post">
@@ -82,9 +82,9 @@
     {if $submit=='true'}
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="panel panel-red" style="margin-top: 10px;">
+				<div class="panel panel-info" style="margin-top: 10px;">
 					<div class="panel-heading">
-						Create Voucher
+						<strong>Create Voucher</strong>
 					</div>
 					<div class="panel-body">
 						<div class="row" style="margin-bottom: 10px;">
@@ -197,14 +197,13 @@
 				</div>
 			</div>
 		</div>
-		</div>
 
     {else}
 		<div class="row">
 			<div class="col-lg-12" style="margin-top: 10px;">
-				<div class="panel panel-red">
+				<div class="panel panel-info">
 					<div class="panel-heading">
-						Latest Vouchers
+						<strong>Latest Vouchers</strong>
 					</div>
 					<div class="panel-body">
                         {php}list_voucher();{/php}

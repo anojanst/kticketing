@@ -38,8 +38,9 @@ function search_telephone_no($customer_name, $telephone_no, $from_date, $to_date
 		$limit = "LIMIT 50";
 	}
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+				<thead>
 				<tr class="danger" style="font-weight: bold;">
 					<td>customer name</td>
 					<td>telephone no</td>
@@ -47,11 +48,12 @@ function search_telephone_no($customer_name, $telephone_no, $from_date, $to_date
 					<td>date</td>
 					<td>type</td>
 					<td>reference</td>
-				<td>ref no</td>
-				<td>Update</td>
+                    <td>ref no</td>
+                    <td>Update</td>
 					<td>Suspend</td>
-				
-				</tr>';
+				</tr>
+				</thead>
+				<tbody>';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM calls WHERE type NOT LIKE 'Flew' AND cancel_status='0' $customer_name_check $telephone_no_check $date_check ORDER BY id DESC $limit" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -70,18 +72,16 @@ function search_telephone_no($customer_name, $telephone_no, $from_date, $to_date
 			echo '<option value="" disabled selected> Select Type</option>';
 		}
 		echo '<option value="Contact">Contact</option>
-											<option value="1stCall">1stCall</option>
-											<option value="2ndCall">2ndCall</option>
-											<option value="SMS">SMS</option>
-											<option value="FinalCall">FinalCall</option>
-											<option value="Booked">Booked</option>
-											<option value="Paid">Paid</option>
-											<option value="Issued">Issued</option>
-											<option value="Flew">Flew</option>
-		                        			<option value="Flew">Arrived</option>
-                        		
-									
-								</select></td>
+                <option value="1stCall">1stCall</option>
+                <option value="2ndCall">2ndCall</option>
+                <option value="SMS">SMS</option>
+                <option value="FinalCall">FinalCall</option>
+                <option value="Booked">Booked</option>
+                <option value="Paid">Paid</option>
+                <option value="Issued">Issued</option>
+                <option value="Flew">Flew</option>
+                <option value="Flew">Arrived</option>
+                </select></td>
 				
 				<td><select class="form-control" name="reference"  placeholder="Reference" >';
 		if ($row [reference]) {
@@ -90,12 +90,12 @@ function search_telephone_no($customer_name, $telephone_no, $from_date, $to_date
 			echo '<option value="" disabled selected> Select Type</option>';
 		}
 		echo '	
-									<option value="Booking">Booking</option>
-									<option value="VISA">VISA</option>
-                        			<option value="Cab">Cab</option>
-                        			<option value="Itinerary">Itinerary</option>
-									<option value="Insurance">Insurance</option>
-									</select></td>';
+            <option value="Booking">Booking</option>
+            <option value="VISA">VISA</option>
+            <option value="Cab">Cab</option>
+            <option value="Itinerary">Itinerary</option>
+            <option value="Insurance">Insurance</option>
+            </select></td>';
 		
 		if ($row [ref_no] > 0) {
 			echo '<td><input class="form-control" name="ref_no" value=' . $row [ref_no] . '></td>';
@@ -110,7 +110,8 @@ function search_telephone_no($customer_name, $telephone_no, $from_date, $to_date
 				<td><a href="view_telephone_no.php?job=delete&id=' . $row [id] . '" onclick="javascript:return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa fa-minus-circle"></i></a></td>
 		</tr>';
 	}
-	echo '    	</table>
+echo '   	</tbody>
+    	    </table>
             </div>';
 	
 }

@@ -23,14 +23,17 @@ function list_salary_details($salary_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 
-	echo '<div class="table-responsive">
+	echo '<div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
+				<thead>
 				<tr style="font-weight: bold;">
 					<td>Description</td>
 					<td>Detail</td>
 					<td align="right">Amount</td>
 					<td> Add/Remove</td>
-				</tr>';
+				</tr>
+				</thead>
+				<tbody>';
 	
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM salary_has_descriptions WHERE salary_no='$salary_no' AND cancel_status='0' ORDER BY id ASC" );
@@ -125,7 +128,7 @@ function search_salary_history($staff_name, $from_date, $to_date) {
 		$date_check = "";
 		$limit = "LIMIT 50";
 	}
-	echo '<div class="table-responsive" >
+	echo '<div class="box-body" >
               <table id="example1" class="table table-bordered table-striped">
 				<thead>
 					<tr style="font-weight: bold;">
@@ -206,13 +209,16 @@ function search_branch_salary_history($branch, $from_date, $to_date) {
 		$limit = "LIMIT 50";
 	}
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+				<thead>
 				<tr class="danger" style="font-weight: bold;">
 					<td>branch</td>
 					<td>date</td>
 					<td align="right">Amount</td>
-				</tr>';
+				</tr>
+				</thead>
+				<tbody>';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM salary WHERE cancel_status='0' $branch_name_check $date_check ORDER BY id LIMIT 20" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -233,7 +239,7 @@ function search_branch_salary_history($branch, $from_date, $to_date) {
 		 <strong>' . $formated_total . '</strong>
 		</td>
 	
-		</tr></table></div>';
+		</tr></tbody></table></div>';
 	
 	
 }

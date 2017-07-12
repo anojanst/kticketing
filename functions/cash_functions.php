@@ -29,8 +29,9 @@ function list_latest_activities($branch, $from_date, $to_date) {
 		$limit = "LIMIT 100";
 	}
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                   <thead>
                        <tr>
 						   <th colspan="4" class="success">Cash Flow IN</th>
                            <th colspan="4" class="danger">Cash Flow OUT</th>
@@ -44,7 +45,9 @@ function list_latest_activities($branch, $from_date, $to_date) {
                            <th class="danger">Ref No</th>
                            <th class="danger">Date</th>
                            <th class="danger">Amount</th>
-                       </tr>';
+                       </tr>
+                       </thead>
+                       <tbody>';
 	$in_total = 0;
 	$in_total = 0;
 	$result = mysqli_query ( $conn, "SELECT * FROM cash_flow WHERE branch='$branch' AND cancel_status='0' $date_check ORDER BY id DESC $limit" );
@@ -91,20 +94,19 @@ function list_latest_activities($branch, $from_date, $to_date) {
 	}
 	
 	$total = $in_total - $out_total;
-	echo '<tr>
-			<td colspan="3" class="success" align="right"><strong>Total In</strong></th>
-			<td class="success" align="right"><strong>' . number_format ( $in_total, 2 ) . '</strong></td>
-            <td colspan="3" class="danger" align="right"><strong>Total OUT</strong></th>
-			<td class="danger" align="right"><strong>' . number_format ( $out_total, 2 ) . '</strong></td>
-          </tr>
-		  <tr>
-			<td colspan="7" class="info"><strong>Balance Within the Period</strong></td>
-			<td class="info" align="right"><strong>' . number_format ( $total, 2 ) . '</strong></td>
-          </tr>
+        echo '<tr>
+                <td colspan="3" class="success" align="right"><strong>Total In</strong></th>
+                <td class="success" align="right"><strong>' . number_format ( $in_total, 2 ) . '</strong></td>
+                <td colspan="3" class="danger" align="right"><strong>Total OUT</strong></th>
+                <td class="danger" align="right"><strong>' . number_format ( $out_total, 2 ) . '</strong></td>
+              </tr>
+              <tr>
+                <td colspan="7" class="info"><strong>Balance Within the Period</strong></td>
+                <td class="info" align="right"><strong>' . number_format ( $total, 2 ) . '</strong></td>
+              </tr>
+          </tbody>
        </table>
     </div>';
-	
-	
 }
 function save_cash_flow($branch, $detail, $cash_amount, $ref_no, $type, $date, $saved_by) {
 	include 'conf/config.php';

@@ -14,9 +14,9 @@
 
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search TarGet Report
+				<strong>Search TarGet Report</strong>
 			</div>
 			<div class="panel-body">
 				<form role="form" action="branch_target_report.php?job=search" method="post">
@@ -44,9 +44,9 @@
 	</div>
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					STAFF TARGET REPORT
+					<strong>STAFF TARGET REPORT</strong>
 				</div>
 				<div class="panel-body">
 					<div class="col-lg-6">

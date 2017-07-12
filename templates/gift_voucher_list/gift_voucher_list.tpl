@@ -3,9 +3,9 @@
 
 
 <div class="col-lg-12">
-	<div class="panel panel-red" style="margin-top: 10px;">
+	<div class="panel panel-info" style="margin-top: 10px;">
 		<div class="panel-heading">
-			Student List
+			<strong>Student List</strong>
 		</div>
 		<div class="panel-body">
             {php}list_customer_gift_voucher_list();{/php}
@@ -16,9 +16,9 @@
 
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-red" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Customers
+				<strong>Customers</strong>
 			</div>
 			<div class="panel-body">
 				<form name="add_product" action="customer.php?job=search" method="post">

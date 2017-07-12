@@ -223,8 +223,8 @@ function list_deposit() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
 							<th>Deposit No</th>
@@ -331,8 +331,8 @@ function list_withdraw() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
 							<th>withdraw No</th>
@@ -442,8 +442,8 @@ function list_transfer() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
 							<th>Transfer No</th>

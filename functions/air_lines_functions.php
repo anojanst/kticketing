@@ -31,7 +31,7 @@ function list_air_lines() {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Edit</th>

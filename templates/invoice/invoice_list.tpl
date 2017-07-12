@@ -22,9 +22,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Choose Customer
+					<strong>Choose Customer</strong>
 				</div>
 				<div class="panel-body">
 					<form name="search_form" action="invoice.php?job=search" method="post"  >
@@ -71,7 +71,7 @@
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red">
+			<div class="panel panel-info">
 				<div class="panel-heading">
 					Search Result
 				</div>
@@ -86,7 +86,6 @@
 {literal}
 	<script>
         $(function () {
-
             $('#datepicker').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true
@@ -95,7 +94,6 @@
 	</script>
 	<script>
         $(function () {
-
             $('#datepicker1').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true

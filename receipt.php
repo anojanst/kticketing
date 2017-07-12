@@ -9,6 +9,7 @@ include 'functions/chat_functions.php';
 include 'functions/customer_functions.php';
 include 'functions/bank_functions.php';
 include 'functions/cash_functions.php';
+include 'functions/company_settings_functions.php';
 
 $module_no = 11;
 

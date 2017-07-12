@@ -14,9 +14,9 @@ $('input.customer').typeahead({
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green">
+			<div class="panel panel-info">
                 <div class="panel-heading">
-                    Choose Customer
+					<strong>Choose Customer</strong>
                 </div>
                 <div class="panel-body">
                     <form role="form" action="paybill.php?job=search" method="post" name="add_item">
@@ -64,9 +64,9 @@ $('input.customer').typeahead({
 	
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red">
+			<div class="panel panel-info">
                 <div class="panel-heading">
-                   Search Result
+					<strong>Search Result</strong>
                 </div>
                 <div class="panel-body">
             		{php}search_paybill($_SESSION['search_paybill_no'], $_SESSION['search_customer'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}

@@ -14,22 +14,16 @@
 	</script>
 {/literal}
 <section class="content">
-	<div class="content-wrapper">
-		<div class="nav-tabs-custom">
-			<div class="tab-content">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-red" style="margin-top: 10px;">
-							<div class="panel-heading">
-								Users
-							</div>
-							<div class="panel-body">
-                                {php}list_users_full();{/php}
-							</div>
-							<div class="panel-footer">
-							</div>
-						</div>
-					</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-info" style="margin-top: 10px;">
+				<div class="panel-heading">
+					<strong>Users</strong>
+				</div>
+				<div class="panel-body">
+                    {php}list_users_full();{/php}
+				</div>
+				<div class="panel-footer">
 				</div>
 			</div>
 		</div>

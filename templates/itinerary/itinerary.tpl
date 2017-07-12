@@ -58,9 +58,9 @@
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Itinerary Details
+					<strong>Itinerary Details</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="itinerary.php?job=next" method="post" name="add_item">

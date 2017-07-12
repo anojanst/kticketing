@@ -7,8 +7,8 @@ function list_receipt_not_deposit($deposit_date) {
 	while ( $row2 = mysqli_fetch_array ( $result2, MYSQLI_ASSOC ) ) {
 		$che_date = $row2 ['che_date'];
 		
-		echo '<h1>' . $che_date . '</h1>';
-		echo '<div class="table-responsive">
+		echo '</br><strong>'.$che_date .'</strong>';
+		echo '
                 <div class="box-body">
                    <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                       <thead>
@@ -68,24 +68,24 @@ function list_receipt_deposit() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '    <div class="table-responsive">
-                <div class="box-body">
-                    <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-                        <thead>
-                            <tr>
-                                <th>Remove</th>
-                                <th>Cheque No</th>
-                                <th>Amount</th>
-                                <th>Receipt No</th>
-                                <th>Receipt Type</th>
-                                <th>Bank</th>
-                                <th>Branch</th>
-                                <th>Date</th>
-                                <th>Deposit Date</th>
-                                <th>Deposit Bank</th>
-                            </tr>
-                        </thead>
-                    <tbody>';
+	echo '   
+            <div class="box-body">
+                <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                    <thead>
+                        <tr>
+                            <th>Remove</th>
+                            <th>Cheque No</th>
+                            <th>Amount</th>
+                            <th>Receipt No</th>
+                            <th>Receipt Type</th>
+                            <th>Bank</th>
+                            <th>Branch</th>
+                            <th>Date</th>
+                            <th>Deposit Date</th>
+                            <th>Deposit Bank</th>
+                        </tr>
+                    </thead>
+                <tbody>';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM cheque_inventory WHERE status='DEPOSITED' AND cancel_status='0' ORDER BY che_date ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {

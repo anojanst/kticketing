@@ -201,18 +201,20 @@ function final_outstanding_invoice_report($customer, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>View</td>
-	<td>No</td>
-	<td>Customer</td>
-	<td>Ref No</td>
-	<td>Type</td>
-	<td align="right">Total</td>
-	<td align="right">Paid</td>
-	<td align="right">Due</td>
-	</tr>';
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                    <tr class="danger" style="font-weight: bold;">
+                        <td>View</td>
+                        <td>No</td>
+                        <td>Customer</td>
+                        <td>Ref No</td>
+                        <td>Type</td>
+                        <td align="right">Total</td>
+                        <td align="right">Paid</td>
+                        <td align="right">Due</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$due = 0;
 	$result = mysqli_query ( $conn, "SELECT * FROM invoice WHERE cancel_status='0' AND due > 0 $date_check $customer_name_check ORDER BY id $limit" );
@@ -229,7 +231,7 @@ function final_outstanding_invoice_report($customer, $from_date, $to_date) {
 	<td align="right" class="danger">
 	<strong>' . $formated_due . '</strong>
 	</td>
-	</tr></table></div>';
+	</tr></tbody></table></div>';
 	
 	
 }
@@ -257,18 +259,20 @@ function final_outstanding_other_expenses_report($customer, $from_date, $to_date
 	}
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>View</td>
-	<td>No</td>
-	<td>Customer</td>
-	<td>Ref No</td>
-	<td>Ref Type</td>
-	<td align="right">Total</td>
-	<td align="right">Paid</td>
-	<td align="right">Due</td>
-	</tr>';
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                    <tr class="danger" style="font-weight: bold;">
+                        <td>View</td>
+                        <td>No</td>
+                        <td>Customer</td>
+                        <td>Ref No</td>
+                        <td>Ref Type</td>
+                        <td align="right">Total</td>
+                        <td align="right">Paid</td>
+                        <td align="right">Due</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$due = 0;
 	$result = mysqli_query ($conn, "SELECT * FROM other_expenses WHERE cancel_status='0' AND due > 0 $date_check $customer_name_check ORDER BY id $limit" );
@@ -285,7 +289,7 @@ function final_outstanding_other_expenses_report($customer, $from_date, $to_date
 	<td align="right" class="danger">
 	<strong>' . $formated_due . '</strong>
 	</td>
-	</tr></table></div>';
+	</tr></tbody></table></div>';
 	
 	
 }
@@ -313,19 +317,21 @@ function final_outstanding_voucher_report($travels, $from_date, $to_date) {
 	}
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
+              <table id="example3" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	            <thead>
+                <tr class="danger" style="font-weight: bold;">
+                <td>View</td>
+                <td>No</td>
+                <td>Travels</td>
+                <td>Booking No</td>
+                <td>Pnr</td>
+                <td align="right">Total</td>
+                <td align="right">Paid</td>
+                <td align="right">Due</td>
+                </tr>
+                </thead>
+                <tbody>';
 
-	<td>View</td>
-	<td>No</td>
-	<td>Travels</td>
-	<td>Booking No</td>
-	<td>Pnr</td>
-	<td align="right">Total</td>
-	<td align="right">Paid</td>
-	<td align="right">Due</td>
-	</tr>';
-	
 	$due = 0;
 	$result = mysqli_query ($conn, "SELECT * FROM voucher WHERE cancel_status='0' AND due > 0 $date_check $travels_name_check ORDER BY id $limit" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -341,7 +347,7 @@ function final_outstanding_voucher_report($travels, $from_date, $to_date) {
 	<td align="right" class="danger">
 	<strong>' . $formated_due . '</strong>
 	</td>
-	</tr></table></div>';
+	</tr></tbody></table></div>';
 	
 	
 }

@@ -4,6 +4,7 @@ include 'functions/user_functions.php';
 include 'functions/chat_functions.php';
 include 'functions/todo_functions.php';
 include 'functions/cash_functions.php';
+include 'functions/company_settings_functions.php';
 
 if ($_REQUEST ['job'] == "login") {
 

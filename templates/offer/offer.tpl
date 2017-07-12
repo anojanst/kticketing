@@ -16,9 +16,9 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-6" style="margin-top: 10px;">
-            <div class="box box-primary">
+            <div class="panel panel-info">
                 <div class="panel-heading">
-                    Add new Offer
+                    <strong>Add new Offer</strong>
                 </div>
                 <div class="panel-body">
                     <form role="form" action="offer.php?job=add" method="post">
@@ -61,9 +61,9 @@
         </div>
 
         <div class="col-lg-6">
-            <div class="panel panel-red" style="margin-top: 10px;">
+            <div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Offers
+                    <strong>Offers</strong>
                 </div>
                 <div class="panel-body">
                     {php}list_offer();{/php}

@@ -76,6 +76,7 @@ if ($_SESSION ['login'] == 1) {
 			
 			$smarty->assign ( 'page', "task_manager" );
 			$smarty->display ( 'task_manager/task_manager.tpl' );
+
 		} elseif ($_REQUEST ['job'] == 'complete_task') {
 			unset ( $_SESSION ['task_name'] );
 			unset ( $_SESSION ['ref_no'] );

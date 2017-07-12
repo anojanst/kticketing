@@ -79,9 +79,9 @@
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					VISA Details
+					<strong>VISA Details</strong>
 				</div>
 				<div class="panel-body">
                     {if $passenger=="on"}

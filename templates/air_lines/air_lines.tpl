@@ -16,9 +16,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-6" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Add new Air Line
+					<strong>Add new Air Line</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="air_lines.php?job=add" method="post">
@@ -57,9 +57,9 @@
 		</div>
 
 		<div class="col-lg-6">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Air Lines
+					<strong>Air Lines</strong>
 				</div>
 				<div class="panel-body">
                     {php}list_air_lines();{/php}

@@ -15,9 +15,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Choose Customer
+					<strong>Choose Customer</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="voucher.php?job=search" method="post" name="add_item">
@@ -64,9 +64,9 @@
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Search Result
+					<strong>Search Result</strong>
 				</div>
 				<div class="panel-body">
                     {php}search_voucher($_SESSION['search_voucher_no'], $_SESSION['search_travels'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}
@@ -79,7 +79,6 @@
 {literal}
 	<script>
         $(function () {
-
             $('#datepicker').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true
@@ -88,7 +87,6 @@
 	</script>
 	<script>
         $(function () {
-
             $('#datepicker1').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true

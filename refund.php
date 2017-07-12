@@ -23,6 +23,7 @@ if ($_SESSION ['login'] == 1) {
 			
 			$smarty->assign ( 'page', "refund" );
 			$smarty->display ( 'refund/refund.tpl' );
+
 		} elseif ($_REQUEST ['job'] == "search_form") {
 			unset ( $_SESSION ['search_refund_no'] );
 			unset ( $_SESSION ['search_customer'] );

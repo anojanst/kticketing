@@ -700,21 +700,23 @@ function search_invoice($invoice_no, $customer, $from_date, $to_date) {
 	} else {
 		$date_check = "AND invoice_date='$today'";
 	}
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>Print</td>
-	<td>View</td>
-	<td>Cancel</td>
-	<td>No</td>
-	<td>Customer</td>
-	<td>Ref No</td>
-	<td>Ref Type</td>
-	<td align="right">Total</td>
-	<td align="right">Paid</td>
-	<td align="right">Due</td>
-	</tr>';
+	echo '<div class="box-body">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                  <thead>  
+                    <tr>
+                        <td>Print</td>
+                        <td>View</td>
+                        <td>Cancel</td>
+                        <td>No</td>
+                        <td>Customer</td>
+                        <td>Ref No</td>
+                        <td>Ref Type</td>
+                        <td align="right">Total</td>
+                        <td align="right">Paid</td>
+                        <td align="right">Due</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$due = 0;
 	$paid = 0;
@@ -806,7 +808,7 @@ function search_invoice($invoice_no, $customer, $from_date, $to_date) {
 		 <strong>' . $formated_due . '</strong>
 		</td>
 
-		</tr></table></div>';
+		</tr></tbody></table></div>';
 	
 
 }

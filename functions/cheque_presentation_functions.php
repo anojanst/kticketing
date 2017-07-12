@@ -9,8 +9,8 @@ function list_paybill_not_presentation($presentation_date) {
 	while ( $row2 = mysqli_fetch_array ( $result2, MYSQLI_ASSOC ) ) {
 		$che_date = $row2 ['che_date'];
 		
-		echo '<h1>' . $che_date . '</h1>';
-		echo '<div class="table-responsive">
+		echo '</br><strong>' . $che_date . '</strong>';
+		echo '<div class="box-body">
               <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
@@ -89,8 +89,8 @@ function list_paybill_presented() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
 	<tr>
 	<th>Unpresent</th>

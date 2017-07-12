@@ -26,9 +26,9 @@ $('input.account').typeahead({
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="box box-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Search By Transfer No
+					<strong>Search By Transfer No</strong>
 				</div>
 				<div class="panel-body">
 					<form name="transfer_form" action="transfer.php?job=save" method="post">
@@ -82,9 +82,9 @@ $('input.account').typeahead({
 
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Latest Transfers
+					<strong>Latest Transfers</strong>
 				</div>
 				<div class="panel-body">
                     {php}list_transfer();{/php}

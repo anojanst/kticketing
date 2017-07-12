@@ -14,14 +14,12 @@
 
 <section class="content">
 	<div class="row">
-		<div class="box box-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Search Outstanding Invoice
+				<strong>Search Outstanding Invoice</strong>
 			</div>
 			<div class="panel-body">
-
 				<form role="form" action="outstanding_invoice.php?job=search" method="post">
-
 					<div class="col-lg-3">
 						<div class="form-group">
 							<input class="form-control customer" type="text" name="customer" value="{$customer}"/>
@@ -60,9 +58,9 @@
 
     {if $search=="on"}
 		<div class="row">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Outstanding Invoice
+					<strong>Outstanding Invoice</strong>
 				</div>
 				<div class="panel-body">
                     {php}outstanding_invoice_report($_SESSION['customer'], $_SESSION['from_date'], $_SESSION['to_date']);{/php}

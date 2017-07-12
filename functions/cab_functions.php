@@ -29,8 +29,8 @@ function list_cab_packages() {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id-="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Edit</th>
@@ -500,6 +500,7 @@ function complete_cab($cab_booking_no, $total) {
 	
 	
 }
+
 function search_cab_report($cab_booking_no, $name, $from_date, $to_date) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
@@ -529,21 +530,23 @@ function search_cab_report($cab_booking_no, $name, $from_date, $to_date) {
 		$limit = "LIMIT 50";
 	}
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
-	<tr class="danger" style="font-weight: bold;">
-
-	<td>View</td>
-	<td>Booking No</td>
-	<td>Serial No</td>
-	<td>Name</td>
-	<td>Start Date</td>
-	<td>End Date</td>
-	<td>Type</td>
-	<td>Model</td>
-	<td>No</td>
-	<td>Total</td>
-	</tr>';
+	echo '<div class="box-body">
+              <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                    <tr>
+                        <td>View</td>
+                        <td>Booking No</td>
+                        <td>Serial No</td>
+                        <td>Name</td>
+                        <td>Start Date</td>
+                        <td>End Date</td>
+                        <td>Type</td>
+                        <td>Model</td>
+                        <td>No</td>
+                        <td>Total</td>
+                    </tr>
+                    </thead>
+                    <tbody>';
 	
 	$total = 0;
 	$result = mysqli_query ( $conn , "SELECT * FROM cab WHERE cancel_status='0' $date_check $name_check $cab_booking_no_check ORDER BY id $limit");
@@ -590,18 +593,18 @@ function search_cab_report($cab_booking_no, $name, $from_date, $to_date) {
 		</td></tr>
 		
 		<div class="modal fade" id="' . $row [cab_booking_no] . '" tabindex="-1" role="dialog" aria-labelledby="' . $row [cab_booking_no] . '" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-		<div class="modal-header">Cab
-		</div>
-		<div class="modal-body">
-		<iframe src="Cab.php?job=view&cab_booking_no=' . $row [cab_booking_no] . '" style="zoom:0.60" frameborder="0" height="500" width="99.6%"></iframe>
-		</div>
-		<div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</div>
-		</div>
-		</div>
+		    <div class="modal-dialog modal-lg">
+		        <div class="modal-content">
+		            <div class="modal-header">Cab
+		            </div>
+		        <div class="modal-body">
+		        <iframe src="Cab.php?job=view&cab_booking_no=' . $row [cab_booking_no] . '" style="zoom:0.60" frameborder="0" height="500" width="99.6%"></iframe>
+		        </div>
+		        <div class="modal-footer">
+		            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		    </div>
+		    </div>
 		</div>';
 		$total = $total + $row ['total'];
 	}
@@ -614,7 +617,7 @@ function search_cab_report($cab_booking_no, $name, $from_date, $to_date) {
 	<td align="right" class="danger">
 	<strong>' . $formated_total . '</strong>
 	</td>
-	</tr></table></div>';
+	</tr></tbody></table></div>';
 	
 	
 }
@@ -649,7 +652,7 @@ function list_Cab($cab_booking_no, $name, $from_date, $to_date) {
 	echo '<div class="table-responsive">
                <table id="example1" class="table table-bordered table-striped">
                   <thead>
-                       <tr class="info">
+                       <tr>
 						   <th>B.No</th>
                            <th>Customer</th>
 						   <th>Invoice</th>

@@ -14,9 +14,9 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Search VISA
+					<strong>Search VISA</strong>
 				</div>
 				<div class="panel-body">
 					<form role="form" action="visa_logbook.php?job=search" method="post" name="add_item">
@@ -37,15 +37,14 @@
 						</div>
 					</form>
 				</div>
-
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					VISA LIST
+					<strong>VISA LIST</strong>
 				</div>
 				<div class="panel-body">
                     {php}list_visa($_SESSION['search_visa_no'], $_SESSION['search_customer']);{/php}

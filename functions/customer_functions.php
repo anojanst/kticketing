@@ -260,14 +260,16 @@ function customer_birthday($date) {
 
 	$date = date ( "m", strtotime ( $date ) );
 	
-		echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
-				<tr class="danger" style="font-weight: bold;">
-
-				<td>Customer Name</td>
-				<td>DOB</td>
-				<td>Mobile</td>
-				</tr>';
+		echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                <tr>
+                    <td>Customer Name</td>
+                    <td>DOB</td>
+                    <td>Mobile</td>
+				</tr>
+				</thead>
+				<tbody>';
 
 		$result1 = mysqli_query ($conn, "SELECT * FROM customer WHERE dob LIKE '%-$date-%' ORDER BY day(dob)" );
 		while ( $row1 = mysqli_fetch_array ( $result1, MYSQLI_ASSOC ) ) {
@@ -276,20 +278,16 @@ function customer_birthday($date) {
 		
 		<td><div class="col-lg-1" style="color:white;"><a href="customer.php?job=view&customer_id=' . $row1 ['customer_id'] . '" class="btn btn-xs btn-primary" target="_blank">' . $row1 ['customer_name'] . '</a></div></td>
 				
-		<td>
-		 ' . $row1 [dob] . '
-		</td>
+		<td>' . $row1 [dob] . '</td>
 
-		<td>
-		' . $row1 [mobile] . '
-		</td></tr>';
+		<td>' . $row1 [mobile] . '</td>
+		</tr>';
 		
 	}
-	echo '</tr></table></div>';
+	echo '</tbody></table></div>';
 	
 
 }
-
 
 function customer_birthday_by_day($date) {
 	include 'conf/config.php';
@@ -297,32 +295,29 @@ function customer_birthday_by_day($date) {
 
 	$date = date ( "m-d", strtotime ( $date ) );
 
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-				<tr class="success" style="font-weight: bold;">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+				<thead>
+				<tr >
 
 				<td>Customer Name</td>
 				<td>DOB</td>
 				<td>Mobile</td>
-				</tr>';
+				</tr>
+				<thead>
+				<tbody>';
 
 	$result1 = mysqli_query ($conn, "SELECT * FROM customer WHERE dob LIKE '%-$date'" );
 	while ( $row1 = mysqli_fetch_array ( $result1, MYSQLI_ASSOC ) ) {
 		echo '<tr>
 
-				<td><div class="col-lg-1" style="color:white;"><a href="customer.php?job=view&customer_id=' . $row1 ['customer_id'] . '" class="btn btn-xs btn-primary" target="_blank">' . $row1 ['customer_name'] . '</a></div></td>
-				
-
-		<td>
-		 ' . $row1 [dob] . '
-		</td>
-
-		<td>
-		' . $row1 [mobile] . '
-		</td></tr>';
+        <td><div class="col-lg-1" style="color:white;"><a href="customer.php?job=view&customer_id=' . $row1 ['customer_id'] . '" class="btn btn-xs btn-primary" target="_blank">' . $row1 ['customer_name'] . '</a></div></td>				
+		<td>' . $row1 [dob] . '</td>
+		<td>' . $row1 [mobile] . '</td>
+		</tr>';
 
 	}
-	echo '</tr></table></div>';
+	echo '</tbody></table></div>';
 
 
 }

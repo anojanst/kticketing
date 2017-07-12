@@ -49,12 +49,11 @@
 <section class="content">
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green">
+			<div class="panel panel-info">
 				<div class="panel-heading">
-					Choose Customer
+					<strong>Choose Customer</strong>
 				</div>
 				<div class="panel-body">
-
 					<div class="row" style="text-align: center;">
 						<div class="col-lg-3" style="margin-top: 10px;">
 							<div class="form-group">
@@ -103,7 +102,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12" style="margin-top: 10px;">
-                            {php}list_description_by_invoice($_SESSION['invoice_no']);{/php}
+                            {php} ($_SESSION['invoice_no']);{/php}
 							<div class="col-lg-3 alert-danger"> &nbsp;</div>
 							<div class="col-lg-3 alert-danger"> &nbsp;</div>
 							<div class="col-lg-2 alert-danger">Total</div>

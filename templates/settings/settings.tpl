@@ -71,8 +71,13 @@
 
                     <li>
                       <img src="sett_icon/12.png" style="height: 150px; width: 150px;" alt="User Image">
-                      <a class="users-list-name" href="branch_target.php?branch_target">Branch Target</a>
+                      <a class="users-list-name" href="branch_target.php?job=branch_target">Branch Target</a>
                      
+                    </li>
+                    <li>
+                        <img src="sett_icon/12.png" style="height: 150px; width: 150px;" alt="User Image">
+                        <a class="users-list-name" href="company_settings.php?job=company_settings">Company Settings </a>
+
                     </li>
 
                   </ul>
