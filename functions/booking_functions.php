@@ -124,14 +124,13 @@ function update_date_change($date_change_no, $booking_no, $customer, $customer_i
 	note='$note'
 	WHERE booking_no='$date_change_no'";
 	mysqli_query ($conn, $query );
-	
-	
+
 }
 function get_booking_info_by_booking_no($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	$result = mysqli_query (  $conn, "SELECT * FROM booking WHERE booking_no='$booking_no' AND cancel_status='0'" );
+	$result = mysqli_query ($conn, "SELECT * FROM booking WHERE booking_no='$booking_no' AND cancel_status='0'" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		return $row;
 	}
@@ -140,7 +139,7 @@ function get_fare_detail($id) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	$result = mysqli_query ( $conn, "SELECT * FROM booking_has_items WHERE id='$id'" );
+	$result = mysqli_query ($conn, "SELECT * FROM booking_has_items WHERE id='$id'" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		return $row;
 	}
@@ -150,7 +149,7 @@ function get_booking_type($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	$result = mysqli_query ( $conn , "SELECT * FROM booking_has_items WHERE booking_no='$booking_no'");
+	$result = mysqli_query ($conn , "SELECT * FROM booking_has_items WHERE booking_no='$booking_no'");
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		return $row;
 	}
@@ -626,17 +625,19 @@ function list_passengers_details_for_date_change($date_change_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
+	echo '<div class="box-body">
+          <div class="table-responsive">
               <table class="table" style="font-size: 13px;">
-         
-                       <tr>
-						   <th>Delete</th>
-						   <th>Full Name</th>
-                           <th>First Name</th>
-						   <th>Last Name</th>
-                           <th>Passport No</th>
-                       </tr>
-				   ';
+              <thead>
+                   <tr>
+                       <th>Delete</th>
+                       <th>Full Name</th>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Passport No</th>
+                   </tr>
+               </thead>
+               <tbody>';
 	$result = mysqli_query ($conn, "SELECT * FROM booking_has_passengers WHERE booking_no='$date_change_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		
@@ -651,13 +652,10 @@ function list_passengers_details_for_date_change($date_change_no) {
 			</tr>';
 		}
 	}
-	echo '
+	echo '</tbody>
               	</table>
             </div>
-		
-			';
-	
-
+            </div>';
 }
 function list_passengers_details_just_view($booking_no) {
 	include 'conf/config.php';
@@ -992,20 +990,16 @@ function check_repetive_passport_no($booking_no, $passport_no) {
 	} else {
 		return 0;
 	}
-	
-
 }
 function check_passengers($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
-	
-	if (mysqli_num_rows ( mysqli_query ( "SELECT id FROM booking_has_passengers WHERE booking_no='$booking_no' AND cancel_status='0'" ) )) {
+
+	if (mysqli_num_rows ( mysqli_query ($conn, "SELECT id FROM booking_has_passengers WHERE booking_no='$booking_no' AND cancel_status='0'"))) {
 		return 1;
 	} else {
 		return 0;
 	}
-	
-
 }
 
 function list_non_confirm($booking_no, $customer, $from_date, $to_date) {

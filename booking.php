@@ -81,7 +81,8 @@ if ($_SESSION ['login'] == 1) {
 		elseif ($_REQUEST ['job'] == 'search') {
 			
 			$booking_info = get_booking_info_by_booking_no ( $_POST ['search'] );
-			
+			$booking_no=$_POST['search'];
+
 			if ($booking_info ['status'] == 0) {
 				if ($booking_info) {
 					$smarty->assign ( 'search', "On" );

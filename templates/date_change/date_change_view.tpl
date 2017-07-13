@@ -29,7 +29,7 @@
     <div class="col-lg-12" style="margin-top: 10px;">
         <div class="panel panel-info" style="margin-top: 10px;">
             <div class="panel-heading">
-                Booking Details
+                <strong>Booking Details</strong>
             </div>
             <div class="panel-body">
                 {php}display_booking_detail_just_view($_SESSION['date_change_no'], $_SESSION['id']);{/php}

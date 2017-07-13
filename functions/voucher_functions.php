@@ -55,17 +55,19 @@ function add_voucher($booking_no, $pnr, $voucher_no, $voucher_date, $travels, $t
 function check_voucher_paybill_status($voucher_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
-	
+
 	$result = mysqli_query ( $conn, "SELECT pay_status FROM voucher WHERE voucher_no='$voucher_no'" );
-	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) ) {
-		if ($row ['paybill_status'] > 0) {
+	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) )
+    {
+		if ($row ['paybill_status'] > 0)
+		{
 			return true;
-		} else {
+		}
+		else
+        {
 			return false;
 		}
 	}
-	
-	
 }
 function delete_voucher($voucher_no) {
 	include 'conf/config.php';
@@ -368,12 +370,27 @@ function search_voucher($voucher_no, $travels, $from_date, $to_date) {
 	
 	
 }
+function get_company_info_by_id($id) {
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+    $result = mysqli_query ($conn, "SELECT * FROM ad_companies WHERE id='$id'" );
+
+    while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) )
+
+    {
+        return $row;
+    }
+
+
+}
 function get_voucher_info($voucher_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM voucher WHERE voucher_no='$voucher_no' AND cancel_status='0'" );
-	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) ) {
+	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) )
+    {
 		return $row;
 	}
 }

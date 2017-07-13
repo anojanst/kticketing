@@ -21,9 +21,9 @@
 {/if}
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Booking Details
+				<strong>Booking Details</strong>
 			</div>
 			<div class="panel-body">
                 {php}display_booking_detail($_SESSION['date_change_no'], $_SESSION['id']);{/php}
@@ -34,9 +34,9 @@
 
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-green" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Enter Passenger Detail
+				<strong>Enter Passenger Detail</strong>
 			</div>
 			<div class="panel-body">
                 {if $passenger_total_updated < $passenger_total}
@@ -68,9 +68,9 @@
 
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-red" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Other Details
+				<strong>Other Details</strong>
 			</div>
 			<div class="panel-body">
                 {php}display_booking_cost($_SESSION['date_change_no'], $_SESSION['id']);{/php}
@@ -132,6 +132,11 @@
 	<script>
         $(function () {
             $("#example1").DataTable();
+        });
+	</script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
         });
 	</script>
 {/literal}
