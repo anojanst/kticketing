@@ -3,7 +3,7 @@ function save_travels($travels, $user_name) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	mysql_select_db ($conn, $dbname );
+	mysqli_select_db ($conn, $dbname );
 	$query = "INSERT INTO travels (id, travels, saved_by)
 	VALUES ('', '$travels', '$user_name')";
 	mysqli_query ($conn, $query ) or die ( mysqli_connect_error () );
@@ -14,7 +14,7 @@ function update_travels($id, $travels) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	mysql_select_db ($conn, $dbname );
+	mysqli_select_db ($conn, $dbname );
 	$query = "UPDATE travels SET
 	travels='$travels'
 	WHERE id='$id'";
@@ -92,7 +92,7 @@ function cancel_travels($id) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	mysql_select_db ($conn, $dbname );
+	mysqli_select_db ($conn, $dbname );
 	$query = "UPDATE travels SET
 	cancel_status='1'
 	WHERE id='$id'";

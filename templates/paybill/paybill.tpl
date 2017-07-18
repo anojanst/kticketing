@@ -17,7 +17,6 @@
             });
         })
 	</script>
-
 	<script type="text/javascript">
         function checkTotal(){
             var x = document.getElementById("total").innerHTML,

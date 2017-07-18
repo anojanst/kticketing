@@ -121,9 +121,9 @@ function display_visa_detail($visa_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-                  ';
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                 <thead> ';
 	
 	$result = mysqli_query ($conn, "SELECT * FROM visa WHERE visa_no='$visa_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -145,7 +145,7 @@ function display_visa_detail($visa_no) {
 		</tr>
 		<input type="hidden" id="count" value="' . $row [count] . '">';
 	}
-	echo '
+	echo '</thead>
               	</table>
             </div>';
 	
@@ -155,14 +155,15 @@ function display_visa_detail_full($visa_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   ';
 	
 	$result = mysqli_query ($conn, "SELECT * FROM visa WHERE visa_no='$visa_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		$cus_info = get_customer_info ( $row [name] );
-		echo '<tr>
+		echo '<thead>
+            <tr>
 				<th colspan="5" class="info">Visa Detail</th>
                 <th colspan="2" class="danger">Passenger Detail</th>
                 <th colspan="3" class="success">Payment Detail</th>
@@ -183,7 +184,7 @@ function display_visa_detail_full($visa_no) {
 		</tr>
 		<input type="hidden" id="count" value="' . $row [count] . '">';
 	}
-	echo '
+	echo '</thead>
               	</table>
             </div>';
 	
@@ -194,7 +195,7 @@ function get_passenger_counts($visa_no) {
 	include 'conf/opendb.php';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM visa_has_passengers WHERE visa_no='$visa_no' AND cancel_status='0'" );
-	$num_rows = mysql_num_rows ( $result );
+	$num_rows = mysqli_num_rows ( $result );
 	
 	return $num_rows;
 	
@@ -204,7 +205,7 @@ function check_repetive_passport_number($visa_no, $passport_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	if (mysql_num_rows ( mysqli_query ( "SELECT id FROM visa_has_passengers WHERE visa_no='$visa_no' AND passport_no='$passport_no' AND cancel_status='0'" ) )) {
+	if (mysqli_num_rows ( mysqli_query ( "SELECT id FROM visa_has_passengers WHERE visa_no='$visa_no' AND passport_no='$passport_no' AND cancel_status='0'" ) )) {
 		return 1;
 	} else {
 		return 0;
@@ -239,17 +240,18 @@ function list_passengers_detail($visa_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-         
-                       <tr>
-						   <th>Delete</th>
-						   <th>Full Name</th>
-                           <th>First Name</th>
-						   <th>Last Name</th>
-                           <th>Passport No</th>
-                       </tr>
-				   ';
+	echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                <thead>
+                   <tr>
+                       <th>Delete</th>
+                       <th>Full Name</th>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Passport No</th>
+                   </tr>
+				   </thead>
+				   <tbody>';
 	$result = mysqli_query ($conn, "SELECT * FROM visa_has_passengers WHERE visa_no='$visa_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		
@@ -264,7 +266,7 @@ function list_passengers_detail($visa_no) {
 			</tr>';
 		}
 	}
-	echo '
+	echo '</tbody>
               	</table>
             </div>
 		
@@ -276,16 +278,17 @@ function list_passengers_details_view($visa_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-         
+	echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                    <thead>
                        <tr>
 						   <th>Full Name</th>
                            <th>First Name</th>
 						   <th>Last Name</th>
                            <th>Passport No</th>
                        </tr>
-				   ';
+                       </thead>
+                       <tbody>';
 	$result = mysqli_query ($conn, "SELECT * FROM visa_has_passengers WHERE visa_no='$visa_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		
@@ -299,7 +302,7 @@ function list_passengers_details_view($visa_no) {
 			</tr>';
 		}
 	}
-	echo '
+	echo '</tbody>
               	</table>
             </div>
 		

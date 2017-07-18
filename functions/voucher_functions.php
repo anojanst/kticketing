@@ -4,7 +4,7 @@ function check_voucher_has_booking_no($booking_no) {
 	include 'conf/opendb.php';
 	
 	$result = mysqli_query ( $conn, "SELECT voucher_no FROM voucher WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id DESC LIMIT 1" );
-	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) ) {
+	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		return $row ['voucher_no'];
 	}
 	
@@ -57,7 +57,7 @@ function check_voucher_paybill_status($voucher_no) {
 	include 'conf/opendb.php';
 
 	$result = mysqli_query ( $conn, "SELECT pay_status FROM voucher WHERE voucher_no='$voucher_no'" );
-	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) )
+	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) )
     {
 		if ($row ['paybill_status'] > 0)
 		{
@@ -144,7 +144,7 @@ function list_voucher() {
 	$today = date ( "Y-m-d" );
 	$total = 0;
 	$result = mysqli_query ($conn, "SELECT * FROM voucher WHERE cancel_status='0' AND voucher_date='$today' ORDER BY id" );
-	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) ) {
+	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		
 		echo '
 		<tr>
@@ -389,7 +389,7 @@ function get_voucher_info($voucher_no) {
 	include 'conf/opendb.php';
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM voucher WHERE voucher_no='$voucher_no' AND cancel_status='0'" );
-	while ( $row = mysqli_fetch_array ( $result, MYSQL_ASSOC ) )
+	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) )
     {
 		return $row;
 	}

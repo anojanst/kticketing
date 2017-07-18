@@ -783,12 +783,9 @@ function get_booking_passengers_for_voucher_view($booking_no, $voucher_no) {
 	}
 	echo '			</tbody>
               	</table>
-            </div>
-
-			';
-	
-
+            </div>';
 }
+
 function get_booking_details_for_voucher($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
@@ -796,7 +793,8 @@ function get_booking_details_for_voucher($booking_no) {
 	$result = mysqli_query ( $conn, "SELECT * FROM booking WHERE booking_no='$booking_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		echo '<div class="box-body">
-              <table class="table" style="font-size: 12px;">
+              <table id="example1" width="100%" class="table-responsive table-bordered table-striped dt-responsive">
+                   <thead>
                        <tr class="danger">
 						   <th>No of Pax</th>
 						   <th>From</th>
@@ -804,7 +802,9 @@ function get_booking_details_for_voucher($booking_no) {
 						   <th>Date</th>
 						   <th>Flight No</th>
 						   <th>Class</th>
-					   </tr>';
+					   </tr>
+					   </thead>
+					   <tbody>';
 		
 		$result1 = mysqli_query ($conn, "SELECT * FROM booking_has_items WHERE booking_no='$booking_no' AND id='$row[fare_id]' AND cancel_status='0' ORDER BY id ASC" );
 		while ( $row1 = mysqli_fetch_array ( $result1, MYSQLI_ASSOC ) ) {
@@ -829,7 +829,7 @@ function get_booking_details_for_voucher($booking_no) {
 			}
 		}
 	}
-	echo '
+	echo '        </tbody>
               	</table>
             </div>';
 }

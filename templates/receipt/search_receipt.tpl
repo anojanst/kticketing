@@ -20,47 +20,52 @@
 				</div>
 				<div class="panel-body">
 					<form role="form" action="receipt.php?job=search" method="post" name="add_item">
-						<div class="col-lg-2">
-							<div class="form-group">
-								<input class="form-control" type="text" name="rec_no" placeholder="Receipt No" />
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="form-group">
-								<input type="text" name="customer" placeholder="Customer" class="form-control customer"/>
-							</div>
-						</div>
-						<div class="col-lg-2">
-							<div class="form-group" style="visibility:visible;">
-								<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-									<input type="text" name="from_date" class="form-control" id="datepicker" readonly placeholder="From Date" style="width: 100%;">
-									<span class="add-on"><i class="icon-remove"></i></span>
-									<span class="add-on"><i class="icon-th"></i></span>
+						<div class="row">
+							<div class="col-lg-2">
+								<div class="form-group">
+									<input class="form-control" type="text" name="rec_no" placeholder="Receipt No" />
 								</div>
-								<input type="hidden" id="dtp_input1" value="" />
 							</div>
-						</div>
-						<div class="col-lg-2">
-							<div class="form-group" id="returnDate" style="visibility:visible;">
-								<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-									<input type="text" name="to_date" class="form-control" id="datepicker1" readonly placeholder="To Date" style="width: 100%;">
-									<span class="add-on"><i class="icon-remove"></i></span>
-									<span class="add-on"><i class="icon-th"></i></span>
+							<div class="col-lg-3">
+								<div class="form-group">
+									<input type="text" name="customer" placeholder="Customer" class="form-control customer"/>
 								</div>
-								<input type="hidden" id="dtp_input1" value="" />
 							</div>
-						</div>
-						<div class="col-lg-1">
-							<div class="form-group">
-								<button type="submit" name="search" value="Search" class="btn btn-danger">Search</button>
+							<div class="col-lg-2">
+								<div class="form-group" style="visibility:visible;">
+									<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
+										<input type="text" name="from_date" class="form-control" id="datepicker" readonly placeholder="From Date" style="width: 100%;">
+										<span class="add-on"><i class="icon-remove"></i></span>
+										<span class="add-on"><i class="icon-th"></i></span>
+									</div>
+									<input type="hidden" id="dtp_input1" value="" />
+								</div>
 							</div>
-						</div>
+							<div class="col-lg-2">
+								<div class="form-group" id="returnDate" style="visibility:visible;">
+									<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
+										<input type="text" name="to_date" class="form-control" id="datepicker1" readonly placeholder="To Date" style="width: 100%;">
+										<span class="add-on"><i class="icon-remove"></i></span>
+										<span class="add-on"><i class="icon-th"></i></span>
+									</div>
+									<input type="hidden" id="dtp_input1" value="" />
+								</div>
+							</div>
+							<div class="col-lg-1">
+								<div class="form-group">
+									<button type="submit" name="search" value="Search" class="btn btn-danger">Search</button>
+								</div>
+							</div>
 					</form>
-					<a href="receipt.php?job=receipt_print"  class="btn btn-primary" target="blank">Print</a>
-
+					<div class="col-lg-2">
+						<div class="form-group">
+							<a href="receipt.php?job=receipt_print"  class="btn btn-primary" target="_blank">Print</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<div class="row">
@@ -97,9 +102,9 @@
         });
 	</script>
 	<script>
-		$(function () {
-			$("#example1").DataTable();
-		});
+        $(function () {
+            $("#example1").DataTable();
+        });
 	</script>
 
 {/literal}

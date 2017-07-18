@@ -1,31 +1,28 @@
 {include file="header.tpl"}
 {include file="navigation.tpl"}
 {literal}
-
-	<script type="text/javascript">
-        function findTotal(){
-            var s = document.getElementById("amount").value,
-                t = document.getElementById("markup").value;
-
-            var tot = +s - +t;
-
-            document.getElementById("total").value=tot;
-        }
-	</script>
+<script type="text/javascript">
+	function findTotal(){
+		var s = document.getElementById("amount").value,
+			t = document.getElementById("markup").value;
+		var tot = +s - +t;
+		document.getElementById("total").value=tot;
+	}
+</script>
 {/literal}
+
 {if $error_message}
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
 			<div class="alert alert-danger"><strong>{$error_message}</strong></div>
-
 		</div>
 	</div>
 {/if}
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Refund Details
+				<strong>Refund Details</strong>
 			</div>
 			<div class="panel-body">
                 {php}refund_detail($_SESSION['refund_no']);{/php}
@@ -36,9 +33,9 @@
 
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-green" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Passenger for Refund
+				<strong>Passenger for Refund</strong>
 			</div>
 			<div class="panel-body">
 				<h1><strong>Selected Passengers</strong></h1>
@@ -56,9 +53,9 @@
 {if $passenger_total_updated==$passenger_total}
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
 				<div class="panel-heading">
-					Other Details
+					<strong>Other Details</strong>
 				</div>
 				<div class="panel-body">
 					<form name="add_product" action="refund.php?job=complete" method="post">
@@ -97,6 +94,11 @@
 	<script>
         $(function () {
             $("#example1").DataTable();
+        });
+	</script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
         });
 	</script>
 {/literal}

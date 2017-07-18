@@ -150,7 +150,7 @@
 											<div class="col-lg-3">
 												<div class="form-group">
 													<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-														<input type="text" name="invoice_date" value="{$invoice_date}" placeholder="Invoice Date" required="required" style="width: 100%;">
+														<input type="text" name="invoice_date" id="datepicker1" class="form-control" value="{$invoice_date}" placeholder="Invoice Date" required="required" style="width: 100%;">
 														<span class="add-on"><i class="icon-remove"></i></span>
 														<span class="add-on"><i class="icon-th"></i></span>
 													</div>
@@ -168,12 +168,14 @@
 												</div>
 											</div>
 										</div>
-										<div class="row" align="center">
-                                            {if $edit=='true'}
-												<button type="submit" name="ok" value="Update" class="btn btn-danger">Update</button>
-                                            {else}
-												<button type="submit" name="ok" value="Save" class="btn btn-danger">Save</button>
-                                            {/if}
+										<div class="row">
+											<div class="col-lg-6">
+												{if $edit=='true'}
+													<button type="submit" name="ok" value="Update" class="btn btn-danger">Update</button>
+												{else}
+													<button type="submit" name="ok" value="Save" class="btn btn-danger">Save</button>
+												{/if}
+											</div>
 										</div>
 									</div>
 							</form>
@@ -191,5 +193,13 @@
         $(function () {
             $("#example1").DataTable();
         });
+	</script>
+	<script>
+	  $(function () {
+	    $('#datepicker1').datepicker({
+	     format: 'yyyy-mm-dd',
+	      autoclose: true
+	    });
+	  });
 	</script>
 {/literal}

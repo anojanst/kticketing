@@ -27,9 +27,9 @@
 
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-red" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				VISA Details
+				<strong>VISA Details</strong>
 			</div>
 			<div class="panel-body">
                 {php}display_visa_detail_full($_SESSION['visa_no']);{/php}
@@ -46,6 +46,11 @@
 	<script>
         $(function () {
             $("#example1").DataTable();
+        });
+	</script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
         });
 	</script>
 {/literal}

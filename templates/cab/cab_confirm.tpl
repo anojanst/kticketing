@@ -21,9 +21,9 @@ $('input.package').typeahead({
 	{/if}
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-primary" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Booking Details
+                    <strong>Booking Details</strong>
                 </div>
                 <div class="panel-body">
             		{php}display_cab_detail($_SESSION['cab_booking_no']);{/php}
@@ -34,9 +34,9 @@ $('input.package').typeahead({
 	
    <div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-green" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Vechicle and Driver Details
+                    <strong>Vechicle and Driver Details</strong>
                 </div>
                 <div class="panel-body">
 					{if $driver} 
@@ -72,7 +72,7 @@ $('input.package').typeahead({
 							<div class="col-lg-2">
 		                    	<div class="form-group">
     								<div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-        								<input type="text" name="pickup_time" value="{$pickup_time}" placeholder="Pickup Time" style="width: 100%;">
+        								<input type="text" name="pickup_time" class="form-control" id="timepicker1" value="{$pickup_time}" placeholder="Pickup Time" style="width: 100%;">
         								<span class="add-on"><i class="icon-remove"></i></span>
 										<span class="add-on"><i class="icon-th"></i></span>
     								</div>
@@ -91,9 +91,9 @@ $('input.package').typeahead({
 	
 	<div class="row">
 		<div class="col-lg-12" style="margin-top: 10px;">
-			<div class="panel panel-red" style="margin-top: 10px;">
+			<div class="panel panel-info" style="margin-top: 10px;">
                 <div class="panel-heading">
-                    Add Charges
+                    <strong>Add Charges</strong>
                 </div>
 				<div class="panel-footer">
             		{if $finish=="off"}
@@ -142,5 +142,22 @@ $('input.package').typeahead({
     $(function () {
         $("#example1").DataTable();
     });
+</script>
+<script>
+    $(function () {
+        $("#example2").DataTable();
+    });
+</script>
+<script>
+    $(function () {
+        $("#example3").DataTable();
+    });
+</script>
+<script>
+  $(function () {
+
+    $('#timepicker1').timepicker({
+    });
+ });
 </script>
 {/literal}

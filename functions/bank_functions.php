@@ -32,7 +32,7 @@ function list_banks(){
 	include 'conf/opendb.php';
 
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Edit</th>
@@ -43,9 +43,6 @@ function list_banks(){
                        </tr>
                   </thead>
                   <tbody>';
-                                        
-                                    
-
     $i=1;
 	$result=mysqli_query( $conn, "SELECT * FROM bank WHERE cancel_status='0' ORDER BY bank ASC" );
 	while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))

@@ -1,5 +1,6 @@
 <?php
 require_once 'conf/smarty-conf.php';
+include 'libs/class.phpmailer.php';
 include 'functions/user_functions.php';
 include 'functions/ledger_functions.php';
 include 'functions/travels_functions.php';
@@ -7,7 +8,6 @@ include 'functions/voucher_functions.php';
 include 'functions/chat_functions.php';
 include 'functions/todo_functions.php';
 include 'functions/booking_functions.php';
-include 'libs/class.phpmailer.php';
 include 'functions/customer_functions.php';
 include 'functions/company_settings_functions.php';
 

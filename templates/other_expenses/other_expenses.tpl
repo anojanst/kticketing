@@ -169,12 +169,14 @@
 												</div>
 											</div>
 										</div>
-										<div class="row" align="center">
-                                            {if $edit=='true'}
-												<button type="submit" name="ok" value="Update" class="btn btn-primary">Update</button>
-                                            {else}
-												<button type="submit" name="ok" value="Save" class="btn btn-primary">Save</button>
-                                            {/if}
+										<div class="row">
+											<div class="col-lg-6">
+												{if $edit=='true'}
+													<button type="submit" name="ok" value="Update" class="btn btn-primary">Update</button>
+												{else}
+													<button type="submit" name="ok" value="Save" class="btn btn-primary">Save</button>
+												{/if}
+											</div>
 										</div>
 									</div>
 							</form>

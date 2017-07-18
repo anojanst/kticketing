@@ -9,6 +9,7 @@ include 'functions/todo_functions.php';
 include 'functions/booking_functions.php';
 include 'functions/other_expenses_functions.php';
 include 'functions/voucher_functions.php';
+include 'functions/company_settings_functions.php';
 include 'libs/class.phpmailer.php';
 
 $module_no = 27;
@@ -199,9 +200,8 @@ if ($_SESSION ['login'] == 1) {
 		} 
 
 		elseif ($_REQUEST ['job'] == "send") {
-			
-			$refund_no = $_REQUEST ['refund_no'];
-			$_SESSION ['refund_no'] = $refund_no;
+
+            $_SESSION ['refund_no'] =$refund_no = $_REQUEST ['refund_no'];
 			$refund_info = get_refund_info ( $refund_no );
 			$_SESSION ['booking_no'] = $refund_info ['ref_no'];
 			$booking_info = get_booking_info_by_booking_no ( $refund_info ['ref_no'] );

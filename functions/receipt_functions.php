@@ -11,7 +11,7 @@ function customer_receipt_detail($customer_id) {
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		if ($i == 1) {
 			echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr class="success">
 							<th>Invoice No</th>
@@ -119,7 +119,7 @@ function list_receipt_invoices($random_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
+	echo '<div class="box-body">
               <table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>

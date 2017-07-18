@@ -316,8 +316,9 @@ function refund_detail($refund_no) {
 	
 	$result = mysqli_query ( $conn, "SELECT * FROM refund WHERE refund_no='$refund_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-		echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+		echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                   <thead>
                        <tr>
                            <th>Refund No</th>
                            <th>Type</th>
@@ -332,7 +333,9 @@ function refund_detail($refund_no) {
                            <th>Markup</th>
                            <th>Amount to Customer</th>
 						   <th>Letter</th>
-                       </tr>';
+                       </tr>
+                       </thead>
+                       <tbody>';
 		
 		$result1 = mysqli_query ($conn, "SELECT * FROM customer WHERE customer_id='$row[customer_id]' AND cancel_status='0'" );
 		while ( $row1 = mysqli_fetch_array ( $result1, MYSQLI_ASSOC ) ) {
@@ -368,7 +371,8 @@ function refund_detail($refund_no) {
 			</div>';
 		}
 	}
-	echo '</table>
+	echo '</tbody>
+        </table>
         </div>';
 	
 	
@@ -377,8 +381,9 @@ function list_passengers_for_refund_no($refund_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class="box-body">
+              <table id="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+         		 <thead>
          		 <tr class="info">
                     <th>Remove</th>
 					<th>Full Name</th>
@@ -386,7 +391,9 @@ function list_passengers_for_refund_no($refund_no) {
 					<th>Last Name</th>
                     <th>Passport No</th>
 					<th>Ticket No</th>
-                 </tr>';
+                 </tr>
+                 </thead>
+                 <tbody>';
 	$result = mysqli_query ($conn, "SELECT * FROM refund_has_passengers WHERE refund_no='$refund_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		$result1 = mysqli_query ($conn, "SELECT * FROM customer WHERE passport_no='$row[passport_no]' AND cancel_status='0' ORDER BY id ASC" );
@@ -400,7 +407,7 @@ function list_passengers_for_refund_no($refund_no) {
 				<td>' . $row ['ticket_no'] . '</td>';
 		}
 	}
-	echo '
+	echo '        </tbody>
               	</table>
             </div>
 
@@ -412,15 +419,18 @@ function list_passengers_for_refund_no_view($refund_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-         		 <tr class="info">
-					<th>Full Name</th>
-                    <th>First Name</th>
-					<th>Last Name</th>
-                    <th>Passport No</th>
-                    <th>Ticket No</th>
-                 </tr>';
+	echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                  <thead>  
+                     <tr class="info">
+                        <th>Full Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Passport No</th>
+                        <th>Ticket No</th>
+                     </tr>
+                     </thead>
+                     <tbody>';
 	$result = mysqli_query ( $conn, "SELECT * FROM refund_has_passengers WHERE refund_no='$refund_no' AND cancel_status='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		$result1 = mysqli_query ( $conn, "SELECT * FROM customer WHERE passport_no='$row[passport_no]' AND cancel_status='0' ORDER BY id ASC" );
@@ -432,11 +442,9 @@ function list_passengers_for_refund_no_view($refund_no) {
 				<td>' . $row ['ticket_no'] . '</td>';
 		}
 	}
-	echo '
+	echo '        </tbody>
               	</table>
-            </div>
-
-			';
+            </div>';
 	
 	
 }
@@ -444,9 +452,9 @@ function list_passengers_booking_no($booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-     
+	echo '<div class="box-body">
+              <table id="example2" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                    <thead>
                        <tr class="info">
 						   <th>Full Name</th>
                            <th>First Name</th>
@@ -455,7 +463,8 @@ function list_passengers_booking_no($booking_no) {
 						   <th>Ticket No</th>
 						   <th>Add</th>
                        </tr>
-				  ';
+                   </thead>
+                   <tbody>';
 	$result = mysqli_query ( $conn, "SELECT * FROM booking_has_passengers WHERE booking_no='$booking_no' AND cancel_status='0' AND refund='0' ORDER BY id ASC" );
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
 		$result1 = mysqli_query ( $conn, "SELECT * FROM customer WHERE passport_no='$row[passport_no]' AND cancel_status='0' ORDER BY id ASC" );
@@ -475,7 +484,8 @@ function list_passengers_booking_no($booking_no) {
 				</tr>';
 		}
 	}
-	echo '</table>
+	echo '    </tbody>
+            </table>
           </div>';
 	
 	

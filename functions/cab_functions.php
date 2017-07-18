@@ -26,12 +26,12 @@ function update_cab_package($id, $cab_package_code, $rate, $type, $user_name) {
 	
 }
 function list_cab_packages() {
-	include 'conf/config.php';
-	include 'conf/opendb.php';
-	
-	echo '<div class="box-body">
-              <table id-="example1" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
-                  <thead>
+    include 'conf/config.php';
+    include 'conf/opendb.php';
+
+    echo '<div class="box-body">
+			<table id="example1"  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+                   <thead>
                        <tr>
                            <th>Edit</th>
                            <th>Code</th>
@@ -41,21 +41,21 @@ function list_cab_packages() {
                        </tr>
                   </thead>
                   <tbody>';
-	
-	$i = 1;
-	$result = mysqli_query ($conn , "SELECT * FROM cab_packages WHERE cancel_status='0' ORDER BY cab_package_code ASC");
-	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-		if ($i % 4 == 0) {
-			echo '<tr class="info">';
-		} elseif ($i % 3 == 0) {
-			echo '<tr class="warning">';
-		} elseif ($i % 2 == 0) {
-			echo '<tr class="success">';
-		} else {
-			echo '<tr class="danger">';
-		}
-		
-		echo '<td><a href="cab_package.php?job=edit&id=' . $row [id] . '"  ><i class="fa fa-edit fa-2x"></i></a></td>
+    $i = 1;
+    $result = mysqli_query ( $conn, "SELECT * FROM cab_packages WHERE cancel_status='0' ORDER BY cab_package_code ASC" );
+    while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
+
+        if ($i % 4 == 0) {
+            echo '<tr class="info">';
+        } elseif ($i % 3 == 0) {
+            echo '<tr class="warning">';
+        } elseif ($i % 2 == 0) {
+            echo '<tr class="success">';
+        } else {
+            echo '<tr class="danger">';
+        }
+
+        echo '<td><a href="cab_package.php?job=edit&id=' . $row [id] . '"  ><i class="fa fa-edit fa-2x"></i></a></td>
 					
 		<td>' . $row [cab_package_code] . '</td>
 					
@@ -66,16 +66,17 @@ function list_cab_packages() {
 		<td><a href="cab_package.php?job=delete&id=' . $row [id] . '" onclick="javascript:return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa fa-times fa-2x"></i></a></td>
 	
 		</tr>';
-		
-		$i ++;
-	}
-	
-	echo '</tbody>
+
+        $i ++;
+    }
+
+    echo '</tbody>
           </table>
           </div>';
-	
-	
+
+
 }
+
 function get_cab_package_info($cab_package_code) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
@@ -201,20 +202,23 @@ function display_cab_detail($cab_booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
-                  <tr>
-					  <th>From</th>
-                      <th>To</th>
-					  <th>Start Date</th>
-	                  <th>End Date</th>
-					  <th>Passengers count</th>
-                      <th>Vehicle Type</th>
-					  <th>App. Distance</th>
-                      <th>Customer</th>
-					  <th>Contact</th>
-                      <th>Confirm Date</th>
-                 </tr>';
+	echo '<div class="box-body">
+              <table id="example1" style="font-size: 13px;" class="table-responsive table-bordered table-striped dt-responsive">
+                  <thead>
+                      <tr>
+                          <th>From</th>
+                          <th>To</th>
+                          <th>Start Date</th>
+                          <th>End Date</th>
+                          <th>Passengers count</th>
+                          <th>Vehicle Type</th>
+                          <th>App. Distance</th>
+                          <th>Customer</th>
+                          <th>Contact</th>
+                          <th>Confirm Date</th>
+                     </tr>
+                 </thead>
+                 <tbody>';
 	
 	$result = mysqli_query (  $conn , "SELECT * FROM cab WHERE cab_booking_no='$cab_booking_no' AND cancel_status='0' ORDER BY id ASC");
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
@@ -232,7 +236,7 @@ function display_cab_detail($cab_booking_no) {
 			<td>' . $row ['confirm_date'] . '</td>
 		</tr>';
 	}
-	echo '
+	echo '        </tbody>
               	</table>
             </div>';
 	
@@ -242,13 +246,14 @@ function cab_driver_details($cab_booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table class="table" style="font-size: 13px;">
+	echo '<div class="box-body">
+              <table id="example2" style="font-size: 13px;" class="table-responsive table-bordered table-striped dt-responsive">
                   ';
 	
 	$result = mysqli_query ( $conn , "SELECT * FROM cab WHERE cab_booking_no='$cab_booking_no' AND cancel_status='0' ORDER BY id ASC");
 	while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-		echo '<tr>
+		echo '<thead>
+              <tr>
 				<th colspan="3" class="info">Driver</th>
                 <th colspan="2" class="danger" style="">Vechicle</th>
 				<th class="success" style="text-align: center;"></th>
@@ -261,6 +266,8 @@ function cab_driver_details($cab_booking_no) {
 				<th class="danger">Number : ' . $row ['vechicle_no'] . '</th>
 				<th class="success">PickUp Time : ' . $row ['pickup_time'] . '</th
              </tr>
+             </thead>
+             <tbody>
 			<tr>
 			<td></td>
 			<td></td>
@@ -270,8 +277,8 @@ function cab_driver_details($cab_booking_no) {
 			<td></td>
 		</tr>';
 	}
-	echo '
-              	</table>
+	echo '    </tbody>
+             </table>
             </div>';
 	
 
@@ -306,8 +313,8 @@ function cab_charges($cab_booking_no) {
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 	
-	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+	echo '<div class = "box-body">
+              <table id="example3" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Package</th>
@@ -355,7 +362,7 @@ function cab_charges_view($cab_booking_no) {
 	include 'conf/opendb.php';
 	
 	echo '<div class="table-responsive">
-              <table  style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
+              <table id="example4" style="width: 100%;" class="table-responsive table-bordered table-striped dt-responsive">
                   <thead>
                        <tr>
                            <th>Package</th>
@@ -387,7 +394,8 @@ function cab_charges_view($cab_booking_no) {
 		
 		<td algin="right"><strong>' . number_format ( $total, 2 ) . '</strong></td>
 
-		</tr></tbody>
+		</tr>
+		</tbody>
           </table>
           </div>
 				

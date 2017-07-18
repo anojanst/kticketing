@@ -11,9 +11,9 @@
 {/if}
 <div class="row">
 	<div class="col-lg-12" style="margin-top: 10px;">
-		<div class="panel panel-primary" style="margin-top: 10px;">
+		<div class="panel panel-info" style="margin-top: 10px;">
 			<div class="panel-heading">
-				Refund Details
+				<strong>Refund Details</strong>
 			</div>
 			<div class="panel-body">
                 {php}refund_detail($_SESSION['refund_no']);{/php}
@@ -28,6 +28,11 @@
 	<script>
         $(function () {
             $("#example1").DataTable();
+        });
+	</script>
+	<script>
+        $(function () {
+            $("#exampl2").DataTable();
         });
 	</script>
 {/literal}

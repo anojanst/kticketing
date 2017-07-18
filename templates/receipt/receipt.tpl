@@ -80,8 +80,11 @@
 					</div>
 					<div class="panel-body">
                         {php} list_receipt_invoices($_SESSION['random_no']); {/php}
-
-						<p><strong>Pending Invoices</strong></p>
+				<div class="panel panel-info" style="margin-top: 10px;">
+					<div class="panel-heading">
+						<strong>Pending Invoices</strong>
+					</div>
+					<div class="panel-body">
                         {php}customer_receipt_detail($_SESSION['customer_id']);{/php}
 						<hr>
 
@@ -142,7 +145,7 @@
 										</div>
 										<div class="col-lg-2">
 											<div class="form-group" style="visibility:visible;">
-												<input type="text" name="exp_date" value="{$exp_date}" placeholder="Expire Date XX/XX" style="width: 100%;">
+												<input type="text" name="exp_date" value="{$exp_date}" id="datepicker5" class="form-control" placeholder="Expire Date XX/XX" style="width: 100%;">
 
 											</div>
 										</div>
@@ -331,8 +334,22 @@
         });
 	</script>
 	<script>
+        $(function () {
+
+            $('#datepicker5').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+        });
+	</script>
+	<script>
 		$(function () {
 			$("#example1").DataTable();
 		});
+	</script>
+	<script>
+        $(function () {
+            $("#example2").DataTable();
+        });
 	</script>
 {/literal}

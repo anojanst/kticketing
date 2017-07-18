@@ -20,7 +20,7 @@ function add_invoice_ledger($invoice_no) {
 		VALUES ('$account', '$date', '$flag', '$ref_no', '$narration', '', '$total', '$branch', '$row[customer_id]')";
 		mysqli_query ($conn, $query1 ) or die ( mysqli_connect_error () );
 		
-		mysqli_select_db ( $dbname );
+		mysqli_select_db ($conn, $dbname );
 		$query2 = "INSERT INTO ledger (account, date, flag, ref_no, narration, debit, credit, branch, customer_id)
 		VALUES ('$narration', '$date', '$flag', '$ref_no', '$account', '$total', '', '$branch', '$row[customer_id]')";
 		mysqli_query ($conn, $query2 ) or die ( mysqli_connect_error () );
