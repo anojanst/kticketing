@@ -398,14 +398,12 @@ function cab_charges_view($cab_booking_no) {
 		</tbody>
           </table>
           </div>
-				
-				
-				
-				<div class="row">
-						<div class="col-lg-12" style="text-align: center;">
-							<a href="cab.php?job=print&cab_booking_no=' . $cab_booking_no . '" class="btn btn-success" target="blank">Print</a>
-						</div>
-	                </div>';
+          
+            <div class="row">
+                <div class="col-lg-12" style="text-align: center;">
+                    <a href="cab.php?job=print&cab_booking_no=' . $cab_booking_no . '" class="btn btn-success" target="blank">Print</a>
+                </div>
+            </div>';
 	
 	
 }
@@ -446,7 +444,8 @@ function cab_charges_view_print($cab_booking_no) {
 
 		<td algin="right"><strong>' . number_format ( $total, 2 ) . '</strong></td>
 
-		</tr></tbody>
+		</tr>
+		</tbody>
           </table>
           </div>';
 	
@@ -580,7 +579,7 @@ function search_cab_report($cab_booking_no, $name, $from_date, $to_date) {
 		 ' . $row [start_date] . '
 		</td>
 
-		 		<td>
+        <td>
 		 ' . $row [end_date] . '
 		</td>
 

@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/jquery-jvectormap-1.2.2.css">
 <link rel="stylesheet" href="css/datepicker3.css">
 <link rel="stylesheet" href="css/daterangepicker.css">
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
 <link rel="stylesheet" href="css/bootstrap3-wysihtml5.min.css">
 <link rel="stylesheet" href="css/dataTables.bootstrap.css">
 <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />

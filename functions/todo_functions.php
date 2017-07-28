@@ -100,9 +100,7 @@ function save_task($task_name, $description, $deadline, $amount, $received, $use
 	include 'conf/config.php';
 	include 'conf/opendb.php';
 
-	echo "INSERT INTO todo (id, task_name, description, deadline, amount, received, user_name, status, ref_no, type, saved_by, telephone_directory_id)
-	VALUES ('', '$task_name', '$description', '$deadline', '$amount', '$received', '$user_name', '$status', '$ref_no', '$type', '$saved_by', '$call_id')";
-	
+
 	$call_id = $_SESSION [call_id];
 	mysqli_select_db ($conn, $dbname );
 	$query = "INSERT INTO todo (id, task_name, description, deadline, amount, received, user_name, status, ref_no, type, saved_by, telephone_directory_id)

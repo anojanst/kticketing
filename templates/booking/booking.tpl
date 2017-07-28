@@ -44,12 +44,11 @@
                 {
                     var outPut = xmlhttp.responseText;
                     document.getElementById("afterDiscountAdult").innerHTML=xmlhttp.responseText;
+
                 }
             }
             var air_line_code = document.getElementById("air_line_code").value;
-            var offer = document.getElementById("offer").value;
-            var offer_code = document.getElementById("offer_code").value;
-            xmlhttp.open("GET","ajax/check_cut_off.php?fare="+pass+"&air_line_code="+air_line_code+"&offer="+offer+"&offer_code="+offer_code,true);
+            xmlhttp.open("GET","ajax/check_cut_off.php?fare="+pass+"&air_line_code="+air_line_code,true);
             xmlhttp.send();
 
         }
@@ -57,12 +56,13 @@
 
     <script type="text/javascript">
         function findTotalAdult(){
-            var x = document.getElementById("afterDiscountAdult").innerHTML,
-                y = document.getElementById("adult_tax").value,
-                z = document.getElementById("adult_markup").value;
+            var x = document.getElementById("afterDiscountAdult").innerHTML;
+                console.log(x);
+                y = document.getElementById("tax").value;
+                z = document.getElementById("markup").value;
 
             var total = +x + +y + +z;
-            document.getElementById("totalAdult").value=total;
+            document.getElementById("total").value=total;
         }
     </script>
 
@@ -218,19 +218,6 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <select class="form-control" id="offer" name="offer" required>
-                                        {if $air_line}
-                                            <option value="{$air_line_code}">{$air_line_code}</option>
-                                            <option value="No Offer">No Offer</option>
-                                        {else}
-                                            <option value="No Offer">No Offer</option>
-                                        {/if}
-                                        <option value="Offer">Offer</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
                                     <select class="form-control" id="air_line_code" name="air_line_code" onchange="calculateDiscountAdult(); calculateDiscountInfant(); calculateDiscountChild();" required placeholder="Air Line" >
                                         {if $air_line}
                                             <option value="{$air_line_code}">{$air_line_code}</option>
@@ -304,6 +291,11 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
+                                    <span id="afterDiscountAdult" class="alert-info col-lg-12"   style="height: 30px; text-align: right; padding: 5px;"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
                                     <input class="form-control" name="tax" value="{$tax}" id="tax" onkeyup="findTotalAdult()" required placeholder="Tax">
                                 </div>
                             </div>
@@ -312,7 +304,7 @@
                                     <input class="form-control" name="markup" onkeyup="findTotalAdult()" id="markup" value="{$markup}" required placeholder="Markup">
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-2">
                                 <select class="form-control" name="passenger_type" required placeholder="Passsenger" >
                                     {if $passenger_type}
                                         <option value="{$passenger_type}">{$passenger_type}</option>
@@ -325,7 +317,7 @@
                                     <option value="NO_OF_TICKETS">No of Tickets</option>
                                 </select>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-2">
                                 <div class="form-group">
                                     <input class="form-control" name="total" value="{$total}" id="total" required placeholder="Total" readonly>
                                 </div>
@@ -337,7 +329,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-                                        <input type="text" name="dep_time" class="form-control" id="timepicker1" placeholder="Departure time" required="required" style="width: 100%;" onclick="findTotalInfant(); findTotalChild(); findTotalAdult();">
+                                        <input type="text" name="dep_time" class="form-control" id="datetimepicker1" placeholder="Departure time" required="required" style="width: 100%;" onclick="findTotalInfant(); findTotalChild(); findTotalAdult();">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
                                     </div>
@@ -347,7 +339,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-                                        <input type="text" name="arr_time" class="form-control" id="timepicker" placeholder="Arrival time" required="required" style="width: 100%;">
+                                        <input type="text" name="arr_time" class="form-control" id="datetimepicker2" placeholder="Arrival time" required="required" style="width: 100%;">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
                                     </div>
@@ -357,7 +349,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group" id="returnDepartureTime" style="visibility:visible;">
                                     <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-                                        <input type="text" name="rtn_dep_time" class="form-control" id="timepicker2"  placeholder="Return departure time" style="width: 100%;">
+                                        <input type="text" name="rtn_dep_time" class="form-control" id="datetimepicker3"  placeholder="Return departure time" style="width: 100%;">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
                                     </div>
@@ -367,7 +359,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group" id="returnArrivalTime" style="visibility:visible;">
                                     <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd h:i:s" data-link-field="dtp_input1">
-                                        <input type="text" name="rtn_arr_time" class="form-control" id="timepicker3"  placeholder="Return arrival time" style="width: 100%;">
+                                        <input type="text" name="rtn_arr_time" class="form-control" id="datetimepicker4"  placeholder="Return arrival time" style="width: 100%;">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
                                     </div>
@@ -565,50 +557,22 @@
 {literal}
     <script>
         $(function () {
-
-            $('#timepicker').timepicker({
-                timeFormat: 'HH:mm:ss'
-            });
+            $('#datetimepicker1').datetimepicker();
         });
     </script>
     <script>
         $(function () {
-
-            $('#timepicker1').timepicker({
-                timeFormat: 'HH:mm:ss'
-            });
+            $('#datetimepicker2').datetimepicker();
         });
     </script>
     <script>
         $(function () {
-
-            $('#timepicker2').timepicker({
-                timeFormat: 'HH:mm:ss'
-            });
+            $('#datetimepicker3').datetimepicker();
         });
     </script>
     <script>
         $(function () {
-            $('#timepicker3').timepicker({
-                timeFormat: 'HH:mm:ss'
-            });
-        });
-    </script>
-    <script>
-        $(function () {
-            $('#datepicker1').datepicker({
-                format: 'yyyy-mm-dd',
-                autoclose: true
-            });
-        });
-    </script>
-    <script>
-        $(function () {
-
-            $('#datepicker').datepicker({
-                format: 'yyyy-mm-dd',
-                autoclose: true
-            });
+            $('#datetimepicker4').datetimepicker();
         });
     </script>
     <script>

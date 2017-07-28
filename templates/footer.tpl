@@ -17,6 +17,7 @@
 <script src="js/demo.js"></script>
 <script src="js/daterangepicker.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
 <script src="js/jquery.inputmask.js"></script>
 <script src="js/jquery.inputmask.date.extensions.js"></script>
 <script src="js/jquery.inputmask.extensions.js"></script>

@@ -20,17 +20,19 @@
             </div>
             <div class="panel-body">
                 <form role="form" action="booking_without_visa.php?job=search" method="post">
-                    <div class="col-lg-3">
-                        <div class="form-group">
-                            <input class="form-control staff_name" type="text" name="staff_name" value="{$staff_name}" placeholder="Name"/>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <input class="form-control staff_name" type="text" name="staff_name" value="{$staff_name}" placeholder="Name"/>
+                            </div>
                         </div>
-                    </div>
+                        <div class="col-lg-2">
+                            <button type="submit" name="ok" value="Search" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
                     <div class="col-lg-2">
-                        <button type="submit" name="ok" value="Search" class="btn btn-primary">Search</button>
+                        <a href="booking_without_visa.php?job=booking_without_visa_print"  class="btn btn-primary" target="blank">Print</a>
                     </div>
-                </form>
-                <div class="col-lg-2">
-                    <a href="booking_without_visa.php?job=booking_without_visa_print"  class="btn btn-primary" target="blank">Print</a>
                 </div>
             </div>
         </div>
